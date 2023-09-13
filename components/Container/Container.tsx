@@ -72,6 +72,12 @@ export default function Container(props: any) {
             >
               Home
             </Link>
+            <Link
+              href='/photos'
+              className='transition-all cursor-pointer hover:text-primary'
+            >
+              Photography
+            </Link>
           </div>
           <div className='flex flex-row items-center space-x-4'>
             <a
