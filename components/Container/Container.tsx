@@ -75,7 +75,7 @@ export default function Container(props: any) {
           </div>
           <div className='flex flex-row items-center space-x-4'>
             <a
-              href='https://github.com/cristicretu/'
+              href='https://github.com/carson375'
               className='visible'
               target='_blank'
               rel='noreferrer'
