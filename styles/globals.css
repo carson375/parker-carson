@@ -69,6 +69,12 @@
     color: #000;
   }
 
+  .gallery {
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  }
+
   html {
     @apply max-h-screen antialiased;
   }
