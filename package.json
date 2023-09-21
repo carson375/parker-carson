@@ -14,14 +14,21 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.10",
+    "@mui/styled-engine-sc": "^5.14.10",
     "cloudinary": "^1.40.0",
     "eslint-config-prettier": "^8.7.0",
+    "mui": "^0.0.1",
     "next": "^13.2.4",
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-imgix": "^9.8.0",
-    "react-use": "^17.4.0"
+    "react-modal-image": "^2.6.0",
+    "react-use": "^17.4.0",
+    "styled-components": "^5.3.11"
   },
   "devDependencies": {
     "@types/node": "^18.15.0",

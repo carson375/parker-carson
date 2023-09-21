@@ -71,8 +71,13 @@
 
   .gallery {
     display: grid;
-    overflow: hidden;
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* Optional: adds space between images */
+  }
+
+  .image {
+    width: 100%;
+    height: auto;
   }
 
   html {
