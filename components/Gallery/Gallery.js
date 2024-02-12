@@ -1,6 +1,7 @@
 import React from 'react'
-import ModalImage from 'react-modal-image'
+
 import { Box, Grid } from '@mui/material'
+import ModalImage from 'react-modal-image'
 
 // The problem is this mapping is limited by the fact that the div is only 640 px wide we need to change that
 export const Gallery = ({ images }) => (
