@@ -37,5 +37,11 @@
   "globals": {
     "React": true,
     "JSX": true
-  }
+  },
+  "prettier/prettier": [
+    "error",
+    {
+      "endOfLine": "auto"
+    }
+  ]
 }
