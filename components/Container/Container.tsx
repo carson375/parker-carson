@@ -72,6 +72,7 @@ export default function Container(props: any) {
             >
               Home
             </Link>
+            <p> | </p>
             <Link
               href='/photos'
               className='transition-all cursor-pointer hover:text-primary'

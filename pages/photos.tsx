@@ -2,26 +2,9 @@ import Container from 'components/Container'
 
 import { Gallery } from '../components/Gallery/Gallery'
 
-const images = [
-  '/photography/Bridge.JPG',
-  '/photography/ASundayAfternoonInParis.JPG',
-  '/photography/Eiffel.JPG',
-  '/photography/Eiffel2.JPG',
-  '/photography/LuxemborgGardens.JPG',
-  '/photography/LuxemborgGardens.JPG',
-  '/photography/LuxGardens2.JPG',
-  '/photography/LuxGardensBuilding.JPG',
-  '/photography/LuxGardensBuilding2.JPG',
-  '/photography/LuxGardensEiffel.JPG',
-  '/photography/LuxGardensStatue.JPG',
-  '/photography/NotreDame.JPG',
-  '/photography/NotreDame2.JPG',
-  '/photography/NotreDameSide.JPG',
-  '/photography/Pantheon.JPG',
-  '/photography/PantheonClose.JPG',
-  '/photography/ParisBuilding.JPG',
-  '/photography/Street.JPG',
-]
+import { Paris2022 } from '../components/imageOptions'
+
+const images = [Paris2022, ['/photography/Paris2022/Bridge.JPG']]
 
 //const images2 = ['/photography/Bridge.JPG']
 
@@ -30,7 +13,7 @@ export default function Photos() {
     <Container>
       <div className='flex flex-col items-center justify-center inset-0'>
         <p>This page is dedicated to photos that I&apos;ve taken.</p>
-        <Gallery images={images} />
+        <Gallery images={images[0]} />
       </div>
     </Container>
   )
