@@ -23,13 +23,13 @@ const images = [
   '/photography/Street.JPG',
 ]
 
-const images2 = ['/photography/Bridge.JPG']
+//const images2 = ['/photography/Bridge.JPG']
 
 export default function Photos() {
   return (
     <Container>
       <div className='flex flex-col items-center justify-center inset-0'>
-        <p>This page is dedicated to photos that I've taken.</p>
+        <p>This page is dedicated to photos that I&apos;ve taken.</p>
         <Gallery images={images} />
       </div>
     </Container>
