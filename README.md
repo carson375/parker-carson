@@ -54,9 +54,17 @@ cd project-name
 yarn install
 ```
 
+To start the app:
+
+```bash
+pnpm install
+pnpm dev
+```
+
 ## Included
 
 ### Custom classNames function
+
 > Under `/lib/classNames`
 
 ### Packages
