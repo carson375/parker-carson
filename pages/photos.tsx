@@ -27,14 +27,26 @@ export default function Photos() {
   }
 
   return (
-    <Container>
-      <div className='flex flex-col items-center justify-center inset-0'>
+    <Container
+      maxWidth={false}
+      sx={{ maxWidth: '1800px', margin: '0 auto', padding: '2rem' }}
+    >
+      <div
+        className='flex flex-col justify-center inset-0 w-full'
+        style={{ maxWidth: '100%' }}
+      >
         <Typography paddingBottom={1} align='center'>
           Please select a trip from the dropdown to view the photos!
         </Typography>
-        <Box sx={{ flexGrow: 1 }} width={200} paddingTop={2} paddingBottom={0}>
-          <Grid container spacing={2}>
-            <FormControl fullWidth>
+        <Box
+          sx={{ flexGrow: 1, width: '100%' }}
+          paddingTop={2}
+          paddingBottom={0}
+        >
+          <div
+            style={{ display: 'flex', justifyContent: 'center', width: '100%' }}
+          >
+            <FormControl sx={{ minWidth: 240 }}>
               <InputLabel
                 id='demo-simple-select-label'
                 sx={{
@@ -55,11 +67,11 @@ export default function Photos() {
                   onTripChange(e as React.ChangeEvent<HTMLInputElement>)
                 }
                 sx={{
-                  color: resolvedTheme === 'dark' ? 'white' : 'black', // text color
-                  backgroundColor: resolvedTheme === 'dark' ? '#222' : '#fff', // background
+                  color: resolvedTheme === 'dark' ? 'white' : 'black',
+                  backgroundColor: resolvedTheme === 'dark' ? '#222' : '#fff',
                   '.MuiSvgIcon-root': {
                     color: resolvedTheme === 'dark' ? 'white' : 'black',
-                  }, // arrow color
+                  },
                 }}
                 MenuProps={{
                   PaperProps: {
@@ -100,10 +112,25 @@ export default function Photos() {
                 ))}
               </Select>
             </FormControl>
-          </Grid>
+          </div>
         </Box>
-        {isRender && <Gallery images={photos[dataIndex].photos} />}
+        {/* Gallery will now use the full width */}
       </div>
+      {isRender && (
+        <div
+          style={{
+            width: '1000px',
+            display: 'flex',
+            justifyContent: 'center',
+            marginTop: '2rem',
+            marginLeft: '-180px',
+          }}
+        >
+          <div style={{ maxWidth: '100%' }}>
+            <Gallery images={photos[dataIndex].photos} perRow={3} />
+          </div>
+        </div>
+      )}
     </Container>
   )
 }
