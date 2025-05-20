@@ -4,11 +4,11 @@ import { Box, Grid } from '@mui/material'
 import ModalImage from 'react-modal-image'
 
 // The problem is this mapping is limited by the fact that the div is only 640 px wide we need to change that
-export const Gallery = ({ images }) => (
+export const Gallery = ({ images, perRow = 1 }) => (
   <Box sx={{ flexGrow: 1 }} p={6} paddingBottom={2}>
     <Grid container spacing={2}>
       {images.map((image, index) => (
-        <Grid item xs={12} sm={6} md={4} key={index}>
+        <Grid item xs={12} sm={12 / perRow} md={12 / perRow} key={index}>
           <ModalImage
             small={image}
             large={image}
