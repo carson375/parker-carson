@@ -1,11 +1,5 @@
-import Container from 'components/Container'
-
-import { Gallery } from '../components/Gallery/Gallery'
-
-import photos from '../components/imageOptions.json'
-import { useTheme as useNextTheme } from 'next-themes'
-import { useTheme as useMuiTheme } from '@mui/material/styles'
 import { useState } from 'react'
+
 import {
   Box,
   Grid,
@@ -18,6 +12,13 @@ import {
   ListItem,
   ListItemText,
 } from '@mui/material'
+import { useTheme as useMuiTheme } from '@mui/material/styles'
+import { useTheme as useNextTheme } from 'next-themes'
+
+import Container from 'components/Container'
+
+import { Gallery } from '../components/Gallery/Gallery'
+import photos from '../components/imageOptions.json'
 
 export default function Projects() {
   const { resolvedTheme } = useNextTheme()
