@@ -1,136 +1,104 @@
+import { useState, useEffect } from 'react'
 import Container from 'components/Container'
-
-import { Gallery } from '../components/Gallery/Gallery'
-
-import photos from '../components/imageOptions.json'
-import { useState } from 'react'
-import { useTheme } from 'next-themes'
-import {
-  Box,
-  Grid,
-  FormControl,
-  Select,
-  MenuItem,
-  InputLabel,
-  Typography,
-} from '@mui/material'
+import { Gallery } from 'components/Gallery/Gallery'
+import photosData from 'components/imageOptions.json'
 
 export default function Photos() {
-  const [dataIndex, setDataIndex] = useState<number>(0)
-  const [photoChoice] = useState(photos)
-  const [isRender, setIsRender] = useState(false)
-  const { resolvedTheme } = useTheme()
+  const [selectedTrip, setSelectedTrip] = useState<number | null>(null)
 
-  const onTripChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setDataIndex(Number(e.target.value))
-    setIsRender(true)
+  // Close on Escape key
+  useEffect(() => {
+    const handleEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setSelectedTrip(null)
+    }
+    window.addEventListener('keydown', handleEsc)
+    return () => window.removeEventListener('keydown', handleEsc)
+  }, [])
+
+  const stats = {
+    cities: 17,
+    countries: 6,
+    states: 5,
   }
 
-  return (
-    <Container
-      maxWidth={false}
-      sx={{ maxWidth: '1800px', margin: '0 auto', padding: '2rem' }}
-    >
-      <div
-        className='flex flex-col justify-center inset-0 w-full'
-        style={{ maxWidth: '100%' }}
-      >
-        <Typography paddingBottom={1} align='center'>
-          Please select a trip from the dropdown to view the photos!
-        </Typography>
-        <Box
-          sx={{ flexGrow: 1, width: '100%' }}
-          paddingTop={2}
-          paddingBottom={0}
-        >
-          <div
-            style={{ display: 'flex', justifyContent: 'center', width: '100%' }}
-          >
-            <FormControl sx={{ minWidth: 240 }}>
-              <InputLabel
-                id='demo-simple-select-label'
-                sx={{
-                  color: resolvedTheme === 'dark' ? 'white' : 'black',
-                  '&.Mui-focused': {
-                    color: resolvedTheme === 'dark' ? 'white' : 'black',
-                  },
-                }}
-              >
-                Trips
-              </InputLabel>
-              <Select
-                labelId='demo-simple-select-label'
-                className='my-mui-select'
-                id='demo-simple-select'
-                label='Trips'
-                onChange={e =>
-                  onTripChange(e as React.ChangeEvent<HTMLInputElement>)
-                }
-                sx={{
-                  color: resolvedTheme === 'dark' ? 'white' : 'black',
-                  backgroundColor: resolvedTheme === 'dark' ? '#222' : '#fff',
-                  '.MuiSvgIcon-root': {
-                    color: resolvedTheme === 'dark' ? 'white' : 'black',
-                  },
-                }}
-                MenuProps={{
-                  PaperProps: {
-                    sx: {
-                      backgroundColor:
-                        resolvedTheme === 'dark' ? '#222' : '#fff',
-                      color: resolvedTheme === 'dark' ? 'white' : 'black',
-                    },
-                  },
-                }}
-              >
-                {photoChoice.map((item, index) => (
-                  <MenuItem
-                    value={index}
-                    key={index}
-                    defaultValue={index}
-                    sx={{
-                      backgroundColor:
-                        resolvedTheme === 'dark' ? '#222' : '#fff',
-                      color: resolvedTheme === 'dark' ? 'white' : 'black',
-                      '&.Mui-selected': {
-                        backgroundColor:
-                          resolvedTheme === 'dark' ? '#333' : '#eee',
-                        color: resolvedTheme === 'dark' ? 'white' : 'black',
-                      },
-                      '&.Mui-selected:hover': {
-                        backgroundColor:
-                          resolvedTheme === 'dark' ? '#444' : '#ddd',
-                      },
-                      '&:hover': {
-                        backgroundColor:
-                          resolvedTheme === 'dark' ? '#333' : '#f5f5f5',
-                      },
-                    }}
-                  >
-                    {item.name}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+  // GALLERY VIEW (Focused Swap)
+  if (selectedTrip !== null) {
+    return (
+      <Container hideNav={true} clean={true}>
+        <div className='min-h-screen w-full bg-white dark:bg-black animate-in fade-in duration-300 flex flex-col'>
+          {/* Header - Fixed at the very top */}
+          <div className='sticky top-0 z-[110] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
+            <h1 className='text-xl md:text-2xl font-bold text-primary'>{photosData[selectedTrip].name}</h1>
+            <button 
+              onClick={() => setSelectedTrip(null)}
+              className='flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              Back to Trips
+            </button>
           </div>
-        </Box>
-        {/* Gallery will now use the full width */}
-      </div>
-      {isRender && (
-        <div
-          style={{
-            width: '1000px',
-            display: 'flex',
-            justifyContent: 'center',
-            marginTop: '2rem',
-            marginLeft: '-180px',
-          }}
-        >
-          <div style={{ maxWidth: '100%' }}>
-            <Gallery images={photos[dataIndex].photos} perRow={3} />
+
+          {/* Content */}
+          <div className='flex-1 w-full max-w-7xl mx-auto py-8 px-4'>
+            <Gallery images={photosData[selectedTrip].photos} perRow={3} />
           </div>
         </div>
-      )}
+      </Container>
+    )
+  }
+
+  // GRID VIEW (Default)
+  return (
+    <Container fullWidth={true}>
+      <div className='flex flex-col items-center justify-center space-y-12 py-16'>
+        {/* Hero Section */}
+        <div className='flex flex-col items-center text-center space-y-8 px-4 max-w-2xl mx-auto'>
+          <h1 className='text-5xl md:text-7xl font-black tracking-tight text-primary'>
+            Photography
+          </h1>
+          
+          <div className='space-y-6'>
+            <div className='flex flex-wrap justify-center gap-4 text-sm md:text-base font-medium'>
+              <span className='px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800'>
+                {stats.cities} Cities visited
+              </span>
+              <span className='px-4 py-1.5 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 border border-purple-100 dark:border-purple-800'>
+                {stats.countries} Countries explored
+              </span>
+              <span className='px-4 py-1.5 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border border-green-100 dark:border-green-800'>
+                {stats.states} US States
+              </span>
+            </div>
+
+            <p className='text-lg md:text-xl text-secondary leading-relaxed'>
+              Captured moments from my travels around the world. These photos are a record 
+              of the places I've been and the things I've seen, all shot through the lens of my phone.
+            </p>
+          </div>
+        </div>
+
+        {/* Trip Selection Grid - Now using full width */}
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 w-full px-4 pb-12'>
+          {photosData.map((trip, index) => (
+            <button
+              key={trip.name}
+              onClick={() => setSelectedTrip(index)}
+              className='group relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]'
+            >
+              <img
+                src={trip.photos[0]}
+                alt={trip.name}
+                className='absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110'
+              />
+              <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity' />
+              <div className='absolute bottom-0 left-0 p-6 text-left'>
+                <h3 className='text-xl font-bold text-white'>{trip.name}</h3>
+                <p className='text-sm text-gray-300 mt-1 font-medium'>{trip.photos.length} Photos</p>
+              </div>
+            </button>
+          ))}
+        </div>
+      </div>
     </Container>
   )
 }

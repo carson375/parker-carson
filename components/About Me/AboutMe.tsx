@@ -6,7 +6,11 @@ import { useInterval } from 'react-use'
 
 import classNames from 'lib/classNames'
 
-const slides = ['I enjoy running']
+const slides = [
+  'I enjoy running',
+  'I love photography',
+  'I build projects',
+]
 
 const gradients = [
   'from-yellow-400 via-red-500 to-pink-500',
@@ -14,21 +18,25 @@ const gradients = [
   'from-green-400 to-blue-500',
 ]
 
-const links = ['/hobbies/running']
+const links = ['/hobbies/running', '/photos', '/projects']
 
 export default function AboutMe() {
+  const [currentSlide, setSlide] = React.useState(0)
+
+  useInterval(() => {
+    setSlide((currentSlide + 1) % slides.length)
+  }, 3000)
+
   return (
     <div className='flex flex-col items-center text-2xl font-semibold tracking-tight space-y-2 pt-8'>
       <h2 className='text-3xl font-bold mb-4'>About Me</h2>
-      {slides.map((text, index) => (
-        <Link href={links[index]} key={text} passHref>
-          <span
-            className={`cursor-pointer bg-clip-text text-transparent bg-gradient-to-r ${gradients[index]} text-center hover:underline`}
-          >
-            {text}
-          </span>
-        </Link>
-      ))}
+      <Link href={links[currentSlide]} passHref>
+        <span
+          className={`cursor-pointer bg-clip-text text-transparent bg-gradient-to-r ${gradients[currentSlide]} text-center hover:underline transition-all duration-500`}
+        >
+          {slides[currentSlide]}
+        </span>
+      </Link>
     </div>
   )
 }
