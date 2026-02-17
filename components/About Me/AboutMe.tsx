@@ -1,16 +1,12 @@
 // https://github.com/delbaoliveira/website/blob/main/ui/challenge/TextSlider.tsx
 import React from 'react'
-import Link from 'next/link'
 
+import Link from 'next/link'
 import { useInterval } from 'react-use'
 
 import classNames from 'lib/classNames'
 
-const slides = [
-  'I enjoy running',
-  'I love photography',
-  'I build projects',
-]
+const slides = ['I enjoy running', 'I love photography', 'I build projects']
 
 const gradients = [
   'from-yellow-400 via-red-500 to-pink-500',

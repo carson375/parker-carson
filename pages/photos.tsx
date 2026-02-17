@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
 import photosData from 'components/imageOptions.json'
@@ -28,12 +29,27 @@ export default function Photos() {
         <div className='min-h-screen w-full bg-white dark:bg-black animate-in fade-in duration-300 flex flex-col'>
           {/* Header - Fixed at the very top */}
           <div className='sticky top-0 z-[110] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
-            <h1 className='text-xl md:text-2xl font-bold text-primary'>{photosData[selectedTrip].name}</h1>
-            <button 
+            <h1 className='text-xl md:text-2xl font-bold text-primary'>
+              {photosData[selectedTrip].name}
+            </h1>
+            <button
               onClick={() => setSelectedTrip(null)}
               className='flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='20'
+                height='20'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <line x1='18' y1='6' x2='6' y2='18'></line>
+                <line x1='6' y1='6' x2='18' y2='18'></line>
+              </svg>
               Back to Trips
             </button>
           </div>
@@ -56,7 +72,7 @@ export default function Photos() {
           <h1 className='text-5xl md:text-7xl font-black tracking-tight text-primary'>
             Photography
           </h1>
-          
+
           <div className='space-y-6'>
             <div className='flex flex-wrap justify-center gap-4 text-sm md:text-base font-medium'>
               <span className='px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800'>
@@ -71,8 +87,9 @@ export default function Photos() {
             </div>
 
             <p className='text-lg md:text-xl text-secondary leading-relaxed'>
-              Captured moments from my travels around the world. These photos are a record 
-              of the places I've been and the things I've seen, all shot through the lens of my phone.
+              Captured moments from my travels around the world. These photos
+              are a record of the places I&apos;ve been and the things I&apos;ve
+              seen, all shot through the lens of my phone.
             </p>
           </div>
         </div>
@@ -93,7 +110,9 @@ export default function Photos() {
               <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity' />
               <div className='absolute bottom-0 left-0 p-6 text-left'>
                 <h3 className='text-xl font-bold text-white'>{trip.name}</h3>
-                <p className='text-sm text-gray-300 mt-1 font-medium'>{trip.photos.length} Photos</p>
+                <p className='text-sm text-gray-300 mt-1 font-medium'>
+                  {trip.photos.length} Photos
+                </p>
               </div>
             </button>
           ))}

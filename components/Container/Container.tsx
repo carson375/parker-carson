@@ -147,7 +147,11 @@ export default function Container(props: any) {
         <main
           className={cn(
             !clean && 'px-4 mt-12',
-            clean ? 'w-full' : (fullWidth ? 'max-w-none w-full px-8' : 'max-w-2xl'),
+            clean
+              ? 'w-full'
+              : fullWidth
+              ? 'max-w-none w-full px-8'
+              : 'max-w-2xl',
             'mx-auto my-auto',
             'flex flex-col justify-center gap-12',
             !clean && 'divide-y divide-gray-200 dark:divide-gray-900',
