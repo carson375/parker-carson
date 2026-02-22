@@ -38,8 +38,8 @@ export default function Home() {
               </p>
               <p className='text-base text-tertiary'>
                 Outside of work, I stay active through running, skiing, and
-                bowling. I’m also enjoy photography and love exploring the city
-                of Chicago on my bike.
+                bowling. I also enjoy photography and love exploring the city of
+                Chicago on my bike.
               </p>
             </div>
           </div>
@@ -100,35 +100,6 @@ export default function Home() {
               </p>
               <div className='mt-4 text-sm font-semibold text-pink-500 group-hover:underline'>
                 See Stats →
-              </div>
-            </div>
-          </Link>
-
-          <Link href='/projects'>
-            <div className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900 md:col-span-2'>
-              <div className='absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity'>
-                <svg
-                  xmlns='http://www.w3.org/2000/svg'
-                  width='64'
-                  height='64'
-                  viewBox='0 0 24 24'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='1'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                >
-                  <polyline points='16 18 22 12 16 6' />
-                  <polyline points='8 6 2 12 8 18' />
-                </svg>
-              </div>
-              <h3 className='text-2xl font-bold mb-2'>Projects</h3>
-              <p className='text-tertiary'>
-                Autonomous drones, machine learning models, and web applications
-                built with TypeScript and Python.
-              </p>
-              <div className='mt-4 text-sm font-semibold text-green-500 group-hover:underline'>
-                Explore Work →
               </div>
             </div>
           </Link>

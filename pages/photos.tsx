@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Image from 'next/image'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
@@ -100,12 +101,15 @@ export default function Photos() {
             <button
               key={trip.name}
               onClick={() => setSelectedTrip(index)}
-              className='group relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02]'
+              className='group relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] bg-gray-100 dark:bg-gray-800'
             >
-              <img
+              <Image
                 src={trip.photos[0]}
                 alt={trip.name}
+                fill
+                sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw'
                 className='absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110'
+                priority={index < 4}
               />
               <div className='absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity' />
               <div className='absolute bottom-0 left-0 p-6 text-left'>

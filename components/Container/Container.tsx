@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-import { useRouter } from 'next/dist/client/router'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Link from 'next/link'
 import { useTheme } from 'next-themes'
@@ -75,25 +75,59 @@ export default function Container(props: any) {
               </Link>
               <p> | </p>
               <Link
-                href='/projects'
-                className='transition-all cursor-pointer hover:text-primary'
-              >
-                Projects
-              </Link>
-              <p> | </p>
-              <Link
                 href='/photos'
                 className='transition-all cursor-pointer hover:text-primary'
               >
                 Photography
               </Link>
               <p> | </p>
-              <Link
-                href='/hobbies/running'
-                className='transition-all cursor-pointer hover:text-primary'
-              >
-                Hobbies
-              </Link>
+              <div className='relative group'>
+                <button className='transition-all cursor-pointer hover:text-primary flex items-center gap-1'>
+                  Hobbies
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='12'
+                    height='12'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='3'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    className='opacity-50 group-hover:rotate-180 transition-transform duration-200'
+                  >
+                    <polyline points='6 9 12 15 18 9'></polyline>
+                  </svg>
+                </button>
+                <div className='absolute left-1/2 -translate-x-1/2 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10'>
+                  <div className='bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-xl min-w-[120px]'>
+                    <Link
+                      href='/hobbies/running'
+                      className='block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                    >
+                      Running
+                    </Link>
+                    <Link
+                      href='/hobbies/skiing'
+                      className='block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                    >
+                      Skiing
+                    </Link>
+                    <Link
+                      href='/hobbies/climbing'
+                      className='block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                    >
+                      Climbing
+                    </Link>
+                    <Link
+                      href='/hobbies/golf'
+                      className='block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
+                    >
+                      Golf
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className='flex flex-row items-center space-x-4'>
               <a
