@@ -21,8 +21,7 @@ export default function Skiing() {
             Skiing
           </h1>
           <p className='text-lg md:text-xl text-secondary leading-relaxed'>
-            Chasing fresh powder and mountain peaks. Documenting my favorite
-            runs and winter adventures.
+            Views from the mountains.
           </p>
         </div>
 
@@ -52,7 +51,6 @@ export default function Skiing() {
               <p className='font-bold text-xl text-primary mb-2'>
                 No trips documented yet
               </p>
-              <p className='text-secondary'>Ready for the next season!</p>
             </div>
           )}
         </div>

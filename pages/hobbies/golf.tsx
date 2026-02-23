@@ -20,8 +20,7 @@ export default function Golf() {
             Golf
           </h1>
           <p className='text-lg md:text-xl text-secondary leading-relaxed'>
-            Finding the fairway (eventually). Tracking rounds, scores, and
-            moments on the green.
+            Finding the fairway (eventually).
           </p>
         </div>
 
@@ -51,9 +50,6 @@ export default function Golf() {
               </svg>
               <p className='font-bold text-xl text-primary mb-2'>
                 No rounds recorded yet
-              </p>
-              <p className='text-secondary'>
-                Looking forward to the next tee time!
               </p>
             </div>
           )}

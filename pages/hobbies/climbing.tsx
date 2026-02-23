@@ -21,8 +21,7 @@ export default function Climbing() {
             Climbing
           </h1>
           <p className='text-lg md:text-xl text-secondary leading-relaxed'>
-            Scaling walls and finding lines. From gym sessions to outdoor crags,
-            documenting the journey upwards.
+            Pictures from all of my climbing trips over the years.
           </p>
         </div>
 
@@ -53,7 +52,6 @@ export default function Climbing() {
               <p className='font-bold text-xl text-primary mb-2'>
                 No climbs logged yet
               </p>
-              <p className='text-secondary'>Time to hit the gym or the crag!</p>
             </div>
           )}
         </div>
