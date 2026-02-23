@@ -1,109 +1,46 @@
-# Ultimate Front-end Template
+# Parker Carson Portfolio
 
-![preview](https://cdn.discordapp.com/attachments/797485737272541250/952208625806495815/image_5.png)
+A photography portfolio and activity tracker built with Next.js 16 and React 19.
 
-> Most elements are taken from [my website](https://cretu.dev).
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fcristicretu%2Fts-next-tailwind-template)
-
-[Use as a CodeSandbox template](https://codesandbox.io/s/ts-next-tailwind-template-vbjvcr)
-
-## Ingredients ✨:
-
-- NextJS 🚀
-- TailwindCSS 🦄
-- Typescript 🦺
-- Dark Mode Support 🌓
-- ESLint + Prettier Config 📂
-- Husky 🐶
-- Self-Hosted Inter Font ␊
-
-Under the _components_ folder, use Container for each of your pages - as it provides a reusable starting point for every page.
-
-```jsx
-<Container>...pageElements</Container>
-```
-
-## Getting started
-
-1. With 'use as template' repository
-   ![preview](https://cdn.discordapp.com/attachments/797485737272541250/952208604386189332/Group_11.png)
-
-2. Clone the project
+## Development
 
 ```bash
-# http
-git clone https://github.com/cristicretu/ts-next-tailwind-template.git
+# Setup
+npm install
+
+# Local Development
+npm run dev
+
+# Production Build
+npm run build
+
+# Production Preview
+npm run start
 ```
 
-```bash
-# ssh
-git clone git@github.com:cristicretu/ts-next-tailwind-template.git
-```
+## Maintenance Commands
 
-3. With `create-next-app`
+| Action | Command | Purpose |
+| :--- | :--- | :--- |
+| Lint | `npm run lint` | Identify code quality and security issues. |
+| Format | `npx prettier --write .` | Standardize code style project-wide. |
+| Reset | `rm -rf .next node_modules` | Perform a clean reinstallation. |
 
-```bash
-npx create-next-app -e https://github.com/cristicretu/ts-next-tailwind-template project-name
-```
+## Technical Implementation
 
-Install the required packages and run the template
+- **Navigation**: Vertical scroll-snap integration for full-screen image viewing.
+- **Responsive Design**: Variable grid system optimized for mobile and desktop viewports.
+- **Overlay System**: Backdrop-blur lightbox with persistent scroll indicators.
+- **Core Stack**: Next.js 16 and React 19 for improved performance and security.
+- **Vercel Optimization**: Configured robots.txt for crawler management and optimized cache TTL for static assets.
 
-```bash
-cd project-name
-yarn install
-```
+## Directory Overview
 
-To start the app:
+- `components/Gallery/`: Reusable gallery logic and scroll-snap components.
+- `pages/photos.tsx`: Photography collection views.
+- `pages/hobbies/running.tsx`: Activity records and media management.
+- `public/photography/`: Static image assets.
 
-```bash
-pnpm install
-pnpm dev
-```
+## Configuration
 
-## Included
-
-### Custom classNames function
-
-> Under `/lib/classNames`
-
-### Packages
-
-1. Next-themes: An abstraction for themes in your Next.js app.
-2. react-use: react-hooks
-
-### Custom globals.css
-
-1. custom underline
-2. vercel navbar
-3. removes firefox, edge and ie. bugs with overflows
-
-### Absolute Imports
-
-```tsx
-import TextField from '../../../components/TextField.tsx'
-```
-
-changes to
-
-```tsx
-import TextField from 'components/TextField.tsx'
-```
-
-### SEO optimization found in `Container.tsx`
-
-### Folder structuring & organization
-
-> Under `/components/` & `/public/`
-
-### Self Hosted Inter Font
-
-> Under `/public/fonts/`
-
-### 404 Page
-
-### Favicons and more configs
-
-> Under `/public/static/favicons/`
-
-![preview](https://cdn.discordapp.com/attachments/797485737272541250/952211815046197278/Frame_7.png)
+Theme management is handled via `next-themes` for system-level preference synchronization. The lightbox interface utilizes backdrop filters to maintain visual context across different themes.
