@@ -1,48 +1,78 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
+
 import Image from 'next/image'
 
 interface GalleryProps {
   images: string[]
   perRow?: number
+  layout?: 'grid' | 'stack'
 }
 
-export const Gallery = ({ images, perRow = 1 }: GalleryProps) => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+export const Gallery = ({
+  images,
+  perRow = 1,
+  layout = 'grid',
+}: GalleryProps) => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  // Handle Escape key to close modal
+  // Handle Keyboard Navigation
   useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedImage(null)
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return
+      if (e.key === 'Escape') setSelectedIndex(null)
     }
-    if (selectedImage) {
-      window.addEventListener('keydown', handleEsc)
+    if (selectedIndex !== null) {
+      window.addEventListener('keydown', handleKeyDown)
       document.body.style.overflow = 'hidden'
     }
     return () => {
-      window.removeEventListener('keydown', handleEsc)
+      window.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = 'unset'
     }
-  }, [selectedImage])
+  }, [selectedIndex])
+
+  // Scroll to the selected image when the lightbox opens
+  useEffect(() => {
+    if (selectedIndex !== null && scrollContainerRef.current) {
+      const element = document.getElementById(`lightbox-img-${selectedIndex}`)
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto' })
+      }
+    }
+  }, [selectedIndex])
+
+  const isStack = layout === 'stack'
 
   return (
-    <div className='p-4 md:p-6'>
+    <div className={isStack ? 'w-full' : 'p-4 md:p-6'}>
       <div
-        className='grid gap-4'
-        style={{
-          gridTemplateColumns: `repeat(${perRow}, minmax(0, 1fr))`,
-        }}
+        className={isStack ? 'flex flex-col gap-12' : 'grid gap-4'}
+        style={
+          !isStack
+            ? {
+                gridTemplateColumns: `repeat(${perRow}, minmax(0, 1fr))`,
+              }
+            : {}
+        }
       >
         {images.map((image, index) => (
           <div
             key={index}
-            className='relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gray-100 dark:bg-gray-800 cursor-zoom-in group'
-            onClick={() => setSelectedImage(image)}
+            className={`relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-zoom-in group ${
+              isStack ? 'aspect-[4/3] rounded-3xl' : 'aspect-[4/3] rounded-2xl'
+            }`}
+            onClick={() => setSelectedIndex(index)}
           >
             <Image
               src={image}
               alt={`Gallery image ${index + 1}`}
               fill
-              sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              sizes={
+                isStack
+                  ? '100vw'
+                  : '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
+              }
               className='object-cover transition-transform duration-500 group-hover:scale-105 group-hover:brightness-110'
               loading='lazy'
             />
@@ -50,18 +80,13 @@ export const Gallery = ({ images, perRow = 1 }: GalleryProps) => {
         ))}
       </div>
 
-      {/* Lightbox Modal */}
-      {selectedImage && (
-        <div
-          className='fixed inset-0 z-[200] flex items-center justify-center bg-white/90 dark:bg-black/95 backdrop-blur-xl animate-in fade-in duration-300'
-          onClick={() => setSelectedImage(null)}
-        >
+      {/* Lightbox Modal - Scroll Snap Version */}
+      {selectedIndex !== null && (
+        <div className='fixed inset-0 z-[200] bg-white/90 dark:bg-black/90 backdrop-blur-xl animate-in fade-in duration-300'>
+          {/* Close Button */}
           <button
-            className='absolute top-6 right-6 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-primary z-[210] hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
-            onClick={(e) => {
-              e.stopPropagation()
-              setSelectedImage(null)
-            }}
+            className='absolute top-6 right-6 p-2 rounded-full bg-gray-100/80 dark:bg-gray-800/80 text-primary z-[210] hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
+            onClick={() => setSelectedIndex(null)}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -79,20 +104,56 @@ export const Gallery = ({ images, perRow = 1 }: GalleryProps) => {
             </svg>
           </button>
 
+          {/* Scrollable Container */}
           <div
-            className='relative w-full h-full p-4 md:p-12 flex items-center justify-center'
-            onClick={(e) => e.stopPropagation()}
+            ref={scrollContainerRef}
+            className='h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth overscroll-contain'
           >
-            <div className='relative w-full h-full max-w-6xl max-h-[85vh]'>
-              <Image
-                src={selectedImage}
-                alt='Full screen view'
-                fill
-                className='object-contain'
-                priority={true}
-              />
-            </div>
+            {images.map((image, index) => (
+              <div
+                key={`lightbox-${index}`}
+                id={`lightbox-img-${index}`}
+                className='h-screen w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-16'
+                onClick={() => setSelectedIndex(null)}
+              >
+                <div
+                  className='relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center'
+                  onClick={e => e.stopPropagation()}
+                >
+                  <Image
+                    src={image}
+                    alt={`Full screen view ${index + 1}`}
+                    fill
+                    className='object-contain'
+                    priority={Math.abs(index - selectedIndex) <= 1}
+                  />
+                </div>
+              </div>
+            ))}
           </div>
+
+          {/* Scroll Hint */}
+          {images.length > 1 && (
+            <div className='absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-secondary pointer-events-none opacity-50'>
+              <span className='text-xs font-bold uppercase tracking-widest'>
+                Scroll
+              </span>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='20'
+                height='20'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+                className='animate-bounce'
+              >
+                <path d='M7 13l5 5 5-5M7 6l5 5 5-5'></path>
+              </svg>
+            </div>
+          )}
         </div>
       )}
     </div>

@@ -1,9 +1,27 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
+
 import Image from 'next/image'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
 import photosData from 'components/imageOptions.json'
+
+// Helper component to handle scrolling to the trip section
+const ScrollToTrip = ({ index }: { index: number }) => {
+  const hasScrolled = useRef(false)
+
+  useEffect(() => {
+    if (!hasScrolled.current) {
+      const element = document.getElementById(`trip-${index}`)
+      if (element) {
+        element.scrollIntoView({ behavior: 'auto' })
+        hasScrolled.current = true
+      }
+    }
+  }, [index])
+
+  return null
+}
 
 export default function Photos() {
   const [selectedTrip, setSelectedTrip] = useState<number | null>(null)
@@ -23,7 +41,7 @@ export default function Photos() {
     states: 5,
   }
 
-  // GALLERY VIEW (Focused Swap)
+  // GALLERY VIEW (Continuous Scroll)
   if (selectedTrip !== null) {
     return (
       <Container hideNav={true} clean={true}>
@@ -31,7 +49,7 @@ export default function Photos() {
           {/* Header - Fixed at the very top */}
           <div className='sticky top-0 z-[110] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
             <h1 className='text-xl md:text-2xl font-bold text-primary'>
-              {photosData[selectedTrip].name}
+              Photography
             </h1>
             <button
               onClick={() => setSelectedTrip(null)}
@@ -56,10 +74,29 @@ export default function Photos() {
           </div>
 
           {/* Content */}
-          <div className='flex-1 w-full max-w-7xl mx-auto py-8 px-4'>
-            <Gallery images={photosData[selectedTrip].photos} perRow={3} />
+          <div className='flex-1 w-full max-w-5xl mx-auto py-12 px-4 space-y-32'>
+            {photosData.map((trip, index) => (
+              <div
+                key={trip.name}
+                id={`trip-${index}`}
+                className='space-y-12 scroll-mt-24'
+              >
+                <div className='space-y-4'>
+                  <h2 className='text-4xl md:text-6xl font-black text-primary tracking-tight'>
+                    {trip.name}
+                  </h2>
+                  <p className='text-lg text-secondary font-medium'>
+                    {trip.photos.length} photos
+                  </p>
+                </div>
+                <Gallery images={trip.photos} perRow={3} />
+              </div>
+            ))}
           </div>
         </div>
+
+        {/* Scroll to selected trip on mount */}
+        <ScrollToTrip index={selectedTrip} />
       </Container>
     )
   }
