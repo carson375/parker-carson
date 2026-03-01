@@ -17,10 +17,11 @@ export default function Container(props: any) {
   const router = useRouter()
 
   const meta = {
-    title: 'Template name',
-    description: 'Template description',
+    title: 'Parker Carson',
+    description:
+      'Personal portfolio of Parker Carson, an engineer based in Chicago.',
     image:
-      'https://cdn.discordapp.com/attachments/797485737272541250/893912493255176192/UnicornVectorGradient_7.png',
+      'https://parker-carson.com/static/images/banner.png',
     type: 'website',
     ...customMeta,
   }
@@ -40,25 +41,21 @@ export default function Container(props: any) {
         )}
       >
         <Head>
+          <title>{meta.title}</title>
           <meta name='robots' content='follow, index' />
           <meta
             property='og:url'
-            content={`https://template.cretu.dev/${router.asPath}`}
+            content={`https://parker-carson.com${router.asPath}`}
           />
           <link
             rel='canonical'
-            href={`https://template.cretu.dev/${router.asPath}`}
+            href={`https://parker-carson.com${router.asPath}`}
           />
           <meta property='og:type' content={meta.type} />
-          <meta property='og:site_name' content='Cristian Crețu' />
+          <meta property='og:site_name' content='Parker Carson' />
           <meta property='og:description' content={meta.description} />
           <meta property='og:title' content={meta.title} />
           <meta property='og:image' content={meta.image} />
-          <meta name='twitter:card' content='summary_large_image' />
-          <meta name='twitter:site' content='@cristicrtu' />
-          <meta name='twitter:title' content={meta.title} />
-          <meta name='twitter:description' content={meta.description} />
-          <meta name='twitter:image' content={meta.image} />
           {meta.date && (
             <meta property='article:published_time' content={meta.date} />
           )}
