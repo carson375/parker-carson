@@ -83,39 +83,77 @@ const VideoPlayer = ({ src }: { src: string }) => {
   )
 }
 
+const formatRaceDistance = (distance: string) => {
+  const normalized = distance.toLowerCase()
+  const isKm = normalized.includes('k')
+  const val = parseFloat(distance)
+
+  if (isKm) {
+    const miles = val * 0.621371
+    return {
+      primary: `${val}K`,
+      secondary: `${miles.toFixed(2)} Mi`,
+    }
+  } else {
+    const km = val * 1.60934
+    return {
+      primary: `${val} Mi`,
+      secondary: `${km.toFixed(2)} K`,
+    }
+  }
+}
+
 const RaceCard = ({ race }: { race: Race }) => {
   const [showMedia, setShowMedia] = useState(false)
   const hasPhotos = race.photos.length > 0
   const hasVideos = race.videos && race.videos.length > 0
   const totalItems = race.photos.length + (race.videos?.length || 0)
+  const distanceInfo = formatRaceDistance(race.distance)
 
   return (
     <div className='bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm'>
       <div className='p-8 md:p-12'>
-        <div className='flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8'>
-          <div>
+        <div className='grid grid-cols-1 md:grid-cols-[2fr_3fr] items-center md:items-end gap-8 md:gap-10 mb-10'>
+          <div className='text-center md:text-left'>
             <p className='text-sm font-bold text-orange-500 uppercase tracking-widest mb-2'>
               {race.date}
             </p>
-            <h3 className='text-4xl md:text-5xl font-black text-primary'>
+            <h3 className='text-3xl md:text-4xl lg:text-5xl font-black text-primary leading-[1.2] md:leading-[1.1]'>
               {race.name}
             </h3>
           </div>
-          <div className='flex flex-wrap gap-4'>
-            <div className='bg-gray-50 dark:bg-gray-800 px-6 py-3 rounded-2xl'>
-              <p className='text-xs text-secondary font-bold uppercase'>Time</p>
-              <p className='text-xl font-bold text-primary'>{race.time}</p>
+          <div className='grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-3 md:gap-4 w-full'>
+            <div className='bg-gray-50 dark:bg-gray-800 px-4 py-3 md:px-6 md:py-5 rounded-2xl flex flex-col justify-center border border-gray-100 dark:border-gray-800/50 text-center md:text-left'>
+              <p className='text-[10px] md:text-xs text-secondary font-bold uppercase mb-1'>
+                Distance
+              </p>
+              <p className='text-base md:text-lg lg:text-xl font-bold text-primary whitespace-nowrap'>
+                {distanceInfo.primary}{' '}
+                <span className='text-[10px] md:text-sm text-secondary font-medium uppercase'>
+                  / {distanceInfo.secondary}
+                </span>
+              </p>
             </div>
-            <div className='bg-gray-50 dark:bg-gray-800 px-6 py-3 rounded-2xl'>
-              <p className='text-xs text-secondary font-bold uppercase'>
+            <div className='bg-gray-50 dark:bg-gray-800 px-4 py-3 md:px-6 md:py-5 rounded-2xl flex flex-col justify-center border border-gray-100 dark:border-gray-800/50 text-center md:text-left'>
+              <p className='text-[10px] md:text-xs text-secondary font-bold uppercase mb-1'>
+                Time
+              </p>
+              <p className='text-base md:text-lg lg:text-xl font-bold text-primary'>
+                {race.time}
+              </p>
+            </div>
+            <div className='bg-gray-50 dark:bg-gray-800 px-4 py-3 md:px-6 md:py-5 rounded-2xl flex flex-col justify-center border border-gray-100 dark:border-gray-800/50 text-center md:text-left'>
+              <p className='text-[10px] md:text-xs text-secondary font-bold uppercase mb-1'>
                 Place
               </p>
-              <p className='text-xl font-bold text-primary'>{race.place}</p>
+              <p className='text-base md:text-lg lg:text-xl font-bold text-primary'>
+                {race.place}
+              </p>
             </div>
           </div>
         </div>
 
-        <div className='flex flex-wrap items-center gap-4 mb-8'>
+        <div className='flex flex-wrap items-center justify-center md:justify-start gap-4 mb-8'>
           <a
             href={race.results}
             target='_blank'
