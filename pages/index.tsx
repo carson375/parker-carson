@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4'>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-4'>
           <Link href='/photos'>
             <div className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
               <div className='absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity'>
@@ -100,6 +100,34 @@ export default function Home() {
               </p>
               <div className='mt-4 text-sm font-semibold text-pink-500 group-hover:underline'>
                 See Stats →
+              </div>
+            </div>
+          </Link>
+
+          <Link href='/hobbies/skiing'>
+            <div className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
+              <div className='absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='64'
+                  height='64'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='1'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='m8 3 4 8 5-5 5 15H2L8 3z' />
+                </svg>
+              </div>
+              <h3 className='text-2xl font-bold mb-2'>Skiing</h3>
+              <p className='text-tertiary'>
+                Winter recaps featuring resort breakdowns, stats, and mountain
+                views.
+              </p>
+              <div className='mt-4 text-sm font-semibold text-cyan-500 group-hover:underline'>
+                View Trips →
               </div>
             </div>
           </Link>
