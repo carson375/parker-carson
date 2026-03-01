@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
@@ -14,11 +14,80 @@ interface SkiSeason {
   days: number
   resorts: ResortVisit[]
   photos: string[]
+  videos?: string[]
+}
+
+const VideoPlayer = ({ src }: { src: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const [isPlaying, setIsPlaying] = useState(false)
+
+  const togglePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause()
+      } else {
+        videoRef.current.play()
+      }
+      setIsPlaying(!isPlaying)
+    }
+  }
+
+  return (
+    <div
+      className='relative cursor-pointer rounded-2xl overflow-hidden group bg-gray-100 dark:bg-gray-800 aspect-video flex items-center justify-center'
+      onClick={togglePlay}
+    >
+      <video
+        ref={videoRef}
+        src={src}
+        className='w-full h-full object-cover'
+        preload='metadata'
+        playsInline
+        onEnded={() => setIsPlaying(false)}
+      />
+      {!isPlaying && (
+        <div className='absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-all'>
+          <div className='w-16 h-16 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white transform transition-transform group-hover:scale-110'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='32'
+              height='32'
+              viewBox='0 0 24 24'
+              fill='currentColor'
+            >
+              <path d='M8 5v14l11-7z'></path>
+            </svg>
+          </div>
+        </div>
+      )}
+      {isPlaying && (
+        <div className='absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity'>
+          <div className='p-2 rounded-full bg-black/40 backdrop-blur-md text-white'>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='20'
+              height='20'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            >
+              <rect x='6' y='4' width='4' height='16'></rect>
+              <rect x='14' y='4' width='4' height='16'></rect>
+            </svg>
+          </div>
+        </div>
+      )}
+    </div>
+  )
 }
 
 const SeasonCard = ({ season }: { season: SkiSeason }) => {
   const [showMedia, setShowMedia] = useState(false)
   const hasPhotos = season.photos.length > 0
+  const hasVideos = season.videos && season.videos.length > 0
   const topResort = [...season.resorts].sort((a, b) => b.days - a.days)[0]
 
   return (
@@ -93,8 +162,13 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
               <h4 className='text-xl font-bold text-primary'>Resort Breakdown</h4>
               <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {season.resorts.map((resort, idx) => (
-                  <div key={idx} className='p-4 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
-                    <p className='text-lg font-bold text-primary'>{resort.name}</p>
+                  <div
+                    key={idx}
+                    className='p-4 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'
+                  >
+                    <p className='text-lg font-bold text-primary'>
+                      {resort.name}
+                    </p>
                     <p className='text-sm text-secondary'>{resort.location}</p>
                     <div className='mt-2 inline-flex items-center px-2 py-1 rounded-md bg-blue-500/10 text-blue-500 text-xs font-bold uppercase'>
                       {resort.days} Days
@@ -103,6 +177,18 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
                 ))}
               </div>
             </div>
+
+            {/* Videos */}
+            {hasVideos && (
+              <div className='space-y-6'>
+                <h4 className='text-xl font-bold text-primary'>Season Videos</h4>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                  {season.videos!.map((video, idx) => (
+                    <VideoPlayer key={idx} src={video} />
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* Photos */}
             {hasPhotos && (
@@ -126,13 +212,37 @@ export default function Skiing() {
   const [seasons] = useState<SkiSeason[]>([
     {
       year: '2025-2026',
-      days: 12,
+      days: 7,
       resorts: [
         { name: 'Alpine Valley', location: 'Ohio', days: 2 },
         { name: 'Holiday Valley', location: 'New York', days: 2 },
         { name: 'Alpine Valley', location: 'Wisconsin', days: 3 },
       ],
-      photos: [], // Add your photos here
+      photos: [
+        '/skiing/2025_2026/photos/IMG_5579.jpg',
+        '/skiing/2025_2026/photos/IMG_5581.jpg',
+        '/skiing/2025_2026/photos/IMG_5583.jpg',
+        '/skiing/2025_2026/photos/IMG_5610.jpg',
+        '/skiing/2025_2026/photos/IMG_5612.jpg',
+        '/skiing/2025_2026/photos/IMG_5814.jpg',
+        '/skiing/2025_2026/photos/IMG_5820.jpg',
+        '/skiing/2025_2026/photos/IMG_5825.jpg',
+        '/skiing/2025_2026/photos/IMG_5826.jpg',
+        '/skiing/2025_2026/photos/IMG_5853.jpg',
+        '/skiing/2025_2026/photos/IMG_5855.jpg',
+        '/skiing/2025_2026/photos/IMG_5857.jpg',
+        '/skiing/2025_2026/photos/IMG_5858.jpg',
+        '/skiing/2025_2026/photos/IMG_5859.jpg',
+        '/skiing/2025_2026/photos/IMG_5860.jpg',
+      ],
+      videos: [
+        '/skiing/2025_2026/movies/IMG_5069.mp4',
+        '/skiing/2025_2026/movies/IMG_5070.mp4',
+        '/skiing/2025_2026/movies/IMG_5586.mp4',
+        '/skiing/2025_2026/movies/IMG_5587.mp4',
+        '/skiing/2025_2026/movies/IMG_5588.mp4',
+        '/skiing/2025_2026/movies/IMG_9550.mp4',
+      ],
     },
     {
       year: '2022',
