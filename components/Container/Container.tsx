@@ -117,10 +117,10 @@ export default function Container(props: any) {
                       Climbing
                     </Link>
                     <Link
-                      href='/hobbies/golf'
+                      href='/hobbies/golfing'
                       className='block px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors'
                     >
-                      Golf
+                      Golfing
                     </Link>
                   </div>
                 </div>

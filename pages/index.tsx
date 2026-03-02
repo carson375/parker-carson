@@ -28,31 +28,32 @@ export default function Home() {
             {/* Narrative Template */}
             <div className='space-y-4 text-lg md:text-xl text-secondary leading-relaxed'>
               <p>
-                Originally from Cleveland, Ohio, I’m now based in Chicago and
-                working as a Software Engineer at{' '}
+                Originally from Cleveland, Ohio, I studied Computer Engineering
+                at Ohio State. I’m now based in Chicago, working as a Software Engineer at{' '}
                 <span className='font-semibold text-primary'>Capital One</span>.
-                My team focuses on the post-approval customer journey ensuring a
+                When I'm not working, I stay active through running, skiing, golfing and
+                I used to rock climb. I also enjoy photography and love exploring the city of
+                Chicago on my bike. This summer my goal is to learn how to skateboard / long board.
+              </p>
+              <p className='text-base text-tertiary'>
+                For work, my team focuses on the post-approval customer journey ensuring a
                 seamless experience from the moment a card is approved to its
                 activation, including features like our real-time delivery
                 tracker.
-              </p>
-              <p className='text-base text-tertiary'>
-                Outside of work, I stay active through running, skiing, and
-                bowling. I also enjoy photography and love exploring the city of
-                Chicago on my bike.
               </p>
             </div>
           </div>
         </div>
 
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-4'>
-          <Link href='/photos'>
-            <div className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
-              <div className='absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity'>
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-6 w-full px-4'>
+          {/* Featured Card: Photography */}
+          <Link href='/photos' className='md:col-span-2'>
+            <div className='group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-10 hover:shadow-2xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
+              <div className='absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-25 transition-opacity'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
-                  width='64'
-                  height='64'
+                  width='96'
+                  height='96'
                   viewBox='0 0 24 24'
                   fill='none'
                   stroke='currentColor'
@@ -64,19 +65,20 @@ export default function Home() {
                   <circle cx='12' cy='13' r='3' />
                 </svg>
               </div>
-              <h3 className='text-2xl font-bold mb-2'>Photography</h3>
-              <p className='text-tertiary'>
+              <h3 className='text-3xl font-black mb-3'>Photography</h3>
+              <p className='text-secondary text-base max-w-lg leading-relaxed'>
                 A collection of moments captured across Florence, Kyoto, London,
-                and more.
+                and beyond. Exploring the world through a lens.
               </p>
-              <div className='mt-4 text-sm font-semibold text-blue-500 group-hover:underline'>
+              <div className='mt-6 text-sm font-bold text-blue-500 group-hover:underline'>
                 View Gallery →
               </div>
             </div>
           </Link>
 
+          {/* Row 2: Running & Skiing */}
           <Link href='/hobbies/running'>
-            <div className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
+            <div className='group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900 h-full'>
               <div className='absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -85,27 +87,27 @@ export default function Home() {
                   viewBox='0 0 24 24'
                   fill='none'
                   stroke='currentColor'
-                  strokeWidth='1'
+                  strokeWidth='1.5'
                   strokeLinecap='round'
                   strokeLinejoin='round'
                 >
-                  <path d='m4 16 4-4 4 4-4 4-4-4z' />
-                  <path d='m12 8 4-4 4 4-4 4-4-4z' />
-                  <path d='m18 14 4-4-4-4-4 4 4 4z' />
+                  <path d='M13 4v16' />
+                  <path d='M17 4v16' />
+                  <path d='M19 4H5v16h14' />
                 </svg>
               </div>
-              <h3 className='text-2xl font-bold mb-2'>Running</h3>
-              <p className='text-tertiary'>
-                Documenting my journey through daily runs and race preparations.
+              <h3 className='text-2xl font-black mb-2'>Running</h3>
+              <p className='text-secondary text-sm leading-relaxed'>
+                Documenting my journey through daily runs, race preparations, and personal bests.
               </p>
-              <div className='mt-4 text-sm font-semibold text-pink-500 group-hover:underline'>
+              <div className='mt-4 text-sm font-bold text-pink-500 group-hover:underline'>
                 See Stats →
               </div>
             </div>
           </Link>
 
           <Link href='/hobbies/skiing'>
-            <div className='group relative overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
+            <div className='group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-8 hover:shadow-xl transition-all cursor-pointer bg-white dark:bg-gray-900 h-full'>
               <div className='absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity'>
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
@@ -114,20 +116,50 @@ export default function Home() {
                   viewBox='0 0 24 24'
                   fill='none'
                   stroke='currentColor'
-                  strokeWidth='1'
+                  strokeWidth='1.5'
                   strokeLinecap='round'
                   strokeLinejoin='round'
                 >
                   <path d='m8 3 4 8 5-5 5 15H2L8 3z' />
                 </svg>
               </div>
-              <h3 className='text-2xl font-bold mb-2'>Skiing</h3>
-              <p className='text-tertiary'>
-                Winter recaps featuring resort breakdowns, stats, and mountain
-                views.
+              <h3 className='text-2xl font-black mb-2'>Skiing</h3>
+              <p className='text-secondary text-sm leading-relaxed'>
+                Winter recaps featuring resort breakdowns, mountain views, and powder day highlights.
               </p>
-              <div className='mt-4 text-sm font-semibold text-cyan-500 group-hover:underline'>
+              <div className='mt-4 text-sm font-bold text-cyan-500 group-hover:underline'>
                 View Trips →
+              </div>
+            </div>
+          </Link>
+
+          {/* Featured Card: Golfing */}
+          <Link href='/hobbies/golfing' className='md:col-span-2'>
+            <div className='group relative overflow-hidden rounded-3xl border border-gray-200 dark:border-gray-800 p-10 hover:shadow-2xl transition-all cursor-pointer bg-white dark:bg-gray-900'>
+              <div className='absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-25 transition-opacity'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='96'
+                  height='96'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='1'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <circle cx='12' cy='12' r='10' />
+                  <path d='M12 2a14.5 14.5 0 0 0 0 20' />
+                  <path d='M2 12a14.5 14.5 0 0 0 20 0' />
+                </svg>
+              </div>
+              <h3 className='text-3xl font-black mb-3'>Golfing</h3>
+              <p className='text-secondary text-base max-w-lg leading-relaxed'>
+                A monthly journal tracking fairways, greens, and season-long improvement. 
+                Documenting rounds, scores, and highlights across 2025 and 2026.
+              </p>
+              <div className='mt-6 text-sm font-bold text-emerald-500 group-hover:underline'>
+                See Progress →
               </div>
             </div>
           </Link>
