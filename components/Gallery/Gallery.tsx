@@ -6,14 +6,18 @@ interface GalleryProps {
   images: string[]
   perRow?: number
   layout?: 'grid' | 'stack'
+  initialIndex?: number | null
+  onClose?: () => void
 }
 
 export const Gallery = ({
   images,
   perRow = 1,
   layout = 'grid',
+  initialIndex = null,
+  onClose,
 }: GalleryProps) => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(initialIndex)
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
@@ -21,7 +25,10 @@ export const Gallery = ({
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return
-      if (e.key === 'Escape') setSelectedIndex(null)
+      if (e.key === 'Escape') {
+        setSelectedIndex(null)
+        onClose?.()
+      }
     }
     if (selectedIndex !== null) {
       window.addEventListener('keydown', handleKeyDown)
@@ -125,7 +132,10 @@ export const Gallery = ({
           {/* Close Button */}
           <button
             className='absolute top-6 right-6 p-2 rounded-full bg-gray-100/50 dark:bg-gray-800/50 text-primary z-[210] hover:bg-white dark:hover:bg-gray-700 transition-all active:scale-95 border border-white/10'
-            onClick={() => setSelectedIndex(null)}
+            onClick={() => {
+              setSelectedIndex(null)
+              onClose?.()
+            }}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'

@@ -6,15 +6,29 @@ import { useInterval } from 'react-use'
 
 import classNames from 'lib/classNames'
 
-const slides = ['I enjoy running', 'I love photography', 'I build projects']
-
-const gradients = [
-  'from-yellow-400 via-red-500 to-pink-500',
-  'from-purple-400 via-pink-500 to-red-500',
-  'from-green-400 to-blue-500',
+const slides = [
+  'I enjoy running',
+  'I love photography',
+  'I enjoy golf',
+  'I love skiing',
+  'I build projects',
 ]
 
-const links = ['/hobbies/running', '/photos', '/projects']
+const gradients = [
+  'from-orange-400 to-red-500',
+  'from-blue-400 to-indigo-500',
+  'from-emerald-400 to-green-600',
+  'from-cyan-400 to-blue-500',
+  'from-purple-400 via-pink-500 to-red-500',
+]
+
+const links = [
+  '/hobbies/running',
+  '/photos',
+  '/hobbies/golfing',
+  '/hobbies/skiing',
+  '/projects',
+]
 
 export default function AboutMe() {
   const [currentSlide, setSlide] = React.useState(0)
