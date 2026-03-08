@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
+import skiingData from 'data/skiing.json'
 
 interface ResortVisit {
   name: string
@@ -209,88 +210,7 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
 }
 
 export default function Skiing() {
-  const [seasons] = useState<SkiSeason[]>([
-    {
-      year: '2025-2026',
-      days: 7,
-      resorts: [
-        { name: 'Alpine Valley', location: 'Ohio', days: 2 },
-        { name: 'Holiday Valley', location: 'New York', days: 2 },
-        { name: 'Alpine Valley', location: 'Wisconsin', days: 3 },
-      ],
-      photos: [
-        '/skiing/2025_2026/photos/IMG_5579.jpg',
-        '/skiing/2025_2026/photos/IMG_5581.jpg',
-        '/skiing/2025_2026/photos/IMG_5583.jpg',
-        '/skiing/2025_2026/photos/IMG_5610.jpg',
-        '/skiing/2025_2026/photos/IMG_5612.jpg',
-        '/skiing/2025_2026/photos/IMG_5814.jpg',
-        '/skiing/2025_2026/photos/IMG_5820.jpg',
-        '/skiing/2025_2026/photos/IMG_5825.jpg',
-        '/skiing/2025_2026/photos/IMG_5826.jpg',
-        '/skiing/2025_2026/photos/IMG_5853.jpg',
-        '/skiing/2025_2026/photos/IMG_5855.jpg',
-        '/skiing/2025_2026/photos/IMG_5857.jpg',
-        '/skiing/2025_2026/photos/IMG_5858.jpg',
-        '/skiing/2025_2026/photos/IMG_5859.jpg',
-        '/skiing/2025_2026/photos/IMG_5860.jpg',
-      ],
-      videos: [
-        '/skiing/2025_2026/movies/IMG_5069.mp4',
-        '/skiing/2025_2026/movies/IMG_5070.mp4',
-        '/skiing/2025_2026/movies/IMG_5586.mp4',
-        '/skiing/2025_2026/movies/IMG_5587.mp4',
-        '/skiing/2025_2026/movies/IMG_5588.mp4',
-        '/skiing/2025_2026/movies/IMG_9550.mp4',
-      ],
-    },
-    {
-      year: '2022',
-      days: 3,
-      resorts: [
-        { name: 'Aspen Snowmass', location: 'Colorado', days: 1 },
-        { name: 'Aspen Highlands', location: 'Colorado', days: 1 },
-        { name: 'Aspen Mountain', location: 'Colorado', days: 0.5 },
-        { name: 'Aspen Buttermilk', location: 'Colorado', days: 0.5 },
-      ],
-      photos: [
-        '/skiing/2022/photos/image000000.jpg',
-        '/skiing/2022/photos/image000005.jpg',
-        '/skiing/2022/photos/image000007.jpg',
-        '/skiing/2022/photos/IMG_20220305_131830.jpg',
-        '/skiing/2022/photos/IMG_4171.jpg',
-        '/skiing/2022/photos/IMG_4172.jpg',
-        '/skiing/2022/photos/IMG_4173.jpg',
-        '/skiing/2022/photos/IMG_4175.jpg',
-        '/skiing/2022/photos/IMG_4177.jpg',
-        '/skiing/2022/photos/IMG_4179.jpg',
-        '/skiing/2022/photos/IMG_4180.jpg',
-        '/skiing/2022/photos/IMG_4181.jpg',
-        '/skiing/2022/photos/IMG_4183.jpg',
-        '/skiing/2022/photos/IMG_4185.jpg',
-        '/skiing/2022/photos/IMG_4187.jpg',
-        '/skiing/2022/photos/IMG_4188.jpg',
-        '/skiing/2022/photos/IMG_4189.jpg',
-        '/skiing/2022/photos/IMG_4190.jpg',
-        '/skiing/2022/photos/IMG_4191.jpg',
-        '/skiing/2022/photos/IMG_4192.jpg',
-        '/skiing/2022/photos/IMG_4193.jpg',
-        '/skiing/2022/photos/IMG_4194.jpg',
-        '/skiing/2022/photos/IMG_4195.jpg',
-        '/skiing/2022/photos/IMG_4196.jpg',
-        '/skiing/2022/photos/IMG_4200.jpg',
-        '/skiing/2022/photos/IMG_4216.jpg',
-        '/skiing/2022/photos/IMG_4221.jpg',
-        '/skiing/2022/photos/IMG_4229.jpg',
-        '/skiing/2022/photos/IMG_4230.jpg',
-        '/skiing/2022/photos/IMG_4231.jpg',
-        '/skiing/2022/photos/IMG_4244.jpg',
-        '/skiing/2022/photos/IMG_4245.jpg',
-        '/skiing/2022/photos/IMG_4246.jpg',
-        '/skiing/2022/photos/IMG_4247.jpg',
-      ],
-    },
-  ])
+  const [seasons] = useState<SkiSeason[]>(skiingData as SkiSeason[])
 
   return (
     <Container fullWidth={true}>

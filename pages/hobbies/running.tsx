@@ -4,6 +4,7 @@ import Image from 'next/image'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
+import runningData from 'data/running.json'
 
 interface Race {
   name: string
@@ -252,105 +253,7 @@ const RaceCard = ({ race }: { race: Race }) => {
 }
 
 export default function Running() {
-  const [races] = useState<Race[]>([
-    {
-      name: 'Shamrock Shuffle',
-      date: 'March 23, 2025',
-      distance: '8k',
-      time: '34:54',
-      place: '1624',
-      results: 'https://track.rtrt.me/e/BASS2025#/tracker/RS5EA4V2',
-      photos: ['/running/RacePhotos/2025_ShamrockShuffle/IMG_6371.jpg'],
-    },
-    {
-      name: 'JPMC Corporate Challenge',
-      date: 'April 23, 2025',
-      distance: '3.5 Miles',
-      time: '22:58',
-      place: '256',
-      results:
-        'https://leaderboard.jpmorgancc.com/leaderboard/2025/individual?entrantId=690398&eventIds=242',
-      photos: [],
-      videos: ['/running/RacePhotos/2025_JPMC/IMG_3829 (1).MOV'],
-    },
-    {
-      name: 'Run For The Zoo',
-      date: 'June 8, 2025',
-      distance: '10k',
-      time: '43:12',
-      place: '19',
-      results: 'https://my.raceresult.com/336635/',
-      photos: [
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4371.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4370.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4369.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4367.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4368.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4365.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4364.JPG',
-        '/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4363.JPG',
-      ],
-    },
-    {
-      name: 'Big Ten 10k',
-      date: 'July 12, 2025',
-      distance: '10k',
-      time: '41:39',
-      place: '142',
-      results: 'https://events.hakuapp.com/?registration_number=B1719187BC',
-      photos: [
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4582.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4581.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4580.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4579.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4578.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4577.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4576.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4575.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4574.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4573.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4572.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4571.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4570.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_2701.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4553.JPG',
-        '/running/RacePhotos/2025_BigTen10K/Photos-3-001 (1)/IMG_4556.JPG',
-      ],
-    },
-    {
-      name: 'Lifetime Chicago Half Marathon',
-      date: 'September 28, 2025',
-      distance: '13.1 Miles',
-      time: '1:30:51',
-      place: '141',
-      results:
-        'https://www.athlinks.com/event/20834/results/Event/1072616/Course/2440334/Bib/5500',
-      photos: [
-        '/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4954.jpg',
-        '/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4953.jpg',
-        '/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4951.jpg',
-        '/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4950.jpg',
-        '/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4947.jpg',
-      ],
-    },
-    {
-      name: 'Columbus Marathon',
-      date: 'October 18, 2025',
-      distance: '26.2 Miles',
-      time: '3:07:29',
-      place: '228',
-      results:
-        'https://www.mtecresults.com/runner/show?race=19623&rid=96038688',
-      photos: [
-        '/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5175.jpg',
-        '/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5177.jpg',
-        '/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5178.jpg',
-        '/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5180.jpg',
-        '/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5181.jpg',
-        '/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_FCB67B4BE97F-1.jpeg',
-      ],
-    },
-  ])
+  const [races] = useState<Race[]>(runningData as Race[])
 
   return (
     <Container fullWidth={true}>

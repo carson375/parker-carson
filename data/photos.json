@@ -1,5 +1,52 @@
 [
   {
+    "name": "Paris2022",
+    "photos": [
+      "/photography/Paris2022/ASundayAfternoonInParis.JPG",
+      "/photography/Paris2022/Bridge.JPG",
+      "/photography/Paris2022/Eiffel.JPG",
+      "/photography/Paris2022/Eiffel2.JPG",
+      "/photography/Paris2022/LuxGardens2.JPG",
+      "/photography/Paris2022/LuxGardensBuilding.JPG",
+      "/photography/Paris2022/LuxGardensBuilding2.JPG",
+      "/photography/Paris2022/LuxGardensEiffel.JPG",
+      "/photography/Paris2022/LuxGardensStatue.JPG",
+      "/photography/Paris2022/LuxemborgGardens.JPG",
+      "/photography/Paris2022/NotreDame.JPG",
+      "/photography/Paris2022/NotreDame2.JPG",
+      "/photography/Paris2022/NotreDameSide.JPG",
+      "/photography/Paris2022/Pantheon.JPG",
+      "/photography/Paris2022/PantheonClose.JPG",
+      "/photography/Paris2022/ParisBuilding.JPG",
+      "/photography/Paris2022/Street.JPG"
+    ]
+  },
+  {
+    "name": "London2024",
+    "photos": [
+      "/photography/London2024/IMG_1056.JPEG",
+      "/photography/London2024/IMG_1059.JPEG",
+      "/photography/London2024/IMG_1061.JPEG",
+      "/photography/London2024/IMG_1064.JPEG",
+      "/photography/London2024/IMG_1065.JPEG",
+      "/photography/London2024/IMG_1076.JPEG",
+      "/photography/London2024/IMG_1085.JPEG",
+      "/photography/London2024/IMG_1088.JPEG",
+      "/photography/London2024/IMG_1090.JPEG",
+      "/photography/London2024/IMG_1092.JPEG",
+      "/photography/London2024/IMG_1098.JPEG",
+      "/photography/London2024/IMG_1101.JPEG",
+      "/photography/London2024/IMG_1103.JPEG",
+      "/photography/London2024/IMG_1105.JPEG",
+      "/photography/London2024/IMG_1112.JPEG",
+      "/photography/London2024/IMG_1115.JPEG",
+      "/photography/London2024/IMG_1121.JPEG",
+      "/photography/London2024/IMG_1122.JPEG",
+      "/photography/London2024/IMG_1123.JPEG",
+      "/photography/London2024/IMG_1124.JPEG"
+    ]
+  },
+  {
     "name": "Paris 2022",
     "photos": [
       "/photography/Paris2022/Bridge.JPG",
@@ -50,27 +97,27 @@
   {
     "name": "Paris 2024",
     "photos": [
-      "/photography/Paris 2024/IMG_1258.JPEG",
-      "/photography/Paris 2024/IMG_1256.JPEG",
-      "/photography/Paris 2024/IMG_1241.JPEG",
-      "/photography/Paris 2024/IMG_1233.JPEG",
-      "/photography/Paris 2024/IMG_1230.JPEG",
-      "/photography/Paris 2024/IMG_1226.JPEG",
-      "/photography/Paris 2024/IMG_1224.JPEG",
-      "/photography/Paris 2024/IMG_1220.JPEG",
-      "/photography/Paris 2024/IMG_1217.JPEG",
-      "/photography/Paris 2024/IMG_1213.JPEG",
-      "/photography/Paris 2024/IMG_1210.JPEG",
-      "/photography/Paris 2024/IMG_1167.JPEG",
-      "/photography/Paris 2024/IMG_1160.JPEG",
-      "/photography/Paris 2024/IMG_1156.JPEG",
-      "/photography/Paris 2024/IMG_1152.JPEG",
-      "/photography/Paris 2024/IMG_1150.JPEG",
-      "/photography/Paris 2024/IMG_1147.JPEG",
-      "/photography/Paris 2024/IMG_1145.JPEG",
-      "/photography/Paris 2024/IMG_1143.JPEG",
+      "/photography/Paris 2024/IMG_1141.JPEG",
       "/photography/Paris 2024/IMG_1142.JPEG",
-      "/photography/Paris 2024/IMG_1141.JPEG"
+      "/photography/Paris 2024/IMG_1143.JPEG",
+      "/photography/Paris 2024/IMG_1145.JPEG",
+      "/photography/Paris 2024/IMG_1147.JPEG",
+      "/photography/Paris 2024/IMG_1150.JPEG",
+      "/photography/Paris 2024/IMG_1152.JPEG",
+      "/photography/Paris 2024/IMG_1156.JPEG",
+      "/photography/Paris 2024/IMG_1160.JPEG",
+      "/photography/Paris 2024/IMG_1167.JPEG",
+      "/photography/Paris 2024/IMG_1210.JPEG",
+      "/photography/Paris 2024/IMG_1213.JPEG",
+      "/photography/Paris 2024/IMG_1217.JPEG",
+      "/photography/Paris 2024/IMG_1220.JPEG",
+      "/photography/Paris 2024/IMG_1224.JPEG",
+      "/photography/Paris 2024/IMG_1226.JPEG",
+      "/photography/Paris 2024/IMG_1230.JPEG",
+      "/photography/Paris 2024/IMG_1233.JPEG",
+      "/photography/Paris 2024/IMG_1241.JPEG",
+      "/photography/Paris 2024/IMG_1256.JPEG",
+      "/photography/Paris 2024/IMG_1258.JPEG"
     ]
   },
   {
@@ -217,7 +264,9 @@
   {
     "name": "El Paso 2024",
     "photos": [
+      "/photography/El Paso 2024/Facetune_09-03-2024-20-07-23.JPEG",
       "/photography/El Paso 2024/IMG_1672.JPEG",
+      "/photography/El Paso 2024/IMG_1673.JPEG",
       "/photography/El Paso 2024/IMG_1677.JPEG",
       "/photography/El Paso 2024/IMG_1681.JPEG",
       "/photography/El Paso 2024/IMG_1682.JPEG",
@@ -226,12 +275,10 @@
       "/photography/El Paso 2024/IMG_1694.JPEG",
       "/photography/El Paso 2024/IMG_1696.JPEG",
       "/photography/El Paso 2024/IMG_1701.JPEG",
-      "/photography/El Paso 2024/IMG_1999.JPEG",
-      "/photography/El Paso 2024/IMG_2502.JPEG",
-      "/photography/El Paso 2024/Facetune_09-03-2024-20-07-23.JPEG",
-      "/photography/El Paso 2024/IMG_1709.JPEG",
       "/photography/El Paso 2024/IMG_1705.JPEG",
-      "/photography/El Paso 2024/IMG_1673.JPEG"
+      "/photography/El Paso 2024/IMG_1709.JPEG",
+      "/photography/El Paso 2024/IMG_1999.JPEG",
+      "/photography/El Paso 2024/IMG_2502.JPEG"
     ]
   },
   {
@@ -376,6 +423,7 @@
       "/photography/Kyoto 2024/IMG_2474.JPEG",
       "/photography/Kyoto 2024/IMG_2475.JPEG",
       "/photography/Kyoto 2024/IMG_2477.JPEG",
+      "/photography/Kyoto 2024/IMG_2482.JPEG",
       "/photography/Kyoto 2024/IMG_2484.JPEG",
       "/photography/Kyoto 2024/IMG_2486.JPEG",
       "/photography/Kyoto 2024/IMG_2497.JPEG",

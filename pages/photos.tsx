@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
-import photosData from 'components/imageOptions.json'
+import photosData from 'data/photos.json'
 
 // Helper component to handle scrolling to the trip section
 const ScrollToTrip = ({ index }: { index: number }) => {
