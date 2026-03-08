@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
 import Container from 'components/Container'
+import climbingData from 'data/climbing.json'
 
 interface Climb {
   location: string
@@ -11,7 +12,7 @@ interface Climb {
 }
 
 export default function Climbing() {
-  const [climbs] = useState<Climb[]>([])
+  const [climbs] = useState<Climb[]>(climbingData as Climb[])
 
   return (
     <Container fullWidth={true}>

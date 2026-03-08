@@ -18,7 +18,7 @@ import { useTheme as useNextTheme } from 'next-themes'
 import Container from 'components/Container'
 
 import { Gallery } from '../components/Gallery/Gallery'
-import photos from '../components/imageOptions.json'
+import photos from 'data/photos.json'
 
 export default function Projects() {
   const { resolvedTheme } = useNextTheme()

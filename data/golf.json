@@ -1,0 +1,65 @@
+[
+  {
+    "year": "2026",
+    "months": [
+      {
+        "month": "April",
+        "roundsDetail": [
+          { 
+            "score": 84, 
+            "course": "Cog Hill", 
+            "date": "April 12, 2026",
+            "photos": [
+              "/photography/Kyoto 2024/IMG_2275.JPEG",
+              "/photography/Kyoto 2024/IMG_2279.JPEG"
+            ]
+          },
+          { "score": 89, "course": "Harborside", "date": "April 25, 2026" }
+        ],
+        "birdies": 3,
+        "girPercent": 32,
+        "highlight": "Early season rust is shaking off.",
+        "photos": [],
+        "videos": []
+      }
+    ]
+  },
+  {
+    "year": "2025",
+    "months": [
+      {
+        "month": "September",
+        "roundsDetail": [
+          { 
+            "score": 79, 
+            "course": "The Preserve", 
+            "date": "Sept 5, 2025",
+            "photos": [
+              "/photography/Grand Canyon 2024/IMG_1713.JPEG",
+              "/photography/Grand Canyon 2024/IMG_1717.JPEG",
+              "/photography/Grand Canyon 2024/IMG_1718.JPEG"
+            ]
+          },
+          { "score": 82, "course": "Pinehurst No. 2", "date": "Sept 15, 2025" },
+          { "score": 85, "course": "Local Muni", "date": "Sept 22, 2025" }
+        ],
+        "birdies": 8,
+        "girPercent": 44,
+        "highlight": "Broke 80 for the first time this year!",
+        "photos": [],
+        "videos": []
+      },
+      {
+        "month": "August",
+        "roundsDetail": [
+          { "score": 81, "course": "Blackwolf Run", "date": "Aug 10, 2025" },
+          { "score": 84, "course": "Whistling Straits", "date": "Aug 24, 2025" }
+        ],
+        "birdies": 4,
+        "girPercent": 38,
+        "highlight": "Consistent ball striking all month.",
+        "photos": []
+      }
+    ]
+  }
+]
