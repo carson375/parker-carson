@@ -4,27 +4,37 @@ import Image from 'next/image'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
-import photosData from 'data/photos.json'
+import photosDataRaw from 'data/photos.json'
+import dynamic from 'next/dynamic'
 
-// Helper component to handle scrolling to the trip section
-const ScrollToTrip = ({ index }: { index: number }) => {
-  const hasScrolled = useRef(false)
+const TripMap = dynamic(() => import('components/Gallery/TripMap').then(mod => mod.TripMap), {
+  ssr: false,
+  loading: () => <div className="w-full h-[450px] bg-gray-100 dark:bg-gray-800 animate-pulse rounded-3xl" />
+})
 
-  useEffect(() => {
-    if (!hasScrolled.current) {
-      const element = document.getElementById(`trip-${index}`)
-      if (element) {
-        element.scrollIntoView({ behavior: 'auto' })
-        hasScrolled.current = true
-      }
-    }
-  }, [index])
-
-  return null
+interface Location {
+  name: string
+  lat: number
+  lng: number
+  description?: string
 }
+
+interface Trip {
+  name: string
+  photos: string[]
+  locations?: Location[]
+}
+
+const photosData = photosDataRaw as Trip[]
 
 export default function Photos() {
   const [selectedTrip, setSelectedTrip] = useState<number | null>(null)
+  const [showMap, setShowMap] = useState(false)
+
+  // Scroll to top when trip selection changes
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [selectedTrip])
 
   // Close on Escape key
   useEffect(() => {
@@ -43,16 +53,40 @@ export default function Photos() {
 
   // GALLERY VIEW (Continuous Scroll)
   if (selectedTrip !== null) {
+    const currentTrip = photosData[selectedTrip]
+    const hasLocations = !!currentTrip.locations && currentTrip.locations.length > 0
+
     return (
       <Container hideNav={true} clean={true}>
         <div className='min-h-screen w-full bg-white dark:bg-black animate-in fade-in duration-300 flex flex-col'>
           {/* Header - Fixed at the very top */}
           <div className='sticky top-0 z-[110] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
-            <h1 className='text-xl md:text-2xl font-bold text-primary'>
-              Photography
-            </h1>
+            <div className='flex items-center gap-4'>
+              <h1 className='text-xl md:text-2xl font-bold text-primary'>
+                Photography
+              </h1>
+              {hasLocations && (
+                <button
+                  onClick={() => setShowMap(!showMap)}
+                  className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 border ${
+                    showMap 
+                      ? 'bg-primary text-background border-primary' 
+                      : 'bg-transparent text-primary border-gray-200 dark:border-gray-800 hover:border-primary'
+                  }`}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                    <circle cx="12" cy="10" r="3"></circle>
+                  </svg>
+                  {showMap ? 'Hide Map' : 'View Map'}
+                </button>
+              )}
+            </div>
             <button
-              onClick={() => setSelectedTrip(null)}
+              onClick={() => {
+                setSelectedTrip(null)
+                setShowMap(false)
+              }}
               className='flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
             >
               <svg
@@ -74,29 +108,30 @@ export default function Photos() {
           </div>
 
           {/* Content */}
-          <div className='flex-1 w-full max-w-5xl mx-auto py-12 px-4 space-y-32'>
-            {photosData.map((trip, index) => (
-              <div
-                key={trip.name}
-                id={`trip-${index}`}
-                className='space-y-12 scroll-mt-24'
-              >
-                <div className='space-y-4'>
-                  <h2 className='text-4xl md:text-6xl font-black text-primary tracking-tight'>
-                    {trip.name}
-                  </h2>
-                  <p className='text-lg text-secondary font-medium'>
-                    {trip.photos.length} photos
-                  </p>
-                </div>
-                <Gallery images={trip.photos} perRow={3} />
+          <div className='flex-1 w-full max-w-5xl mx-auto py-12 px-4'>
+            <div
+              key={currentTrip.name}
+              className='space-y-12'
+            >
+              <div className='space-y-4'>
+                <h2 className='text-4xl md:text-6xl font-black text-primary tracking-tight'>
+                  {currentTrip.name}
+                </h2>
+                <p className='text-lg text-secondary font-medium'>
+                  {currentTrip.photos.length} photos {currentTrip.locations && `• ${currentTrip.locations.length} pinned locations`}
+                </p>
               </div>
-            ))}
+              
+              {showMap && hasLocations && (
+                <div className='w-full animate-in slide-in-from-top-4 duration-500'>
+                  <TripMap locations={currentTrip.locations!} />
+                </div>
+              )}
+
+              <Gallery images={currentTrip.photos} perRow={3} />
+            </div>
           </div>
         </div>
-
-        {/* Scroll to selected trip on mount */}
-        <ScrollToTrip index={selectedTrip} />
       </Container>
     )
   }
@@ -152,7 +187,7 @@ export default function Photos() {
               <div className='absolute bottom-0 left-0 p-6 text-left'>
                 <h3 className='text-xl font-bold text-white'>{trip.name}</h3>
                 <p className='text-sm text-gray-300 mt-1 font-medium'>
-                  {trip.photos.length} Photos
+                  {trip.photos.length} Photos {trip.locations && trip.locations.length > 0 && `• ${trip.locations.length} Locations`}
                 </p>
               </div>
             </button>
