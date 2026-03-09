@@ -9,8 +9,9 @@ pnpm-lock.yaml
 # testing
 /coverage
 
-# prompts
+# prompts and helper scripts
 /prompts
+/scripts
 
 # next.js
 /.next/
