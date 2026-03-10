@@ -7,7 +7,6 @@
       "/photography/Paris2022/Eiffel.JPG",
       "/photography/Paris2022/Eiffel2.JPG",
       "/photography/Paris2022/LuxemborgGardens.JPG",
-      "/photography/Paris2022/LuxemborgGardens.JPG",
       "/photography/Paris2022/LuxGardens2.JPG",
       "/photography/Paris2022/LuxGardensBuilding.JPG",
       "/photography/Paris2022/LuxGardensBuilding2.JPG",
@@ -20,6 +19,33 @@
       "/photography/Paris2022/PantheonClose.JPG",
       "/photography/Paris2022/ParisBuilding.JPG",
       "/photography/Paris2022/Street.JPG"
+    ],
+    "locations": [
+      {
+        "name": "Jardin du Luxembourg",
+        "lat": 48.8462,
+        "lng": 2.3371
+      },
+      {
+        "name": "Notre-Dame de Paris",
+        "lat": 48.8530,
+        "lng": 2.3499
+      },
+      {
+        "name": "The Panthéon",
+        "lat": 48.8462,
+        "lng": 2.3464
+      },
+      {
+        "name": "The Seine River",
+        "lat": 48.8575,
+        "lng": 2.3413
+      },
+      {
+        "name": "The Latin Quarter",
+        "lat": 48.8502,
+        "lng": 2.3444
+      }
     ]
   },
   {
@@ -56,8 +82,7 @@
       {
         "name": "The Globe Theatre",
         "lat": 51.5081,
-        "lng": -0.0971,
-        "description": ""
+        "lng": -0.0971
       },
       {
         "name": "The Shard",
@@ -68,20 +93,17 @@
       {
         "name": "Tower Bridge",
         "lat": 51.5055,
-        "lng": -0.0754,
-        "description": ""
+        "lng": -0.0754
       },
       {
         "name": "The British Museum",
         "lat": 51.5194,
-        "lng": -0.1270,
-        "description": ""
+        "lng": -0.1270
       },
       {
         "name": "The London Eye",
         "lat": 51.5033,
-        "lng": -0.1196,
-        "description": ""
+        "lng": -0.1196
       },
       {
         "name": "Stamford Bridge Stadium",
@@ -92,20 +114,17 @@
       {
         "name": "Buckingham Palace",
         "lat": 51.5014,
-        "lng": -0.1419,
-        "description": ""
+        "lng": -0.1419
       },
       {
         "name": "Westminster Bridge",
         "lat": 51.5009,
-        "lng": -0.1218,
-        "description": ""
+        "lng": -0.1218
       },
       {
         "name": "The George Inn",
         "lat": 51.5043,
-        "lng": -0.0899,
-        "description": ""
+        "lng": -0.0899
       }
     ]
   },
@@ -133,6 +152,48 @@
       "/photography/Paris 2024/IMG_1241.JPEG",
       "/photography/Paris 2024/IMG_1256.JPEG",
       "/photography/Paris 2024/IMG_1258.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Eiffel Tower / Trocadéro",
+        "lat": 48.8616,
+        "lng": 2.2893
+      },
+      {
+        "name": "Place de la Concorde",
+        "lat": 48.8655,
+        "lng": 2.3212
+      },
+      {
+        "name": "Pont Alexandre III",
+        "lat": 48.8639,
+        "lng": 2.3136
+      },
+      {
+        "name": "Grand Palais",
+        "lat": 48.8661,
+        "lng": 2.3125
+      },
+      {
+        "name": "The Louvre / Tuileries Garden",
+        "lat": 48.8635,
+        "lng": 2.3275
+      },
+      {
+        "name": "Hôtel de Ville",
+        "lat": 48.8565,
+        "lng": 2.3522
+      },
+      {
+        "name": "Arc de Triomphe",
+        "lat": 48.8738,
+        "lng": 2.2950
+      },
+      {
+        "name": "Sacré-Cœur Basilica",
+        "lat": 48.8867,
+        "lng": 2.3431
+      }
     ]
   },
   {
