@@ -226,6 +226,48 @@
       "/photography/Rome 2024/IMG_1393.JPEG",
       "/photography/Rome 2024/IMG_1398.JPEG",
       "/photography/Rome 2024/IMG_1406.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Colosseum",
+        "lat": 41.8902,
+        "lng": 12.4922
+      },
+      {
+        "name": "Roman Forum & Palatine Hill",
+        "lat": 41.8925,
+        "lng": 12.4853
+      },
+      {
+        "name": "Trevi Fountain",
+        "lat": 41.9009,
+        "lng": 12.4833
+      },
+      {
+        "name": "The Pantheon",
+        "lat": 41.8986,
+        "lng": 12.4769
+      },
+      {
+        "name": "Piazza Navona",
+        "lat": 41.8992,
+        "lng": 12.4731
+      },
+      {
+        "name": "Spanish Steps",
+        "lat": 41.9057,
+        "lng": 12.4823
+      },
+      {
+        "name": "Vatican City",
+        "lat": 41.9029,
+        "lng": 12.4534
+      },
+      {
+        "name": "Vittoriano",
+        "lat": 41.8956,
+        "lng": 12.4823
+      }
     ]
   },
   {
@@ -247,6 +289,23 @@
       "/photography/Naples 2024/IMG_1438.JPEG",
       "/photography/Naples 2024/IMG_1441.JPEG",
       "/photography/Naples 2024/IMG_1443.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Pompeii Archaeological Park",
+        "lat": 40.7489,
+        "lng": 14.4848
+      },
+      {
+        "name": "Mount Vesuvius",
+        "lat": 40.8224,
+        "lng": 14.4289
+      },
+      {
+        "name": "Napoli Centrale",
+        "lat": 40.8524,
+        "lng": 14.2722
+      }
     ]
   },
   {
@@ -268,6 +327,28 @@
       "/photography/Florence 2024/IMG_1496.JPEG",
       "/photography/Florence 2024/IMG_1498.JPEG",
       "/photography/Florence 2024/IMG_1500.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Duomo (Cattedrale di Santa Maria del Fiore)",
+        "lat": 43.7731,
+        "lng": 11.2558
+      },
+      {
+        "name": "Ponte Vecchio",
+        "lat": 43.7679,
+        "lng": 11.2532
+      },
+      {
+        "name": "Piazzale Michelangelo",
+        "lat": 43.7629,
+        "lng": 11.2651
+      },
+      {
+        "name": "Galleria dell'Accademia (Statue of David)",
+        "lat": 43.7769,
+        "lng": 11.2587
+      }
     ]
   },
   {
