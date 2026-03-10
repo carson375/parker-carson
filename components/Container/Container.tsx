@@ -62,7 +62,7 @@ export default function Container(props: any) {
         </Head>
 
         {!hideNav && (
-          <nav className='sticky top-4 z-[110] w-[calc(100%-2rem)] max-w-5xl mx-auto flex justify-between items-center px-6 py-3 rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm'>
+          <nav className='sticky top-4 z-[9999] w-[calc(100%-2rem)] max-w-5xl mx-auto flex justify-between items-center px-6 py-3 rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm'>
             <div className='flex flex-row items-center gap-6'>
               <Link
                 href='/'
@@ -99,7 +99,7 @@ export default function Container(props: any) {
                     <polyline points='6 9 12 15 18 9'></polyline>
                   </svg>
                 </button>
-                <div className='absolute left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[120]'>
+                <div className='absolute left-1/2 -translate-x-1/2 pt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-[10000]'>
                   <div className='bg-white/95 dark:bg-gray-900/95 backdrop-blur-2xl border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden shadow-2xl min-w-[160px] p-1.5'>
                     {[
                       { label: 'Running', href: '/hobbies/running' },

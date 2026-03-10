@@ -60,7 +60,7 @@ export default function Photos() {
       <Container hideNav={true} clean={true}>
         <div className='min-h-screen w-full bg-white dark:bg-black animate-in fade-in duration-300 flex flex-col'>
           {/* Header - Fixed at the very top */}
-          <div className='sticky top-0 z-[110] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
+          <div className='sticky top-0 z-[9999] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
             <div className='flex items-center gap-4'>
               <h1 className='text-xl md:text-2xl font-bold text-primary'>
                 Photography
