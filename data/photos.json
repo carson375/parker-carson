@@ -28,7 +28,7 @@
       },
       {
         "name": "Notre-Dame de Paris",
-        "lat": 48.8530,
+        "lat": 48.853,
         "lng": 2.3499
       },
       {
@@ -98,7 +98,7 @@
       {
         "name": "The British Museum",
         "lat": 51.5194,
-        "lng": -0.1270
+        "lng": -0.127
       },
       {
         "name": "The London Eye",
@@ -108,7 +108,7 @@
       {
         "name": "Stamford Bridge Stadium",
         "lat": 51.4816,
-        "lng": -0.1910,
+        "lng": -0.191,
         "description": "Chelsea vs Fulham (1-0), Jan. 13 2024, Palmer (P) 45'+4'"
       },
       {
@@ -187,7 +187,7 @@
       {
         "name": "Arc de Triomphe",
         "lat": 48.8738,
-        "lng": 2.2950
+        "lng": 2.295
       },
       {
         "name": "Sacré-Cœur Basilica",
@@ -369,6 +369,38 @@
       "/photography/Venice 2024/IMG_1523.JPEG",
       "/photography/Venice 2024/IMG_1524.JPEG",
       "/photography/Venice 2024/IMG_1526.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "St. Mark's Square (Piazza San Marco)",
+        "lat": 45.4343,
+        "lng": 12.3388
+      },
+      {
+        "name": "Doge's Palace (Palazzo Ducale)",
+        "lat": 45.4337,
+        "lng": 12.3404
+      },
+      {
+        "name": "Rialto Bridge",
+        "lat": 45.438,
+        "lng": 12.336
+      },
+      {
+        "name": "Grand Canal",
+        "lat": 45.4363,
+        "lng": 12.3323
+      },
+      {
+        "name": "Basilica di Santa Maria della Salute",
+        "lat": 45.4305,
+        "lng": 12.3335
+      },
+      {
+        "name": "Mozart's House in Venice",
+        "lat": 45.4335,
+        "lng": 12.334
+      }
     ]
   },
   {
