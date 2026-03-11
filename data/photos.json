@@ -423,6 +423,38 @@
       "/photography/Vienna 2024/IMG_1555.JPEG",
       "/photography/Vienna 2024/IMG_1557.JPEG",
       "/photography/Vienna 2024/IMG_1558.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Belvedere Palace and Gardens",
+        "lat": 48.1915,
+        "lng": 16.3809
+      },
+      {
+        "name": "Hofburg Palace Complex (Neue Burg)",
+        "lat": 48.2052,
+        "lng": 16.3650
+      },
+      {
+        "name": "St. Stephen's Cathedral (Stephansdom)",
+        "lat": 48.2082,
+        "lng": 16.3731
+      },
+      {
+        "name": "Stadtpark (Johann Strauss Monument)",
+        "lat": 48.2028,
+        "lng": 16.3801
+      },
+      {
+        "name": "Innere Stadt",
+        "lat": 48.2092,
+        "lng": 16.3725
+      },
+      {
+        "name": "Soviet War Memorial (Schwarzenbergplatz)",
+        "lat": 48.1979,
+        "lng": 16.3759
+      }
     ]
   },
   {
@@ -448,6 +480,38 @@
       "/photography/Prague 2024/IMG_1597.JPEG",
       "/photography/Prague 2024/IMG_1601.JPEG",
       "/photography/Prague 2024/IMG_1614.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Prague Astronomical Clock",
+        "lat": 50.0870,
+        "lng": 14.4207
+      },
+      {
+        "name": "Charles Bridge",
+        "lat": 50.0865,
+        "lng": 14.4114
+      },
+      {
+        "name": "St. Vitus Cathedral",
+        "lat": 50.0909,
+        "lng": 14.4005
+      },
+      {
+        "name": "Prague Castle Complex",
+        "lat": 50.0911,
+        "lng": 14.4018
+      },
+      {
+        "name": "Na Příkopě",
+        "lat": 50.0853,
+        "lng": 14.4261
+      },
+      {
+        "name": "Wenceslas Square",
+        "lat": 50.0813,
+        "lng": 14.4275
+      }
     ]
   },
   {
