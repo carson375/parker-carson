@@ -433,7 +433,7 @@
       {
         "name": "Hofburg Palace Complex (Neue Burg)",
         "lat": 48.2052,
-        "lng": 16.3650
+        "lng": 16.365
       },
       {
         "name": "St. Stephen's Cathedral (Stephansdom)",
@@ -484,7 +484,7 @@
     "locations": [
       {
         "name": "Prague Astronomical Clock",
-        "lat": 50.0870,
+        "lat": 50.087,
         "lng": 14.4207
       },
       {
@@ -532,6 +532,13 @@
       "/photography/El Paso 2024/IMG_1709.JPEG",
       "/photography/El Paso 2024/IMG_1999.JPEG",
       "/photography/El Paso 2024/IMG_2502.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "El Paso, Texas",
+        "lat": 31.7619,
+        "lng": -106.485
+      }
     ]
   },
   {
@@ -551,6 +558,13 @@
       "/photography/Grand Canyon 2024/IMG_1738.JPEG",
       "/photography/Grand Canyon 2024/IMG_1739.JPEG",
       "/photography/Grand Canyon 2024/IMG_1747.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Grand Canyon National Park",
+        "lat": 36.1069,
+        "lng": -112.1129
+      }
     ]
   },
   {
@@ -565,6 +579,13 @@
       "/photography/Las Vegas 2024/IMG_1765.JPEG",
       "/photography/Las Vegas 2024/IMG_1766.JPEG",
       "/photography/Las Vegas 2024/IMG_1769.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Las Vegas, Nevada",
+        "lat": 36.1699,
+        "lng": -115.1398
+      }
     ]
   },
   {
@@ -586,6 +607,13 @@
       "/photography/Zion 2024/IMG_1821.JPEG",
       "/photography/Zion 2024/IMG_1827.JPEG",
       "/photography/Zion 2024/IMG_1828.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Zion National Park",
+        "lat": 37.2982,
+        "lng": -113.0263
+      }
     ]
   },
   {
@@ -628,6 +656,13 @@
       "/photography/Tokyo 2024/IMG_2243.JPEG",
       "/photography/Tokyo 2024/IMG_2249.JPEG",
       "/photography/Tokyo 2024/IMG_2251.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Tokyo, Japan",
+        "lat": 35.6895,
+        "lng": 139.6917
+      }
     ]
   },
   {
@@ -685,6 +720,13 @@
       "/photography/Kyoto 2024/IMG_2542.JPEG",
       "/photography/Kyoto 2024/IMG_2547.JPEG",
       "/photography/Kyoto 2024/IMG_2551.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Kyoto, Japan",
+        "lat": 35.0116,
+        "lng": 135.7681
+      }
     ]
   },
   {
@@ -697,6 +739,13 @@
       "/photography/Osaka 2024/IMG_2571.JPEG",
       "/photography/Osaka 2024/IMG_2573.JPEG",
       "/photography/Osaka 2024/IMG_2574.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Osaka, Japan",
+        "lat": 34.6937,
+        "lng": 135.5023
+      }
     ]
   },
   {
@@ -734,6 +783,13 @@
       "/photography/Seoul 2024/IMG_2692.JPEG",
       "/photography/Seoul 2024/IMG_2697.JPEG",
       "/photography/Seoul 2024/IMG_2698.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Seoul, South Korea",
+        "lat": 37.5665,
+        "lng": 126.978
+      }
     ]
   }
 ]
