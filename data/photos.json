@@ -535,9 +535,14 @@
     ],
     "locations": [
       {
-        "name": "El Paso, Texas",
-        "lat": 31.7619,
-        "lng": -106.485
+        "name": "Hueco Tanks State Park",
+        "lat": 31.926453,
+        "lng": -106.042437
+      },
+      {
+        "name": "Ciudad Juarez City Center",
+        "lat": 31.7386,
+        "lng": -106.4869
       }
     ]
   },
@@ -561,9 +566,9 @@
     ],
     "locations": [
       {
-        "name": "Grand Canyon National Park",
-        "lat": 36.1069,
-        "lng": -112.1129
+        "name": "Mather Point",
+        "lat": 36.0616497,
+        "lng": -112.1079463
       }
     ]
   },
@@ -582,9 +587,44 @@
     ],
     "locations": [
       {
-        "name": "Las Vegas, Nevada",
-        "lat": 36.1699,
-        "lng": -115.1398
+        "name": "New York-New York",
+        "lat": 36.1024,
+        "lng": -115.1746
+      },
+      {
+        "name": "Excalibur",
+        "lat": 36.0988,
+        "lng": -115.1754
+      },
+      {
+        "name": "MGM Grand",
+        "lat": 36.1026,
+        "lng": -115.1699
+      },
+      {
+        "name": "Paris",
+        "lat": 36.1125,
+        "lng": -115.1707
+      },
+      {
+        "name": "Bellagio",
+        "lat": 36.1126,
+        "lng": -115.1767
+      },
+      {
+        "name": "Caesars Palace",
+        "lat": 36.1162,
+        "lng": -115.1745
+      },
+      {
+        "name": "Luxor",
+        "lat": 36.0955,
+        "lng": -115.1761
+      },
+      {
+        "name": "Mandalay Bay",
+        "lat": 36.0907,
+        "lng": -115.1764
       }
     ]
   },
