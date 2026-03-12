@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 
 import Image from 'next/image'
 
@@ -7,10 +7,15 @@ import { Gallery } from 'components/Gallery/Gallery'
 import photosDataRaw from 'data/photos.json'
 import dynamic from 'next/dynamic'
 
-const TripMap = dynamic(() => import('components/Gallery/TripMap').then(mod => mod.TripMap), {
-  ssr: false,
-  loading: () => <div className="w-full h-[450px] bg-gray-100 dark:bg-gray-800 animate-pulse rounded-3xl" />
-})
+const TripMap = dynamic(
+  () => import('components/Gallery/TripMap').then(mod => mod.TripMap),
+  {
+    ssr: false,
+    loading: () => (
+      <div className='w-full h-[450px] bg-gray-100 dark:bg-gray-800 animate-pulse rounded-3xl' />
+    ),
+  }
+)
 
 interface Location {
   name: string
@@ -54,7 +59,8 @@ export default function Photos() {
   // GALLERY VIEW (Continuous Scroll)
   if (selectedTrip !== null) {
     const currentTrip = photosData[selectedTrip]
-    const hasLocations = !!currentTrip.locations && currentTrip.locations.length > 0
+    const hasLocations =
+      !!currentTrip.locations && currentTrip.locations.length > 0
 
     return (
       <Container hideNav={true} clean={true}>
@@ -69,14 +75,24 @@ export default function Photos() {
                 <button
                   onClick={() => setShowMap(!showMap)}
                   className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 border ${
-                    showMap 
-                      ? 'bg-primary text-background border-primary' 
+                    showMap
+                      ? 'bg-primary text-background border-primary'
                       : 'bg-transparent text-primary border-gray-200 dark:border-gray-800 hover:border-primary'
                   }`}
                 >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                    <circle cx="12" cy="10" r="3"></circle>
+                  <svg
+                    xmlns='http://www.w3.org/2000/svg'
+                    width='14'
+                    height='14'
+                    viewBox='0 0 24 24'
+                    fill='none'
+                    stroke='currentColor'
+                    strokeWidth='2.5'
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                  >
+                    <path d='M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z'></path>
+                    <circle cx='12' cy='10' r='3'></circle>
                   </svg>
                   {showMap ? 'Hide Map' : 'View Map'}
                 </button>
@@ -109,19 +125,18 @@ export default function Photos() {
 
           {/* Content */}
           <div className='flex-1 w-full max-w-5xl mx-auto py-12 px-4'>
-            <div
-              key={currentTrip.name}
-              className='space-y-12'
-            >
+            <div key={currentTrip.name} className='space-y-12'>
               <div className='space-y-4'>
                 <h2 className='text-4xl md:text-6xl font-black text-primary tracking-tight'>
                   {currentTrip.name}
                 </h2>
                 <p className='text-lg text-secondary font-medium'>
-                  {currentTrip.photos.length} photos {currentTrip.locations && `• ${currentTrip.locations.length} pinned locations`}
+                  {currentTrip.photos.length} photos{' '}
+                  {currentTrip.locations &&
+                    `• ${currentTrip.locations.length} pinned locations`}
                 </p>
               </div>
-              
+
               {showMap && hasLocations && (
                 <div className='w-full animate-in slide-in-from-top-4 duration-500'>
                   <TripMap locations={currentTrip.locations!} />
@@ -187,7 +202,10 @@ export default function Photos() {
               <div className='absolute bottom-0 left-0 p-6 text-left'>
                 <h3 className='text-xl font-bold text-white'>{trip.name}</h3>
                 <p className='text-sm text-gray-300 mt-1 font-medium'>
-                  {trip.photos.length} Photos {trip.locations && trip.locations.length > 0 && `• ${trip.locations.length} Locations`}
+                  {trip.photos.length} Photos{' '}
+                  {trip.locations &&
+                    trip.locations.length > 0 &&
+                    `• ${trip.locations.length} Locations`}
                 </p>
               </div>
             </button>

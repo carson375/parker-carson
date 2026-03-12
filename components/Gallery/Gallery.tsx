@@ -17,7 +17,9 @@ export const Gallery = ({
   initialIndex = null,
   onClose,
 }: GalleryProps) => {
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(initialIndex)
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(
+    initialIndex
+  )
   const [activeIndex, setActiveIndex] = useState<number>(0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
