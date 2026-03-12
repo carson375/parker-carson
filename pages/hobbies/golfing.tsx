@@ -80,32 +80,46 @@ const RoundTile = ({ round }: { round: RoundEntry }) => {
 
   return (
     <>
-      <div 
+      <div
         onClick={() => hasPhotos && setIsOpen(true)}
         className={`group relative flex items-center justify-between p-4 rounded-xl border border-gray-100 dark:border-gray-800/50 bg-gray-50/30 dark:bg-gray-900/30 overflow-hidden transition-all ${hasPhotos ? 'cursor-pointer hover:border-emerald-500/30 hover:bg-emerald-50/10 dark:hover:bg-emerald-500/5' : ''}`}
       >
         {/* Background Photo for specific rounds */}
         {hasPhotos && (
           <div className='absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300'>
-            <Image 
-              src={round.photos![0]} 
-              alt={round.course} 
-              fill 
-              className='object-cover object-center' 
+            <Image
+              src={round.photos![0]}
+              alt={round.course}
+              fill
+              className='object-cover object-center'
             />
           </div>
         )}
-        
+
         <div className='min-w-0 relative z-10'>
           <div className='flex items-center gap-2'>
-            <p className='text-sm font-bold text-primary truncate'>{round.course}</p>
+            <p className='text-sm font-bold text-primary truncate'>
+              {round.course}
+            </p>
             {hasPhotos && (
               <div className='flex items-center gap-1 px-1.5 py-0.5 rounded-md bg-emerald-500/10 text-emerald-600 dark:text-emerald-400'>
-                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/>
-                  <circle cx="12" cy="13" r="3"/>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='10'
+                  height='10'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='3'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z' />
+                  <circle cx='12' cy='13' r='3' />
                 </svg>
-                {photoCount > 1 && <span className='text-[8px] font-black'>{photoCount}</span>}
+                {photoCount > 1 && (
+                  <span className='text-[8px] font-black'>{photoCount}</span>
+                )}
               </div>
             )}
           </div>
@@ -119,19 +133,29 @@ const RoundTile = ({ round }: { round: RoundEntry }) => {
       {/* Trigger the Lightbox via the Gallery component */}
       {isOpen && hasPhotos && (
         <div className='fixed inset-0 z-[100]'>
-          <div className='absolute inset-0 bg-black/60 backdrop-blur-3xl' onClick={() => setIsOpen(false)} />
-          <Gallery 
-            images={round.photos!} 
-            initialIndex={0}
+          <div
+            className='absolute inset-0 bg-black/60 backdrop-blur-3xl'
+            onClick={() => setIsOpen(false)}
           />
-          <button 
+          <Gallery images={round.photos!} initialIndex={0} />
+          <button
             onClick={() => setIsOpen(false)}
             className='fixed top-6 right-6 z-[250] p-2 text-primary hover:scale-110 transition-transform bg-gray-100/50 dark:bg-gray-800/50 rounded-full'
             title='Close Gallery'
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              viewBox='0 0 24 24'
+              fill='none'
+              stroke='currentColor'
+              strokeWidth='2.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            >
+              <line x1='18' y1='6' x2='6' y2='18'></line>
+              <line x1='6' y1='6' x2='18' y2='18'></line>
             </svg>
           </button>
         </div>
@@ -144,11 +168,14 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
   const [showMedia, setShowMedia] = useState(false)
   const hasMonthPhotos = data.photos.length > 0
   const hasVideos = data.videos && data.videos.length > 0
-  
+
   // Derive stats from roundsDetail
   const roundsCount = data.roundsDetail.length
-  const lowScore = roundsCount > 0 ? Math.min(...data.roundsDetail.map(r => r.score)) : '--'
-  const uniqueCourses = Array.from(new Set(data.roundsDetail.map(r => r.course)))
+  const lowScore =
+    roundsCount > 0 ? Math.min(...data.roundsDetail.map(r => r.score)) : '--'
+  const uniqueCourses = Array.from(
+    new Set(data.roundsDetail.map(r => r.course))
+  )
 
   return (
     <div className='bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm'>
@@ -165,7 +192,10 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
           </div>
           <div className='flex flex-wrap gap-2'>
             {uniqueCourses.map((course, i) => (
-              <span key={i} className='px-3 py-1 bg-gray-50 dark:bg-gray-800 text-secondary text-[10px] font-bold uppercase tracking-wider rounded-full border border-gray-100 dark:border-gray-700/50'>
+              <span
+                key={i}
+                className='px-3 py-1 bg-gray-50 dark:bg-gray-800 text-secondary text-[10px] font-bold uppercase tracking-wider rounded-full border border-gray-100 dark:border-gray-700/50'
+              >
                 {course}
               </span>
             ))}
@@ -175,25 +205,37 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
         {/* Stats Grid - "Bento Box" Style */}
         <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10'>
           <div className='p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>Rounds</p>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>
+              Rounds
+            </p>
             <p className='text-3xl font-black text-primary'>{roundsCount}</p>
           </div>
           <div className='p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>Low Score</p>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>
+              Low Score
+            </p>
             <p className='text-3xl font-black text-primary'>{lowScore}</p>
           </div>
           <div className='p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-widest mb-2'>Birdies</p>
-            <p className='text-3xl font-black text-emerald-700 dark:text-emerald-300'>{data.birdies}</p>
+            <p className='text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-widest mb-2'>
+              Birdies
+            </p>
+            <p className='text-3xl font-black text-emerald-700 dark:text-emerald-300'>
+              {data.birdies}
+            </p>
           </div>
           <div className='p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>GIR %</p>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>
+              GIR %
+            </p>
             <div className='flex items-end justify-between gap-2 mb-1'>
-              <p className='text-3xl font-black text-primary leading-none'>{data.girPercent}%</p>
+              <p className='text-3xl font-black text-primary leading-none'>
+                {data.girPercent}%
+              </p>
             </div>
             <div className='w-full h-1.5 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden'>
-              <div 
-                className='h-full bg-emerald-500 transition-all duration-1000' 
+              <div
+                className='h-full bg-emerald-500 transition-all duration-1000'
                 style={{ width: `${data.girPercent}%` }}
               />
             </div>
@@ -202,7 +244,9 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
 
         {/* Individual Rounds Log */}
         <div className='mb-10'>
-          <h4 className='text-xs font-black text-secondary uppercase tracking-[0.2em] mb-4'>Round History</h4>
+          <h4 className='text-xs font-black text-secondary uppercase tracking-[0.2em] mb-4'>
+            Round History
+          </h4>
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3'>
             {data.roundsDetail.map((round, i) => (
               <RoundTile key={i} round={round} />
@@ -268,43 +312,62 @@ export default function Golfing() {
           </h1>
           <div className='space-y-6'>
             <p className='text-lg md:text-xl text-secondary leading-relaxed'>
-              Tracking my journey through my golf seasons, and hopefully eventually finding the fairway...
+              Tracking my journey through my golf seasons, and hopefully
+              eventually finding the fairway...
             </p>
           </div>
         </div>
 
         {/* Seasons */}
         <div className='w-full px-4 max-w-7xl mx-auto space-y-20'>
-          {seasons.map((season) => {
+          {seasons.map(season => {
             const allRounds = season.months.flatMap(m => m.roundsDetail)
             const totalRounds = allRounds.length
-            const lowScore = totalRounds > 0 ? Math.min(...allRounds.map(r => r.score)) : '--'
-            const totalBirdies = season.months.reduce((acc, m) => acc + m.birdies, 0)
+            const lowScore =
+              totalRounds > 0 ? Math.min(...allRounds.map(r => r.score)) : '--'
+            const totalBirdies = season.months.reduce(
+              (acc, m) => acc + m.birdies,
+              0
+            )
 
             return (
               <div key={season.year} className='space-y-12'>
                 <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
                   <div className='flex items-center gap-6'>
-                    <h2 className='text-3xl md:text-5xl font-black text-primary tracking-tighter'>{season.year}</h2>
+                    <h2 className='text-3xl md:text-5xl font-black text-primary tracking-tighter'>
+                      {season.year}
+                    </h2>
                     <div className='hidden md:block h-px w-24 bg-gray-100 dark:bg-gray-800' />
                   </div>
-                  
+
                   <div className='flex flex-wrap gap-4'>
                     <div className='px-4 py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
-                      <p className='text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>Rounds</p>
-                      <p className='text-xl font-black text-primary'>{totalRounds}</p>
+                      <p className='text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
+                        Rounds
+                      </p>
+                      <p className='text-xl font-black text-primary'>
+                        {totalRounds}
+                      </p>
                     </div>
                     <div className='px-4 py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
-                      <p className='text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>Low Round</p>
-                      <p className='text-xl font-black text-primary'>{lowScore}</p>
+                      <p className='text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
+                        Low Round
+                      </p>
+                      <p className='text-xl font-black text-primary'>
+                        {lowScore}
+                      </p>
                     </div>
                     <div className='px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20'>
-                      <p className='text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-0.5'>Birdies</p>
-                      <p className='text-xl font-black text-emerald-700 dark:text-emerald-300'>{totalBirdies}</p>
+                      <p className='text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-0.5'>
+                        Birdies
+                      </p>
+                      <p className='text-xl font-black text-emerald-700 dark:text-emerald-300'>
+                        {totalBirdies}
+                      </p>
                     </div>
                   </div>
                 </div>
-                
+
                 <div className='grid grid-cols-1 gap-12'>
                   {season.months.map((month, idx) => (
                     <MonthlyCard key={idx} data={month} />

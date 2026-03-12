@@ -4,8 +4,6 @@ import React from 'react'
 import Link from 'next/link'
 import { useInterval } from 'react-use'
 
-import classNames from 'lib/classNames'
-
 const slides = [
   'I enjoy running',
   'I love photography',

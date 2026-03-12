@@ -20,8 +20,7 @@ export default function Container(props: any) {
     title: 'Parker Carson',
     description:
       'Personal portfolio of Parker Carson, an engineer based in Chicago.',
-    image:
-      'https://parker-carson.com/static/images/banner.png',
+    image: 'https://parker-carson.com/static/images/banner.png',
     type: 'website',
     ...customMeta,
   }
@@ -76,9 +75,9 @@ export default function Container(props: any) {
               >
                 Photography
               </Link>
-              
+
               <div className='relative group'>
-                <button 
+                <button
                   className='text-sm font-bold transition-all cursor-pointer text-tertiary hover:text-primary flex items-center gap-1.5'
                   aria-haspopup='true'
                   aria-expanded='false'
@@ -105,8 +104,8 @@ export default function Container(props: any) {
                       { label: 'Running', href: '/hobbies/running' },
                       { label: 'Skiing', href: '/hobbies/skiing' },
                       { label: 'Climbing', href: '/hobbies/climbing' },
-                      { label: 'Golfing', href: '/hobbies/golfing' }
-                    ].map((item) => (
+                      { label: 'Golfing', href: '/hobbies/golfing' },
+                    ].map(item => (
                       <Link
                         key={item.href}
                         href={item.href}
@@ -164,7 +163,12 @@ export default function Container(props: any) {
                         <line x1='12' y1='1' x2='12' y2='3'></line>
                         <line x1='12' y1='21' x2='12' y2='23'></line>
                         <line x1='4.22' y1='4.22' x2='5.64' y2='5.64'></line>
-                        <line x1='18.36' y1='18.36' x2='19.78' y2='19.78'></line>
+                        <line
+                          x1='18.36'
+                          y1='18.36'
+                          x2='19.78'
+                          y2='19.78'
+                        ></line>
                         <line x1='1' y1='12' x2='3' y2='12'></line>
                         <line x1='21' y1='12' x2='23' y2='12'></line>
                         <line x1='4.22' y1='17.78' x2='5.64' y2='16.36'></line>
@@ -186,8 +190,8 @@ export default function Container(props: any) {
             clean
               ? 'w-full'
               : fullWidth
-              ? 'max-w-none w-full px-8'
-              : 'max-w-2xl',
+                ? 'max-w-none w-full px-8'
+                : 'max-w-2xl',
             'mx-auto my-auto',
             'flex flex-col justify-center gap-12',
             !clean && 'divide-y divide-gray-200 dark:divide-gray-900',

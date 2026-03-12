@@ -3,10 +3,6 @@ import { useState } from 'react'
 import {
   Box,
   Grid,
-  FormControl,
-  Select,
-  MenuItem,
-  InputLabel,
   Typography,
   List,
   ListItem,
@@ -16,9 +12,6 @@ import { useTheme as useMuiTheme } from '@mui/material/styles'
 import { useTheme as useNextTheme } from 'next-themes'
 
 import Container from 'components/Container'
-
-import { Gallery } from '../components/Gallery/Gallery'
-import photos from 'data/photos.json'
 
 export default function Projects() {
   const { resolvedTheme } = useNextTheme()

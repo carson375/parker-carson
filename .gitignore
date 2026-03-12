@@ -12,6 +12,7 @@ pnpm-lock.yaml
 # prompts and helper scripts
 /prompts
 /scripts
+.julesignore
 
 # next.js
 /.next/

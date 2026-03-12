@@ -160,7 +160,9 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
           <div className='space-y-12 pt-8 border-t border-gray-100 dark:border-gray-800'>
             {/* Resort Breakdown */}
             <div className='space-y-6'>
-              <h4 className='text-xl font-bold text-primary'>Resort Breakdown</h4>
+              <h4 className='text-xl font-bold text-primary'>
+                Resort Breakdown
+              </h4>
               <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {season.resorts.map((resort, idx) => (
                   <div
@@ -182,7 +184,9 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
             {/* Videos */}
             {hasVideos && (
               <div className='space-y-6'>
-                <h4 className='text-xl font-bold text-primary'>Season Videos</h4>
+                <h4 className='text-xl font-bold text-primary'>
+                  Season Videos
+                </h4>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   {season.videos!.map((video, idx) => (
                     <VideoPlayer key={idx} src={video} />

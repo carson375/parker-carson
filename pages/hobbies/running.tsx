@@ -1,7 +1,5 @@
 import { useState, useRef } from 'react'
 
-import Image from 'next/image'
-
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
 import runningData from 'data/running.json'
@@ -108,7 +106,6 @@ const RaceCard = ({ race }: { race: Race }) => {
   const [showMedia, setShowMedia] = useState(false)
   const hasPhotos = race.photos.length > 0
   const hasVideos = race.videos && race.videos.length > 0
-  const totalItems = race.photos.length + (race.videos?.length || 0)
   const distanceInfo = formatRaceDistance(race.distance)
 
   return (

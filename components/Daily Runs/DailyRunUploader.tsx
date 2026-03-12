@@ -1,11 +1,6 @@
 // https://github.com/delbaoliveira/website/blob/main/ui/challenge/TextSlider.tsx
 import React from 'react'
 
-import Link from 'next/link'
-import { useInterval } from 'react-use'
-
-import classNames from 'lib/classNames'
-
 import { Gallery } from '../Gallery/Gallery'
 
 type DailyRunUploaderProps = {

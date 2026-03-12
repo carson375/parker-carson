@@ -1,7 +1,5 @@
 import Link from 'next/link'
 
-import AboutMe from 'components/About Me'
-import BigText from 'components/BigText'
 import Container from 'components/Container'
 
 export default function Home() {
@@ -29,17 +27,19 @@ export default function Home() {
             <div className='space-y-4 text-lg md:text-xl text-secondary leading-relaxed'>
               <p>
                 Originally from Cleveland, Ohio, I studied Computer Engineering
-                at Ohio State. I’m now based in Chicago, working as a Software Engineer at{' '}
+                at Ohio State. I’m now based in Chicago, working as a Software
+                Engineer at{' '}
                 <span className='font-semibold text-primary'>Capital One</span>.
-                When I'm not working, I stay active through running, skiing, golfing and
-                I used to rock climb. I also enjoy photography and love exploring the city of
-                Chicago on my bike. This summer my goal is to learn how to skateboard / long board.
+                When I'm not working, I stay active through running, skiing,
+                golfing and I used to rock climb. I also enjoy photography and
+                love exploring the city of Chicago on my bike. This summer my
+                goal is to learn how to skateboard / long board.
               </p>
               <p className='text-base text-tertiary'>
-                For work, my team focuses on the post-approval customer journey ensuring a
-                seamless experience from the moment a card is approved to its
-                activation, including features like our real-time delivery
-                tracker.
+                For work, my team focuses on the post-approval customer journey
+                ensuring a seamless experience from the moment a card is
+                approved to its activation, including features like our
+                real-time delivery tracker.
               </p>
             </div>
           </div>
@@ -98,7 +98,8 @@ export default function Home() {
               </div>
               <h3 className='text-2xl font-black mb-2'>Running</h3>
               <p className='text-secondary text-sm leading-relaxed'>
-                Documenting my journey through daily runs, race preparations, and personal bests.
+                Documenting my journey through daily runs, race preparations,
+                and personal bests.
               </p>
               <div className='mt-4 text-sm font-bold text-pink-500 group-hover:underline'>
                 See Stats →
@@ -125,7 +126,8 @@ export default function Home() {
               </div>
               <h3 className='text-2xl font-black mb-2'>Skiing</h3>
               <p className='text-secondary text-sm leading-relaxed'>
-                Winter recaps featuring resort breakdowns, mountain views, and powder day highlights.
+                Winter recaps featuring resort breakdowns, mountain views, and
+                powder day highlights.
               </p>
               <div className='mt-4 text-sm font-bold text-cyan-500 group-hover:underline'>
                 View Trips →
@@ -155,8 +157,9 @@ export default function Home() {
               </div>
               <h3 className='text-3xl font-black mb-3'>Golfing</h3>
               <p className='text-secondary text-base max-w-lg leading-relaxed'>
-                A monthly journal tracking fairways, greens, and season-long improvement. 
-                Documenting rounds, scores, and highlights across 2025 and 2026.
+                A monthly journal tracking fairways, greens, and season-long
+                improvement. Documenting rounds, scores, and highlights across
+                2025 and 2026.
               </p>
               <div className='mt-6 text-sm font-bold text-emerald-500 group-hover:underline'>
                 See Progress →
