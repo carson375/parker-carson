@@ -433,7 +433,7 @@
       {
         "name": "Hofburg Palace Complex (Neue Burg)",
         "lat": 48.2052,
-        "lng": 16.3650
+        "lng": 16.365
       },
       {
         "name": "St. Stephen's Cathedral (Stephansdom)",
@@ -484,7 +484,7 @@
     "locations": [
       {
         "name": "Prague Astronomical Clock",
-        "lat": 50.0870,
+        "lat": 50.087,
         "lng": 14.4207
       },
       {
@@ -532,6 +532,18 @@
       "/photography/El Paso 2024/IMG_1709.JPEG",
       "/photography/El Paso 2024/IMG_1999.JPEG",
       "/photography/El Paso 2024/IMG_2502.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Hueco Tanks State Park",
+        "lat": 31.926453,
+        "lng": -106.042437
+      },
+      {
+        "name": "Ciudad Juarez City Center",
+        "lat": 31.7386,
+        "lng": -106.4869
+      }
     ]
   },
   {
@@ -551,6 +563,13 @@
       "/photography/Grand Canyon 2024/IMG_1738.JPEG",
       "/photography/Grand Canyon 2024/IMG_1739.JPEG",
       "/photography/Grand Canyon 2024/IMG_1747.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Mather Point",
+        "lat": 36.0616497,
+        "lng": -112.1079463
+      }
     ]
   },
   {
@@ -565,6 +584,48 @@
       "/photography/Las Vegas 2024/IMG_1765.JPEG",
       "/photography/Las Vegas 2024/IMG_1766.JPEG",
       "/photography/Las Vegas 2024/IMG_1769.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "New York-New York",
+        "lat": 36.1024,
+        "lng": -115.1746
+      },
+      {
+        "name": "Excalibur",
+        "lat": 36.0988,
+        "lng": -115.1754
+      },
+      {
+        "name": "MGM Grand",
+        "lat": 36.1026,
+        "lng": -115.1699
+      },
+      {
+        "name": "Paris",
+        "lat": 36.1125,
+        "lng": -115.1707
+      },
+      {
+        "name": "Bellagio",
+        "lat": 36.1126,
+        "lng": -115.1767
+      },
+      {
+        "name": "Caesars Palace",
+        "lat": 36.1162,
+        "lng": -115.1745
+      },
+      {
+        "name": "Luxor",
+        "lat": 36.0955,
+        "lng": -115.1761
+      },
+      {
+        "name": "Mandalay Bay",
+        "lat": 36.0907,
+        "lng": -115.1764
+      }
     ]
   },
   {
@@ -586,6 +647,13 @@
       "/photography/Zion 2024/IMG_1821.JPEG",
       "/photography/Zion 2024/IMG_1827.JPEG",
       "/photography/Zion 2024/IMG_1828.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Zion National Park",
+        "lat": 37.2982,
+        "lng": -113.0263
+      }
     ]
   },
   {
@@ -628,6 +696,13 @@
       "/photography/Tokyo 2024/IMG_2243.JPEG",
       "/photography/Tokyo 2024/IMG_2249.JPEG",
       "/photography/Tokyo 2024/IMG_2251.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Tokyo, Japan",
+        "lat": 35.6895,
+        "lng": 139.6917
+      }
     ]
   },
   {
@@ -685,6 +760,13 @@
       "/photography/Kyoto 2024/IMG_2542.JPEG",
       "/photography/Kyoto 2024/IMG_2547.JPEG",
       "/photography/Kyoto 2024/IMG_2551.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Kyoto, Japan",
+        "lat": 35.0116,
+        "lng": 135.7681
+      }
     ]
   },
   {
@@ -697,6 +779,13 @@
       "/photography/Osaka 2024/IMG_2571.JPEG",
       "/photography/Osaka 2024/IMG_2573.JPEG",
       "/photography/Osaka 2024/IMG_2574.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Osaka, Japan",
+        "lat": 34.6937,
+        "lng": 135.5023
+      }
     ]
   },
   {
@@ -734,6 +823,13 @@
       "/photography/Seoul 2024/IMG_2692.JPEG",
       "/photography/Seoul 2024/IMG_2697.JPEG",
       "/photography/Seoul 2024/IMG_2698.JPEG"
+    ],
+    "locations": [
+      {
+        "name": "Seoul, South Korea",
+        "lat": 37.5665,
+        "lng": 126.978
+      }
     ]
   }
 ]
