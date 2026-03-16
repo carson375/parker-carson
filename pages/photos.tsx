@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 import Image from 'next/image'
 
@@ -33,9 +34,46 @@ interface Trip {
 
 const photosData = photosDataRaw as Trip[]
 
+// Helper to slugify trip names for URLs
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^\w ]+/g, '')
+    .replace(/ +/g, '-')
+
 export default function Photos() {
+  const router = useRouter()
   const [selectedTrip, setSelectedTrip] = useState<number | null>(null)
   const [showMap, setShowMap] = useState(false)
+
+  // Handle initial load and browser back/forward
+  useEffect(() => {
+    if (router.isReady) {
+      const tripSlug = router.query.trip
+      if (tripSlug) {
+        const index = photosData.findIndex(t => slugify(t.name) === tripSlug)
+        if (index !== -1) {
+          setSelectedTrip(index)
+        }
+      } else {
+        setSelectedTrip(null)
+      }
+    }
+  }, [router.isReady, router.query.trip])
+
+  const handleSelectTrip = (index: number) => {
+    const trip = photosData[index]
+    router.push({ query: { trip: slugify(trip.name) } }, undefined, {
+      shallow: true,
+    })
+    setSelectedTrip(index)
+  }
+
+  const handleCloseTrip = () => {
+    router.push({ query: {} }, undefined, { shallow: true })
+    setSelectedTrip(null)
+    setShowMap(false)
+  }
 
   // Scroll to top when trip selection changes
   useEffect(() => {
@@ -45,17 +83,11 @@ export default function Photos() {
   // Close on Escape key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') setSelectedTrip(null)
+      if (e.key === 'Escape') handleCloseTrip()
     }
     window.addEventListener('keydown', handleEsc)
     return () => window.removeEventListener('keydown', handleEsc)
   }, [])
-
-  const stats = {
-    cities: 17,
-    countries: 6,
-    states: 5,
-  }
 
   // GALLERY VIEW (Continuous Scroll)
   if (selectedTrip !== null) {
@@ -101,10 +133,7 @@ export default function Photos() {
               )}
             </div>
             <button
-              onClick={() => {
-                setSelectedTrip(null)
-                setShowMap(false)
-              }}
+              onClick={handleCloseTrip}
               className='flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
             >
               <svg
@@ -167,18 +196,6 @@ export default function Photos() {
           </h1>
 
           <div className='space-y-6'>
-            <div className='flex flex-wrap justify-center gap-4 text-sm md:text-base font-medium'>
-              <span className='px-4 py-1.5 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border border-blue-100 dark:border-blue-800'>
-                {stats.cities} Cities visited
-              </span>
-              <span className='px-4 py-1.5 rounded-full bg-purple-50 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400 border border-purple-100 dark:border-purple-800'>
-                {stats.countries} Countries explored
-              </span>
-              <span className='px-4 py-1.5 rounded-full bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border border-green-100 dark:border-green-800'>
-                {stats.states} US States
-              </span>
-            </div>
-
             <p className='text-lg md:text-xl text-secondary leading-relaxed'>
               Captured moments from my travels around the world. These photos
               are a record of the places I&apos;ve been and the things I&apos;ve
@@ -192,7 +209,7 @@ export default function Photos() {
           {photosData.map((trip, index) => (
             <button
               key={trip.name}
-              onClick={() => setSelectedTrip(index)}
+              onClick={() => handleSelectTrip(index)}
               className='group relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] bg-gray-100 dark:bg-gray-800'
             >
               <Image

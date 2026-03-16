@@ -748,7 +748,12 @@
       {
         "name": "New York-New York",
         "lat": 36.1024,
-        "lng": -115.1746
+        "lng": -115.1745
+      },
+      {
+        "name": "Hoover Dam",
+        "lat": 36.016045,
+        "lng": -114.737839
       },
       {
         "name": "Excalibur",
