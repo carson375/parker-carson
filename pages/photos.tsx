@@ -28,6 +28,7 @@ interface Trip {
   name: string
   photos: string[]
   locations?: Location[]
+  route?: [number, number][]
 }
 
 const photosData = photosDataRaw as Trip[]
@@ -60,7 +61,8 @@ export default function Photos() {
   if (selectedTrip !== null) {
     const currentTrip = photosData[selectedTrip]
     const hasLocations =
-      !!currentTrip.locations && currentTrip.locations.length > 0
+      (!!currentTrip.locations && currentTrip.locations.length > 0) ||
+      (!!currentTrip.route && currentTrip.route.length > 0)
 
     return (
       <Container hideNav={true} clean={true}>
@@ -139,7 +141,10 @@ export default function Photos() {
 
               {showMap && hasLocations && (
                 <div className='w-full animate-in slide-in-from-top-4 duration-500'>
-                  <TripMap locations={currentTrip.locations!} />
+                  <TripMap
+                    locations={currentTrip.locations || []}
+                    route={currentTrip.route}
+                  />
                 </div>
               )}
 
