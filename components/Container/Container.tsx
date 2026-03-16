@@ -103,7 +103,7 @@ export default function Container(props: any) {
                     {[
                       { label: 'Running', href: '/hobbies/running' },
                       { label: 'Skiing', href: '/hobbies/skiing' },
-                      { label: 'Climbing', href: '/hobbies/climbing' },
+
                       { label: 'Golfing', href: '/hobbies/golfing' },
                     ].map(item => (
                       <Link
