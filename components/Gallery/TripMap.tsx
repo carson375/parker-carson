@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
 
@@ -12,9 +12,10 @@ interface Location {
 
 interface TripMapProps {
   locations: Location[]
+  route?: [number, number][]
 }
 
-export const TripMap = ({ locations }: TripMapProps) => {
+export const TripMap = ({ locations, route }: TripMapProps) => {
   // Leaflet icons are only available in the browser
   const icon = useMemo(() => {
     if (typeof window === 'undefined') return null
@@ -31,8 +32,14 @@ export const TripMap = ({ locations }: TripMapProps) => {
 
   if (typeof window === 'undefined' || !icon) return null
 
-  // Calculate bounds to fit all markers
-  const bounds = L.latLngBounds(locations.map(loc => [loc.lat, loc.lng]))
+  // Calculate bounds to fit all markers and route points
+  const points: [number, number][] = [
+    ...locations.map(loc => [loc.lat, loc.lng] as [number, number]),
+    ...(route || []),
+  ]
+  const bounds = points.length > 0 
+    ? L.latLngBounds(points)
+    : L.latLngBounds([[37.2982, -113.0263]]) // Default to Zion if no points
 
   return (
     <div className='w-full h-[450px] rounded-[24px] overflow-hidden border border-gray-100 dark:border-gray-800 animate-in fade-in duration-700'>
@@ -46,6 +53,18 @@ export const TripMap = ({ locations }: TripMapProps) => {
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
           url='https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png'
         />
+
+        {route && route.length > 0 && (
+          <Polyline
+            positions={route}
+            pathOptions={{
+              color: '#3b82f6',
+              weight: 4,
+              opacity: 0.7,
+              dashArray: '5, 10',
+            }}
+          />
+        )}
 
         {locations.map((loc, index) => (
           <Marker key={index} position={[loc.lat, loc.lng]} icon={icon}>
