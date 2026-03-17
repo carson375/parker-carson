@@ -990,9 +990,95 @@
     ],
     "locations": [
       {
-        "name": "Tokyo, Japan",
-        "lat": 35.6895,
-        "lng": 139.6917
+        "name": "Yoyogi Park",
+        "lat": 35.6720,
+        "lng": 139.6977
+      },
+      {
+        "name": "Meiji Jingu",
+        "lat": 35.6764,
+        "lng": 139.6993
+      },
+      {
+        "name": "Ueno Zoo",
+        "lat": 35.7172,
+        "lng": 139.7695
+      },
+      {
+        "name": "Senso-Ji",
+        "lat": 35.7147,
+        "lng": 139.7968
+      },
+      {
+        "name": "Kappabashi Avenue",
+        "lat": 35.7144,
+        "lng": 139.7889
+      },
+      {
+        "name": "Shinjuku Gyoen National Garden",
+        "lat": 35.6853,
+        "lng": 139.7094
+      },
+      {
+        "name": "Gardens of the Imperial Palace",
+        "lat": 35.6875,
+        "lng": 139.7575
+      },
+      {
+        "name": "Tokyo Station",
+        "lat": 35.6752,
+        "lng": 139.7668
+      },
+      {
+        "name": "Mega Don Quijote Shibuya",
+        "lat": 35.6605,
+        "lng": 139.6979
+      },
+      {
+        "name": "Golden Gai",
+        "lat": 35.6939,
+        "lng": 139.7047
+      },
+      {
+        "name": "Shibuya Crossing",
+        "lat": 35.6595,
+        "lng": 139.7006
+      },
+      {
+        "name": "Tokyo Tower",
+        "lat": 35.6586,
+        "lng": 139.7454
+      },
+      {
+        "name": "teamLab Planets Tokyo",
+        "lat": 35.6491,
+        "lng": 139.7908
+      },
+      {
+        "name": "Godzilla Head Shinjuku",
+        "lat": 35.6951,
+        "lng": 139.7019
+      },
+      {
+        "name": "Starbucks Reserve Roastery Tokyo",
+        "lat": 35.6492,
+        "lng": 139.6924
+      },
+      {
+        "name": "Akihabara",
+        "lat": 35.6982,
+        "lng": 139.7737
+      },
+      {
+        "name": "Hotel",
+        "lat": 35.6795,
+        "lng": 139.7798,
+        "description": "Smile Hotel Tokyo Nihombashi"
+      },
+      {
+        "name": "Tokyo National Museum",
+        "lat": 35.7189,
+        "lng": 139.7764
       }
     ]
   },
@@ -1054,9 +1140,54 @@
     ],
     "locations": [
       {
-        "name": "Kyoto, Japan",
-        "lat": 35.0116,
-        "lng": 135.7681
+        "name": "Funaoka Onsen",
+        "lat": 35.0369,
+        "lng": 135.7444
+      },
+      {
+        "name": "Nanzen-ji Temple",
+        "lat": 35.0111,
+        "lng": 135.7911
+      },
+      {
+        "name": "Arashiyama Bamboo Forest",
+        "lat": 35.0170,
+        "lng": 135.6720
+      },
+      {
+        "name": "Fushimi Inari Shrine",
+        "lat": 34.9671,
+        "lng": 135.7727
+      },
+      {
+        "name": "Kiyomizu-dera Temple",
+        "lat": 34.9949,
+        "lng": 135.7850
+      },
+      {
+        "name": "Nishiki Market",
+        "lat": 35.0050,
+        "lng": 135.7649
+      },
+      {
+        "name": "Hokan-ji Temple",
+        "lat": 34.9986,
+        "lng": 135.7811
+      },
+      {
+        "name": "Nintendo Kyoto",
+        "lat": 35.0037,
+        "lng": 135.7692
+      },
+      {
+        "name": "Nara Deer Park",
+        "lat": 34.6850,
+        "lng": 135.8430
+      },
+      {
+        "name": "Monkey Park Iwatayama",
+        "lat": 35.0089,
+        "lng": 135.6747
       }
     ]
   },
@@ -1073,9 +1204,14 @@
     ],
     "locations": [
       {
-        "name": "Osaka, Japan",
-        "lat": 34.6937,
-        "lng": 135.5023
+        "name": "Glico Man Sign",
+        "lat": 34.6690,
+        "lng": 135.5013
+      },
+      {
+        "name": "Don Quijote Dotonbori",
+        "lat": 34.6691,
+        "lng": 135.5024
       }
     ]
   },
@@ -1117,9 +1253,51 @@
     ],
     "locations": [
       {
-        "name": "Seoul, South Korea",
-        "lat": 37.5665,
-        "lng": 126.978
+        "name": "Deoksugung",
+        "lat": 37.5661,
+        "lng": 126.9750
+      },
+      {
+        "name": "Seoul Metropolitan Library",
+        "lat": 37.5664,
+        "lng": 126.9778
+      },
+      {
+        "name": "Seoul Tower",
+        "lat": 37.5512,
+        "lng": 126.9882
+      },
+      {
+        "name": "Namsan Park",
+        "lat": 37.5517,
+        "lng": 126.9884
+      },
+      {
+        "name": "The Gangnam Hands",
+        "lat": 37.5116,
+        "lng": 127.0592,
+        "description": "Gangnam Style Statue at COEX Mall"
+      },
+      {
+        "name": "Olympic Park",
+        "lat": 37.5204,
+        "lng": 127.1226
+      },
+      {
+        "name": "War Memorial Of Korea",
+        "lat": 37.5372,
+        "lng": 126.9771
+      },
+      {
+        "name": "Paradise City",
+        "lat": 37.4372,
+        "lng": 126.4599,
+        "description": "Mall and Casino near Incheon Airport"
+      },
+      {
+        "name": "Myeong-dong",
+        "lat": 37.5632,
+        "lng": 126.9854
       }
     ]
   }
