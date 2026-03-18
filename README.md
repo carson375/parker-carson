@@ -3,7 +3,7 @@
 ## Section A: Site Overview
 
 **Purpose:**
-Parker-Carson.com is a professional portfolio and activity tracker built to showcase photography collections and track daily hobbies. It leverages a modern frontend stack to deliver a highly interactive, media-rich user experience.
+parker-carson.com is my portfolio and activity tracker built to showcase photography collections and track daily hobbies.
 
 **Features:**
 - **Content-Driven Pages:** Easily maintainable views for photography galleries and hobby tracking (e.g., daily runs).
