@@ -1,46 +1,41 @@
-# Parker Carson Portfolio
+# Parker-Carson.com
 
-A photography portfolio and activity tracker built with Next.js 16 and React 19.
+## Section A: Site Overview
 
-## Development
+**Purpose:**
+Parker-Carson.com is a professional portfolio and activity tracker built to showcase photography collections and track daily hobbies. It leverages a modern frontend stack to deliver a highly interactive, media-rich user experience.
 
+**Features:**
+- **Content-Driven Pages:** Easily maintainable views for photography galleries and hobby tracking (e.g., daily runs).
+- **Mobile-First Design:** Responsive layouts powered by Tailwind CSS to ensure a seamless experience across all devices.
+- **TypeScript Safety:** Strongly typed codebase using TypeScript to prevent runtime errors and improve developer experience.
+- **Interactive Galleries:** Full-screen, scroll-snap image viewing experiences utilizing `react-modal-image`.
+- **Map Integrations:** Activity tracking routes and data visualized via `leaflet`.
+- **Theming:** System-level theme synchronization enabled by `next-themes`.
+
+## Section B: Technical Documentation
+
+**Prerequisites:**
+- Node.js (v18 or higher recommended)
+- npm (Node Package Manager)
+
+**Setup:**
+Clone the repository and install the required dependencies:
 ```bash
-# Setup
 npm install
-
-# Local Development
-npm run dev
-
-# Production Build
-npm run build
-
-# Production Preview
-npm run start
 ```
 
-## Maintenance Commands
+**Development:**
+Start the local development server:
+```bash
+npm run dev
+```
 
-| Action | Command | Purpose |
-| :--- | :--- | :--- |
-| Lint | `npm run lint` | Identify code quality and security issues. |
-| Format | `npx prettier --write .` | Standardize code style project-wide. |
-| Reset | `rm -rf .next node_modules` | Perform a clean reinstallation. |
+**Building:**
+Create an optimized production build:
+```bash
+npm run build
+```
 
-## Technical Implementation
-
-- **Navigation**: Vertical scroll-snap integration for full-screen image viewing.
-- **Responsive Design**: Variable grid system optimized for mobile and desktop viewports.
-- **Overlay System**: Backdrop-blur lightbox with persistent scroll indicators.
-- **Core Stack**: Next.js 16 and React 19 for improved performance and security.
-- **Vercel Optimization**: Configured robots.txt for crawler management and optimized cache TTL for static assets.
-
-## Directory Overview
-
-- `components/Gallery/`: Reusable gallery logic and scroll-snap components.
-- `pages/photos.tsx`: Photography collection views.
-- `pages/hobbies/running.tsx`: Activity records and media management.
-- `public/photography/`: Static image assets.
-
-## Configuration
-
-Theme management is handled via `next-themes` for system-level preference synchronization. The lightbox interface utilizes backdrop filters to maintain visual context across different themes.
+**Deployment:**
+This project utilizes a Vercel-based workflow. Pushing changes to the `main` branch will automatically trigger a production deployment. Pull requests will automatically generate functional preview deployments for testing and review before merging.
