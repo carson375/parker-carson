@@ -48,7 +48,6 @@ export const TripMap = ({ locations, route }: TripMapProps) => {
         style={{ height: '100%', width: '100%' }}
         scrollWheelZoom={false}
         keyboard={false}
-        tap={false}
       >
         {/* CartoDB Positron (Light/Silver Theme) */}
         <TileLayer
