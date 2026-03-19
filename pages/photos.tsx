@@ -155,7 +155,7 @@ export default function Photos() {
           </div>
 
           {/* Content */}
-          <div className='w-full max-w-5xl mx-auto py-8 md:py-12 px-4'>
+          <div className='w-full max-w-[1400px] mx-auto py-8 md:py-12 px-4'>
             <div key={currentTrip.name} className='space-y-8 md:space-y-12'>
               <div className='space-y-4'>
                 <h2 className='text-3xl md:text-6xl font-black text-primary tracking-tight'>
@@ -188,9 +188,9 @@ export default function Photos() {
   // GRID VIEW (Default)
   return (
     <Container fullWidth={true}>
-      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
+      <div className='flex flex-col items-center justify-center space-y-12 py-4 md:py-8'>
         {/* Hero Section */}
-        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-2xl mx-auto'>
+        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-4xl mx-auto'>
           <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
             Photography
           </h1>

@@ -254,9 +254,10 @@ export default function Running() {
 
   return (
     <Container fullWidth={true}>
-      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
+      <div className='flex flex-col items-center justify-center space-y-12 py-4 md:py-8'>
+
         {/* Hero Section */}
-        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-2xl mx-auto'>
+        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-4xl mx-auto'>
           <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
             Running
           </h1>
@@ -269,7 +270,7 @@ export default function Running() {
         </div>
 
         {/* 2025 Races Section */}
-        <div className='w-full px-4 max-w-7xl mx-auto'>
+        <div className='w-full px-4 max-w-[1400px] mx-auto'>
           <div className='flex items-center justify-between mb-6 md:mb-8'>
             <h2 className='text-2xl md:text-3xl font-bold text-primary'>2025 Races</h2>
           </div>

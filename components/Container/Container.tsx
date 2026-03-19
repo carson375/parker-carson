@@ -67,7 +67,7 @@ export default function Container(props: any) {
 
         {!hideNav && (
           <>
-            <nav className='sticky top-4 z-[9999] w-[calc(100%-2rem)] max-w-5xl mx-auto flex justify-between items-center px-4 md:px-6 py-3 rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm'>
+            <nav className='sticky top-4 z-[9999] w-[calc(100%-2rem)] max-w-[1400px] mx-auto flex justify-between items-center px-4 md:px-6 py-3 rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm'>
               {/* Desktop Navigation */}
               <div className='hidden md:flex flex-row items-center gap-6'>
                 <Link
@@ -286,10 +286,12 @@ export default function Container(props: any) {
         <main
           className={cn(
             !clean &&
-              'px-4 mt-12 mx-auto max-w-2xl flex flex-col justify-center gap-12 divide-y divide-gray-200 dark:divide-gray-900 rounded-lg py-12 md:py-24',
+              'px-4 mt-6 mx-auto flex flex-col justify-center gap-12 divide-y divide-gray-200 dark:divide-gray-900 rounded-lg py-6 md:py-12',
+            !clean && (fullWidth ? 'max-w-[1600px]' : 'max-w-2xl md:max-w-5xl lg:max-w-6xl xl:max-w-[1400px]'),
             clean && 'w-full mx-auto'
           )}
         >
+
           <div>{children}</div>
           <footer>
             <Footer />

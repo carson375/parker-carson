@@ -304,9 +304,9 @@ export default function Golfing() {
 
   return (
     <Container fullWidth={true}>
-      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
+      <div className='flex flex-col items-center justify-center space-y-12 py-4 md:py-8'>
         {/* Hero Section */}
-        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-2xl mx-auto'>
+        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-4xl mx-auto'>
           <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
             Golfing
           </h1>
@@ -319,7 +319,7 @@ export default function Golfing() {
         </div>
 
         {/* Seasons */}
-        <div className='w-full px-4 max-w-7xl mx-auto space-y-12 md:space-y-20'>
+        <div className='w-full px-4 max-w-[1400px] mx-auto space-y-12 md:space-y-20'>
           {seasons.map(season => {
             const allRounds = season.months.flatMap(m => m.roundsDetail)
             const totalRounds = allRounds.length

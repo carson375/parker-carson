@@ -48,14 +48,8 @@ export default function Projects() {
   ])
 
   return (
-    <Container
-      sx={{
-        maxWidth: '800px', // Increase the maximum width of the container
-        margin: '0 auto', // Center the container
-        padding: '2rem', // Add padding for better spacing
-      }}
-    >
-      <div className='flex flex-col items-center justify-center inset-0'>
+    <Container>
+      <div className='max-w-4xl mx-auto py-12 px-4'>
         <Box
           sx={{
             flexGrow: 1,

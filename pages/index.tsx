@@ -5,14 +5,14 @@ import Container from 'components/Container'
 export default function Home() {
   return (
     <Container>
-      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
+      <div className='max-w-4xl mx-auto flex flex-col items-center justify-center space-y-12 py-4 md:py-8'>
         {/* New Refined Hero Section */}
         <div className='flex flex-col items-center text-center space-y-8 px-4'>
           <h1 className='text-4xl md:text-6xl font-black tracking-tight text-primary'>
             Parker Carson
           </h1>
 
-          <div className='max-w-2xl space-y-6'>
+          <div className='max-w-4xl space-y-6'>
             {/* Quick Snapshot Template */}
             <div className='flex flex-wrap justify-center gap-3 md:gap-4 text-xs md:text-base font-medium'>
               <span className='px-3 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-secondary'>
