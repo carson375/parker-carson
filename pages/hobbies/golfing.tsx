@@ -179,14 +179,14 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
 
   return (
     <div className='bg-white dark:bg-gray-900 rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm'>
-      <div className='p-8'>
+      <div className='p-6 md:p-8'>
         {/* Header Section */}
-        <div className='flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10'>
+        <div className='flex flex-col md:flex-row md:items-center justify-between gap-4 md:gap-6 mb-8 md:mb-10'>
           <div>
-            <h3 className='text-3xl md:text-4xl font-black text-primary mb-2 tracking-tight'>
+            <h3 className='text-2xl md:text-4xl font-black text-primary mb-1 md:mb-2 tracking-tight'>
               {data.month}
             </h3>
-            <p className='text-emerald-600 dark:text-emerald-500 font-bold uppercase tracking-widest text-xs'>
+            <p className='text-emerald-600 dark:text-emerald-500 font-bold uppercase tracking-widest text-[10px] md:text-xs'>
               {data.highlight}
             </p>
           </div>
@@ -194,7 +194,7 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
             {uniqueCourses.map((course, i) => (
               <span
                 key={i}
-                className='px-3 py-1 bg-gray-50 dark:bg-gray-800 text-secondary text-[10px] font-bold uppercase tracking-wider rounded-full border border-gray-100 dark:border-gray-700/50'
+                className='px-2 py-0.5 md:px-3 md:py-1 bg-gray-50 dark:bg-gray-800 text-secondary text-[8px] md:text-[10px] font-bold uppercase tracking-wider rounded-full border border-gray-100 dark:border-gray-700/50'
               >
                 {course}
               </span>
@@ -203,33 +203,33 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
         </div>
 
         {/* Stats Grid - "Bento Box" Style */}
-        <div className='grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10'>
-          <div className='p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-10'>
+          <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               Rounds
             </p>
-            <p className='text-3xl font-black text-primary'>{roundsCount}</p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>{roundsCount}</p>
           </div>
-          <div className='p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>
+          <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               Low Score
             </p>
-            <p className='text-3xl font-black text-primary'>{lowScore}</p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>{lowScore}</p>
           </div>
-          <div className='p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-widest mb-2'>
+          <div className='p-4 md:p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 flex flex-col justify-center'>
+            <p className='text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-widest mb-1 md:mb-2'>
               Birdies
             </p>
-            <p className='text-3xl font-black text-emerald-700 dark:text-emerald-300'>
+            <p className='text-2xl md:text-3xl font-black text-emerald-700 dark:text-emerald-300'>
               {data.birdies}
             </p>
           </div>
-          <div className='p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
-            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-2'>
+          <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               GIR %
             </p>
             <div className='flex items-end justify-between gap-2 mb-1'>
-              <p className='text-3xl font-black text-primary leading-none'>
+              <p className='text-2xl md:text-3xl font-black text-primary leading-none'>
                 {data.girPercent}%
               </p>
             </div>
@@ -304,14 +304,14 @@ export default function Golfing() {
 
   return (
     <Container fullWidth={true}>
-      <div className='flex flex-col items-center justify-center space-y-12 py-16'>
+      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
         {/* Hero Section */}
-        <div className='flex flex-col items-center text-center space-y-8 px-4 max-w-2xl mx-auto'>
-          <h1 className='text-5xl md:text-7xl font-black tracking-tight text-primary'>
+        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-2xl mx-auto'>
+          <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
             Golfing
           </h1>
-          <div className='space-y-6'>
-            <p className='text-lg md:text-xl text-secondary leading-relaxed'>
+          <div className='space-y-4 md:space-y-6'>
+            <p className='text-base md:text-xl text-secondary leading-relaxed'>
               Tracking my journey through my golf seasons, and hopefully
               eventually finding the fairway...
             </p>
@@ -319,7 +319,7 @@ export default function Golfing() {
         </div>
 
         {/* Seasons */}
-        <div className='w-full px-4 max-w-7xl mx-auto space-y-20'>
+        <div className='w-full px-4 max-w-7xl mx-auto space-y-12 md:space-y-20'>
           {seasons.map(season => {
             const allRounds = season.months.flatMap(m => m.roundsDetail)
             const totalRounds = allRounds.length
@@ -331,37 +331,37 @@ export default function Golfing() {
             )
 
             return (
-              <div key={season.year} className='space-y-12'>
-                <div className='flex flex-col md:flex-row md:items-end justify-between gap-6'>
-                  <div className='flex items-center gap-6'>
+              <div key={season.year} className='space-y-8 md:space-y-12'>
+                <div className='flex flex-col md:flex-row md:items-end justify-between gap-4 md:gap-6'>
+                  <div className='flex items-center gap-4 md:gap-6'>
                     <h2 className='text-3xl md:text-5xl font-black text-primary tracking-tighter'>
                       {season.year}
                     </h2>
                     <div className='hidden md:block h-px w-24 bg-gray-100 dark:bg-gray-800' />
                   </div>
 
-                  <div className='flex flex-wrap gap-4'>
-                    <div className='px-4 py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
-                      <p className='text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
+                  <div className='flex flex-wrap gap-2 md:gap-4'>
+                    <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
+                      <p className='text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
                         Rounds
                       </p>
-                      <p className='text-xl font-black text-primary'>
+                      <p className='text-lg md:text-xl font-black text-primary'>
                         {totalRounds}
                       </p>
                     </div>
-                    <div className='px-4 py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
-                      <p className='text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
+                    <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
+                      <p className='text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
                         Low Round
                       </p>
-                      <p className='text-xl font-black text-primary'>
+                      <p className='text-lg md:text-xl font-black text-primary'>
                         {lowScore}
                       </p>
                     </div>
-                    <div className='px-4 py-2 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20'>
-                      <p className='text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-0.5'>
+                    <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20'>
+                      <p className='text-[8px] md:text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-0.5'>
                         Birdies
                       </p>
-                      <p className='text-xl font-black text-emerald-700 dark:text-emerald-300'>
+                      <p className='text-lg md:text-xl font-black text-emerald-700 dark:text-emerald-300'>
                         {totalBirdies}
                       </p>
                     </div>

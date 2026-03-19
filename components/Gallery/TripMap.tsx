@@ -42,11 +42,13 @@ export const TripMap = ({ locations, route }: TripMapProps) => {
     : L.latLngBounds([[37.2982, -113.0263]]) // Default to Zion if no points
 
   return (
-    <div className='w-full h-[450px] rounded-[24px] overflow-hidden border border-gray-100 dark:border-gray-800 animate-in fade-in duration-700'>
+    <div className='w-full h-[450px] rounded-[24px] overflow-hidden border border-gray-100 dark:border-gray-800'>
       <MapContainer
         bounds={bounds}
         style={{ height: '100%', width: '100%' }}
         scrollWheelZoom={false}
+        keyboard={false}
+        tap={false}
       >
         {/* CartoDB Positron (Light/Silver Theme) */}
         <TileLayer

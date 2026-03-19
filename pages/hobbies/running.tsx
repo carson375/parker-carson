@@ -110,22 +110,22 @@ const RaceCard = ({ race }: { race: Race }) => {
 
   return (
     <div className='bg-white dark:bg-gray-900 rounded-3xl border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm'>
-      <div className='p-8 md:p-12'>
-        <div className='grid grid-cols-1 md:grid-cols-[2fr_3fr] items-center md:items-end gap-8 md:gap-10 mb-10'>
+      <div className='p-6 md:p-12'>
+        <div className='grid grid-cols-1 md:grid-cols-[2fr_3fr] items-center md:items-end gap-6 md:gap-10 mb-8 md:mb-10'>
           <div className='text-center md:text-left'>
-            <p className='text-sm font-bold text-orange-500 uppercase tracking-widest mb-2'>
+            <p className='text-xs font-bold text-orange-500 uppercase tracking-widest mb-2'>
               {race.date}
             </p>
-            <h3 className='text-3xl md:text-4xl lg:text-5xl font-black text-primary leading-[1.2] md:leading-[1.1]'>
+            <h3 className='text-2xl md:text-5xl font-black text-primary leading-tight md:leading-[1.1]'>
               {race.name}
             </h3>
           </div>
-          <div className='grid grid-cols-1 md:grid-cols-[1.4fr_1fr_1fr] gap-3 md:gap-4 w-full'>
+          <div className='grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 w-full'>
             <div className='bg-gray-50 dark:bg-gray-800 px-4 py-3 md:px-6 md:py-5 rounded-2xl flex flex-col justify-center border border-gray-100 dark:border-gray-800/50 text-center md:text-left'>
               <p className='text-[10px] md:text-xs text-secondary font-bold uppercase mb-1'>
                 Distance
               </p>
-              <p className='text-base md:text-lg lg:text-xl font-bold text-primary whitespace-nowrap'>
+              <p className='text-sm md:text-xl font-bold text-primary whitespace-nowrap'>
                 {distanceInfo.primary}{' '}
                 <span className='text-[10px] md:text-sm text-secondary font-medium uppercase'>
                   / {distanceInfo.secondary}
@@ -136,7 +136,7 @@ const RaceCard = ({ race }: { race: Race }) => {
               <p className='text-[10px] md:text-xs text-secondary font-bold uppercase mb-1'>
                 Time
               </p>
-              <p className='text-base md:text-lg lg:text-xl font-bold text-primary'>
+              <p className='text-sm md:text-xl font-bold text-primary'>
                 {race.time}
               </p>
             </div>
@@ -144,25 +144,25 @@ const RaceCard = ({ race }: { race: Race }) => {
               <p className='text-[10px] md:text-xs text-secondary font-bold uppercase mb-1'>
                 Place
               </p>
-              <p className='text-base md:text-lg lg:text-xl font-bold text-primary'>
+              <p className='text-sm md:text-xl font-bold text-primary'>
                 {race.place}
               </p>
             </div>
           </div>
         </div>
 
-        <div className='flex flex-wrap items-center justify-center md:justify-start gap-4 mb-8'>
+        <div className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4 mb-8'>
           <a
             href={race.results}
             target='_blank'
             rel='noreferrer'
-            className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-background font-bold hover:opacity-90 transition-all active:scale-95'
+            className='inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-primary text-background text-sm md:text-base font-bold hover:opacity-90 transition-all active:scale-95'
           >
             View Results
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
+              width='18'
+              height='18'
               viewBox='0 0 24 24'
               fill='none'
               stroke='currentColor'
@@ -179,13 +179,13 @@ const RaceCard = ({ race }: { race: Race }) => {
           {(hasPhotos || hasVideos) && (
             <button
               onClick={() => setShowMedia(!showMedia)}
-              className='inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gray-100 dark:bg-gray-800 text-primary font-bold hover:opacity-90 transition-all active:scale-95'
+              className='inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-gray-100 dark:bg-gray-800 text-primary text-sm md:text-base font-bold hover:opacity-90 transition-all active:scale-95'
             >
               {showMedia ? 'Hide Media' : 'Show Media'}
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                width='20'
-                height='20'
+                width='18'
+                height='18'
                 viewBox='0 0 24 24'
                 fill='none'
                 stroke='currentColor'
@@ -254,15 +254,15 @@ export default function Running() {
 
   return (
     <Container fullWidth={true}>
-      <div className='flex flex-col items-center justify-center space-y-12 py-16'>
+      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
         {/* Hero Section */}
-        <div className='flex flex-col items-center text-center space-y-8 px-4 max-w-2xl mx-auto'>
-          <h1 className='text-5xl md:text-7xl font-black tracking-tight text-primary'>
+        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-2xl mx-auto'>
+          <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
             Running
           </h1>
 
-          <div className='space-y-6'>
-            <p className='text-lg md:text-xl text-secondary leading-relaxed'>
+          <div className='space-y-4 md:space-y-6'>
+            <p className='text-base md:text-xl text-secondary leading-relaxed'>
               Tracking my journey through various races and daily runs.
             </p>
           </div>
@@ -270,8 +270,8 @@ export default function Running() {
 
         {/* 2025 Races Section */}
         <div className='w-full px-4 max-w-7xl mx-auto'>
-          <div className='flex items-center justify-between mb-8'>
-            <h2 className='text-3xl font-bold text-primary'>2025 Races</h2>
+          <div className='flex items-center justify-between mb-6 md:mb-8'>
+            <h2 className='text-2xl md:text-3xl font-bold text-primary'>2025 Races</h2>
           </div>
 
           <div className='grid grid-cols-1 gap-12'>

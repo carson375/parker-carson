@@ -81,7 +81,7 @@
   }
 
   html {
-    @apply max-h-screen antialiased;
+    @apply antialiased;
   }
 
   * {
@@ -218,4 +218,9 @@
     animation: blink-animation 1.5s steps(2, start) infinite;
     -webkit-animation: blink-animation 1.5s steps(2, start) infinite;
   }
+}
+
+/* Prevent Leaflet zoom controls from triggering focus-scrolling/snapping */
+.leaflet-control-zoom a:focus {
+  outline: none !important;
 }

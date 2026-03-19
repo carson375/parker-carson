@@ -98,17 +98,17 @@ export default function Photos() {
 
     return (
       <Container hideNav={true} clean={true}>
-        <div className='min-h-screen w-full bg-white dark:bg-black animate-in fade-in duration-300 flex flex-col'>
-          {/* Header - Fixed at the very top */}
-          <div className='sticky top-0 z-[9999] flex items-center justify-between px-6 py-4 bg-white/90 dark:bg-black/90 backdrop-blur-md border-b border-gray-100 dark:border-gray-900'>
-            <div className='flex items-center gap-4'>
-              <h1 className='text-xl md:text-2xl font-bold text-primary'>
+        <div className='w-full bg-white dark:bg-black'>
+          {/* Header - Changed to relative to prevent Leaflet snapping issues */}
+          <div className='relative z-[9999] flex flex-col md:flex-row md:items-center justify-between px-4 md:px-6 py-4 bg-white dark:bg-black border-b border-gray-100 dark:border-gray-900 gap-4'>
+            <div className='flex items-center justify-between md:justify-start gap-4'>
+              <h1 className='text-lg md:text-2xl font-bold text-primary'>
                 Photography
               </h1>
               {hasLocations && (
                 <button
                   onClick={() => setShowMap(!showMap)}
-                  className={`flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 border ${
+                  className={`flex items-center gap-2 px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold transition-all active:scale-95 border ${
                     showMap
                       ? 'bg-primary text-background border-primary'
                       : 'bg-transparent text-primary border-gray-200 dark:border-gray-800 hover:border-primary'
@@ -116,8 +116,8 @@ export default function Photos() {
                 >
                   <svg
                     xmlns='http://www.w3.org/2000/svg'
-                    width='14'
-                    height='14'
+                    width='12'
+                    height='12'
                     viewBox='0 0 24 24'
                     fill='none'
                     stroke='currentColor'
@@ -134,12 +134,12 @@ export default function Photos() {
             </div>
             <button
               onClick={handleCloseTrip}
-              className='flex items-center gap-2 px-5 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
+              className='flex items-center justify-center gap-2 px-5 py-2 rounded-full bg-gray-100 dark:bg-gray-800 text-xs md:text-sm font-bold hover:bg-gray-200 dark:hover:bg-gray-700 transition-all active:scale-95'
             >
               <svg
                 xmlns='http://www.w3.org/2000/svg'
-                width='20'
-                height='20'
+                width='18'
+                height='18'
                 viewBox='0 0 24 24'
                 fill='none'
                 stroke='currentColor'
@@ -155,13 +155,13 @@ export default function Photos() {
           </div>
 
           {/* Content */}
-          <div className='flex-1 w-full max-w-5xl mx-auto py-12 px-4'>
-            <div key={currentTrip.name} className='space-y-12'>
+          <div className='w-full max-w-5xl mx-auto py-8 md:py-12 px-4'>
+            <div key={currentTrip.name} className='space-y-8 md:space-y-12'>
               <div className='space-y-4'>
-                <h2 className='text-4xl md:text-6xl font-black text-primary tracking-tight'>
+                <h2 className='text-3xl md:text-6xl font-black text-primary tracking-tight'>
                   {currentTrip.name}
                 </h2>
-                <p className='text-lg text-secondary font-medium'>
+                <p className='text-base md:text-lg text-secondary font-medium'>
                   {currentTrip.photos.length} photos{' '}
                   {currentTrip.locations &&
                     `• ${currentTrip.locations.length} pinned locations`}
@@ -169,7 +169,7 @@ export default function Photos() {
               </div>
 
               {showMap && hasLocations && (
-                <div className='w-full animate-in slide-in-from-top-4 duration-500'>
+                <div className='w-full'>
                   <TripMap
                     locations={currentTrip.locations || []}
                     route={currentTrip.route}
@@ -188,15 +188,15 @@ export default function Photos() {
   // GRID VIEW (Default)
   return (
     <Container fullWidth={true}>
-      <div className='flex flex-col items-center justify-center space-y-12 py-16'>
+      <div className='flex flex-col items-center justify-center space-y-12 py-8 md:py-16'>
         {/* Hero Section */}
-        <div className='flex flex-col items-center text-center space-y-8 px-4 max-w-2xl mx-auto'>
-          <h1 className='text-5xl md:text-7xl font-black tracking-tight text-primary'>
+        <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-2xl mx-auto'>
+          <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
             Photography
           </h1>
 
-          <div className='space-y-6'>
-            <p className='text-lg md:text-xl text-secondary leading-relaxed'>
+          <div className='space-y-4 md:space-y-6'>
+            <p className='text-base md:text-xl text-secondary leading-relaxed'>
               Captured moments from my travels around the world. These photos
               are a record of the places I&apos;ve been and the things I&apos;ve
               seen, all shot through the lens of my phone.
