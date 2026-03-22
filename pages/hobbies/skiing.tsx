@@ -85,7 +85,13 @@ const VideoPlayer = ({ src }: { src: string }) => {
   )
 }
 
-const SeasonCard = ({ season }: { season: SkiSeason }) => {
+const SeasonCard = ({
+  season,
+  onToggleLightbox,
+}: {
+  season: SkiSeason
+  onToggleLightbox: (open: boolean) => void
+}) => {
   const [showMedia, setShowMedia] = useState(false)
   const hasPhotos = season.photos.length > 0
   const hasVideos = season.videos && season.videos.length > 0
@@ -202,7 +208,12 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
                   Season Gallery
                 </h4>
                 <div className='w-full'>
-                  <Gallery images={season.photos} perRow={3} />
+                  <Gallery 
+                    images={season.photos} 
+                    perRow={3} 
+                    onOpen={() => onToggleLightbox(true)}
+                    onClose={() => onToggleLightbox(false)}
+                  />
                 </div>
               </div>
             )}
@@ -215,9 +226,10 @@ const SeasonCard = ({ season }: { season: SkiSeason }) => {
 
 export default function Skiing() {
   const [seasons] = useState<SkiSeason[]>(skiingData as SkiSeason[])
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false)
 
   return (
-    <Container fullWidth={true}>
+    <Container fullWidth={true} hideNav={isLightboxOpen}>
       <div className='flex flex-col items-center justify-center space-y-12 py-4 md:py-8'>
         {/* Hero Section */}
         <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-4xl mx-auto'>
@@ -234,14 +246,21 @@ export default function Skiing() {
         </div>
 
         {/* Seasons Section */}
-        <div className='w-full px-4 max-w-[1400px] mx-auto'>
-          <div className='flex items-center justify-between mb-6 md:mb-8'>
-            <h2 className='text-2xl md:text-3xl font-bold text-primary'>Season Recaps</h2>
+        <div className='w-full px-4 max-w-[1400px] mx-auto space-y-8 md:space-y-12'>
+          <div className='flex items-center gap-4 md:gap-6'>
+            <h2 className='text-3xl md:text-5xl font-black text-primary tracking-tighter'>
+              Season Recaps
+            </h2>
+            <div className='hidden md:block h-px w-24 bg-gray-100 dark:bg-gray-800' />
           </div>
 
           <div className='grid grid-cols-1 gap-12'>
             {seasons.map((season, index) => (
-              <SeasonCard key={index} season={season} />
+              <SeasonCard 
+                key={index} 
+                season={season} 
+                onToggleLightbox={setIsLightboxOpen}
+              />
             ))}
           </div>
         </div>

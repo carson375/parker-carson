@@ -251,11 +251,28 @@ const RaceCard = ({ race }: { race: Race }) => {
 
 export default function Running() {
   const [races] = useState<Race[]>(runningData as Race[])
+  const [collapsedYears, setCollapsedYears] = useState<{ [key: string]: boolean }>({})
+
+  // Group races by year from the date string (e.g., "March 23, 2025")
+  const groupedRaces = races.reduce((acc: { [key: string]: Race[] }, race) => {
+    const year = race.date.split(', ')[1] || 'Upcoming'
+    if (!acc[year]) acc[year] = []
+    acc[year].push(race)
+    return acc
+  }, {})
+
+  const years = Object.keys(groupedRaces).sort((a, b) => b.localeCompare(a))
+
+  const toggleYear = (year: string) => {
+    setCollapsedYears(prev => ({
+      ...prev,
+      [year]: !prev[year]
+    }))
+  }
 
   return (
     <Container fullWidth={true}>
       <div className='flex flex-col items-center justify-center space-y-12 py-4 md:py-8'>
-
         {/* Hero Section */}
         <div className='flex flex-col items-center text-center space-y-6 md:space-y-8 px-4 max-w-4xl mx-auto'>
           <h1 className='text-4xl md:text-7xl font-black tracking-tight text-primary'>
@@ -269,17 +286,47 @@ export default function Running() {
           </div>
         </div>
 
-        {/* 2025 Races Section */}
-        <div className='w-full px-4 max-w-[1400px] mx-auto'>
-          <div className='flex items-center justify-between mb-6 md:mb-8'>
-            <h2 className='text-2xl md:text-3xl font-bold text-primary'>2025 Races</h2>
-          </div>
+        {/* Race Sections by Year */}
+        <div className='w-full px-4 max-w-[1400px] mx-auto space-y-8 md:space-y-12'>
+          {years.map(year => {
+            const isCollapsed = collapsedYears[year]
+            return (
+              <div key={year} className='space-y-8 md:space-y-12'>
+                <button 
+                  onClick={() => toggleYear(year)}
+                  className='flex items-center gap-4 md:gap-6 w-full text-left group'
+                >
+                  <h2 className='text-3xl md:text-5xl font-black text-primary tracking-tighter'>
+                    {year} Races
+                  </h2>
+                  <div className='flex-grow hidden md:block h-px bg-gray-100 dark:bg-gray-800' />
+                  <div className={`p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-primary transition-transform duration-300 ${isCollapsed ? '' : 'rotate-180'}`}>
+                    <svg
+                      xmlns='http://www.w3.org/2000/svg'
+                      width='24'
+                      height='24'
+                      viewBox='0 0 24 24'
+                      fill='none'
+                      stroke='currentColor'
+                      strokeWidth='3'
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                    >
+                      <polyline points='6 9 12 15 18 9'></polyline>
+                    </svg>
+                  </div>
+                </button>
 
-          <div className='grid grid-cols-1 gap-12'>
-            {races.map((race, index) => (
-              <RaceCard key={index} race={race} />
-            ))}
-          </div>
+                {!isCollapsed && (
+                  <div className='grid grid-cols-1 gap-12 animate-in fade-in slide-in-from-top-4 duration-500'>
+                    {groupedRaces[year].map((race, index) => (
+                      <RaceCard key={index} race={race} />
+                    ))}
+                  </div>
+                )}
+              </div>
+            )
+          })}
         </div>
       </div>
     </Container>
