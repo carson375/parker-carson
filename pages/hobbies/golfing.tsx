@@ -332,9 +332,12 @@ export default function Golfing() {
         <div className='w-full px-4 max-w-[1400px] mx-auto space-y-12 md:space-y-20'>
           {seasons.map(season => {
             const allRounds = season.months.flatMap(m => m.roundsDetail)
+            const rounds9 = allRounds.filter(r => r.score < 70)
+            const rounds18 = allRounds.filter(r => r.score >= 70)
+  
+            const low9 = rounds9.length > 0 ? Math.min(...rounds9.map(r => r.score)) : '--'
+            const low18 = rounds18.length > 0 ? Math.min(...rounds18.map(r => r.score)) : '--'
             const totalRounds = allRounds.length
-            const lowScore =
-              totalRounds > 0 ? Math.min(...allRounds.map(r => r.score)) : '--'
             const totalBirdies = season.months.reduce(
               (acc, m) => acc + m.birdies,
               0
@@ -361,10 +364,18 @@ export default function Golfing() {
                     </div>
                     <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
                       <p className='text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
-                        Low Round
+                        Low 9 Hole Round
                       </p>
                       <p className='text-lg md:text-xl font-black text-primary'>
-                        {lowScore}
+                        {low9}
+                      </p>
+                    </div>
+                                        <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
+                      <p className='text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
+                        Low 18 Hole Round
+                      </p>
+                      <p className='text-lg md:text-xl font-black text-primary'>
+                        {low18}
                       </p>
                     </div>
                     <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20'>

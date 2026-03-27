@@ -1,30 +1,5 @@
 [
   {
-    "year": "2026",
-    "months": [
-      {
-        "month": "April",
-        "roundsDetail": [
-          { 
-            "score": 84, 
-            "course": "Cog Hill", 
-            "date": "April 12, 2026",
-            "photos": [
-              "/photography/Kyoto 2024/IMG_2275.JPEG",
-              "/photography/Kyoto 2024/IMG_2279.JPEG"
-            ]
-          },
-          { "score": 89, "course": "Harborside", "date": "April 25, 2026" }
-        ],
-        "birdies": 3,
-        "girPercent": 32,
-        "highlight": "Early season rust is shaking off.",
-        "photos": [],
-        "videos": []
-      }
-    ]
-  },
-  {
     "year": "2025",
     "months": [
       {
@@ -82,15 +57,38 @@
         "videos": []
       },
       {
+        "month": "July",
+        "roundsDetail": [
+          { "score": 43, "course": "Sydney R. Marovitz", "date": "July 7, 2025" },
+          { "score": 49, "course": "Marquette Park", "date": "July 13, 2025" },
+          { "score": 49, "course": "Sydney R. Marovitz", "date": "July 27, 2025" }
+        ],
+        "birdies": 0,
+        "girPercent": 25.9,
+        "highlight": "Got to play Marquette Park with Drew.",
+        "photos": [],
+        "videos": []
+      },
+      {
         "month": "August",
         "roundsDetail": [
-          { "score": 81, "course": "Blackwolf Run", "date": "Aug 10, 2025" },
-          { "score": 84, "course": "Whistling Straits", "date": "Aug 24, 2025" }
+          { "score": 49, "course": "Sydney R. Marovitz", "date": "August 3, 2025" },
+          { "score": 44, "course": "Sydney R. Marovitz", "date": "August 10, 2025" },
+          { "score": 50, "course": "Sydney R. Marovitz", "date": "August 23, 2025" },
+          { 
+            "score": 47, 
+            "course": "Sydney R. Marovitz", 
+            "date": "August 29, 2025",
+            "photos": [
+              "/golfing/2025_August/IMG_4795.JPG"
+            ]
+          }
         ],
-        "birdies": 4,
-        "girPercent": 38,
-        "highlight": "Consistent ball striking all month.",
-        "photos": []
+        "birdies": 1,
+        "girPercent": 30.5,
+        "highlight": "First birdie of the year!",
+        "photos": [],
+        "videos": []
       }
     ]
   }
