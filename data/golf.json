@@ -28,24 +28,56 @@
     "year": "2025",
     "months": [
       {
-        "month": "September",
+        "month": "June",
         "roundsDetail": [
           { 
-            "score": 79, 
-            "course": "The Preserve", 
-            "date": "Sept 5, 2025",
+            "score": 50, 
+            "course": "Sydney R. Marovitz", 
+            "date": "June 1, 2025",
             "photos": [
-              "/photography/Grand Canyon 2024/IMG_1713.JPEG",
-              "/photography/Grand Canyon 2024/IMG_1717.JPEG",
-              "/photography/Grand Canyon 2024/IMG_1718.JPEG"
+              "/golfing/2025_June/IMG_4327.JPG",
+              "/golfing/2025_June/IMG_4329.JPG",
+              "/golfing/2025_June/IMG_4332.JPG",
+              "/golfing/2025_June/IMG_4337.JPG"
             ]
           },
-          { "score": 82, "course": "Pinehurst No. 2", "date": "Sept 15, 2025" },
-          { "score": 85, "course": "Local Muni", "date": "Sept 22, 2025" }
+          { "score": 49, "course": "Sydney R. Marovitz", "date": "June 8, 2025" },
+          { 
+            "score": 92, 
+            "course": "Cog Hill Golf & County Club (Cog Hill No. 1)", 
+            "date": "June 13, 2025", 
+            "photos": [
+              "/golfing/2025_June/Cog_Hill1.JPG",
+              "/golfing/2025_June/Cog_Hill2.JPG",
+              "/golfing/2025_June/Cog_Hill3.JPG",
+              "/golfing/2025_June/Cog_Hill4.JPG"
+            ] 
+          },
+          { 
+            "score": 45, 
+            "course": "Sydney R. Marovitz", 
+            "date": "June 18, 2025",
+            "photos": [
+              "/golfing/2025_June/IMG_4431.JPG",
+              "/golfing/2025_June/IMG_4432.JPG"
+            ]
+          },
+          { "score": 100, "course": "St Denis Golf Club", "date": "June 20, 2025" },
+          { 
+            "score": 50, 
+            "course": "Sydney R. Marovitz", 
+            "date": "June 22, 2025",
+            "photos": [
+              "/golfing/2025_June/IMG_4474.JPG",
+              "/golfing/2025_June/IMG_4475.JPG"
+            ]
+
+          },
+          { "score": 49, "course": "Sydney R. Marovitz", "date": "June 28, 2025" }
         ],
-        "birdies": 8,
-        "girPercent": 44,
-        "highlight": "Broke 80 for the first time this year!",
+        "birdies": 0,
+        "girPercent": 19.83,
+        "highlight": "Played Cog Hill for the first time.",
         "photos": [],
         "videos": []
       },

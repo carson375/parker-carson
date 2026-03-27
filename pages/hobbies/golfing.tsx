@@ -171,8 +171,12 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
 
   // Derive stats from roundsDetail
   const roundsCount = data.roundsDetail.length
-  const lowScore =
-    roundsCount > 0 ? Math.min(...data.roundsDetail.map(r => r.score)) : '--'
+  const rounds9 = data.roundsDetail.filter(r => r.score < 70)
+  const rounds18 = data.roundsDetail.filter(r => r.score >= 70)
+  
+  const low9 = rounds9.length > 0 ? Math.min(...rounds9.map(r => r.score)) : '--'
+  const low18 = rounds18.length > 0 ? Math.min(...rounds18.map(r => r.score)) : '--'
+  
   const uniqueCourses = Array.from(
     new Set(data.roundsDetail.map(r => r.course))
   )
@@ -203,7 +207,7 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
         </div>
 
         {/* Stats Grid - "Bento Box" Style */}
-        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4 mb-8 md:mb-10'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 md:gap-4 mb-8 md:mb-10'>
           <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               Rounds
@@ -212,9 +216,15 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
           </div>
           <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
-              Low Score
+              Low 9
             </p>
-            <p className='text-2xl md:text-3xl font-black text-primary'>{lowScore}</p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>{low9}</p>
+          </div>
+          <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
+            <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
+              Low 18
+            </p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>{low18}</p>
           </div>
           <div className='p-4 md:p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-widest mb-1 md:mb-2'>
@@ -224,7 +234,7 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
               {data.birdies}
             </p>
           </div>
-          <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
+          <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center sm:col-span-2 lg:col-span-1'>
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               GIR %
             </p>
