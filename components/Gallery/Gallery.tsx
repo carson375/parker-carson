@@ -107,6 +107,7 @@ export const Gallery = ({
             }`}
             onClick={() => {
               setSelectedIndex(index)
+              setActiveIndex(index)
               onOpen?.()
             }}
           >
@@ -197,7 +198,7 @@ export const Gallery = ({
                     alt={`Full screen view ${index + 1}`}
                     fill
                     className='object-contain'
-                    priority={Math.abs(index - activeIndex) <= 1}
+                    priority={index === selectedIndex || Math.abs(index - activeIndex) <= 1}
                   />
                 </div>
               </div>
