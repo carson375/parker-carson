@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
@@ -18,56 +18,144 @@ interface SkiSeason {
   videos?: string[]
 }
 
-const VideoPlayer = ({ src }: { src: string }) => {
+const VideoPlayer = ({ 
+  src, 
+  onToggleLightbox 
+}: { 
+  src: string; 
+  onToggleLightbox: (open: boolean) => void 
+}) => {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const fullScreenVideoRef = useRef<HTMLVideoElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isFullScreen, setIsFullScreen] = useState(false)
 
-  const togglePlay = () => {
-    if (videoRef.current) {
+  const togglePlay = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation()
+    const currentRef = isFullScreen ? fullScreenVideoRef : videoRef
+    if (currentRef.current) {
       if (isPlaying) {
-        videoRef.current.pause()
+        currentRef.current.pause()
       } else {
-        videoRef.current.play()
+        currentRef.current.play()
       }
       setIsPlaying(!isPlaying)
     }
   }
 
+  const toggleFullScreen = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation()
+    const nextState = !isFullScreen
+    setIsFullScreen(nextState)
+    onToggleLightbox(nextState)
+    
+    // If we were playing, pause the small player and we'll handle the big one via effect or manual sync
+    if (isPlaying && videoRef.current) {
+      videoRef.current.pause()
+    }
+  }
+
+  // Handle Escape key
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (isFullScreen && e.key === 'Escape') {
+        toggleFullScreen()
+      }
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [isFullScreen])
+
   return (
-    <div
-      className='relative cursor-pointer rounded-2xl overflow-hidden group bg-gray-100 dark:bg-gray-800 aspect-video flex items-center justify-center'
-      onClick={togglePlay}
-    >
-      <video
-        ref={videoRef}
-        src={src}
-        className='w-full h-full object-cover'
-        preload='metadata'
-        playsInline
-        onEnded={() => setIsPlaying(false)}
-      />
-      {!isPlaying && (
-        <div className='absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/40 transition-all'>
-          <div className='w-16 h-16 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white transform transition-transform group-hover:scale-110'>
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='32'
-              height='32'
-              viewBox='0 0 24 24'
-              fill='currentColor'
-            >
-              <path d='M8 5v14l11-7z'></path>
-            </svg>
-          </div>
+    <>
+      <div
+        className='relative cursor-pointer rounded-2xl overflow-hidden group bg-gray-100 dark:bg-gray-800 aspect-video flex items-center justify-center'
+        onClick={togglePlay}
+        onDoubleClick={toggleFullScreen}
+      >
+        <video
+          ref={videoRef}
+          src={src}
+          className='w-full h-full object-cover'
+          preload='metadata'
+          playsInline
+          onEnded={() => setIsPlaying(false)}
+        />
+        
+        {/* Hover Controls */}
+        <div className='absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-all'>
+          {!isPlaying && (
+            <div className='w-16 h-16 flex items-center justify-center rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white transform transition-transform hover:scale-110'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='32'
+                height='32'
+                viewBox='0 0 24 24'
+                fill='currentColor'
+              >
+                <path d='M8 5v14l11-7z'></path>
+              </svg>
+            </div>
+          )}
         </div>
-      )}
-      {isPlaying && (
-        <div className='absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity'>
-          <div className='p-2 rounded-full bg-black/40 backdrop-blur-md text-white'>
+
+        {/* Full Screen Button (Top Right) */}
+        <button 
+          onClick={toggleFullScreen}
+          className='absolute top-4 right-4 p-2 rounded-full bg-black/40 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60'
+        >
+          <svg
+            xmlns='http://www.w3.org/2000/svg'
+            width='20'
+            height='20'
+            viewBox='0 0 24 24'
+            fill='none'
+            stroke='currentColor'
+            strokeWidth='2'
+            strokeLinecap='round'
+            strokeLinejoin='round'
+          >
+            <path d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7' />
+          </svg>
+        </button>
+
+        {isPlaying && (
+          <div className='absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity'>
+            <div className='p-2 rounded-full bg-black/40 backdrop-blur-md text-white'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='20'
+                height='20'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.5'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <rect x='6' y='4' width='4' height='16'></rect>
+                <rect x='14' y='4' width='4' height='16'></rect>
+              </svg>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {/* Full Screen Lightbox */}
+      {isFullScreen && (
+        <div 
+          className='fixed inset-0 z-[10001] bg-white/95 dark:bg-black/95 backdrop-blur-3xl animate-in fade-in duration-500 flex items-center justify-center p-4 md:p-12'
+          onClick={toggleFullScreen}
+        >
+          {/* Close Button (Top Right) */}
+          <button
+            className='absolute top-6 right-6 p-3 rounded-full bg-gray-100/50 dark:bg-gray-800/50 text-primary z-[10002] hover:bg-white dark:hover:bg-gray-700 transition-all active:scale-95 border border-white/10 shadow-lg'
+            onClick={toggleFullScreen}
+          >
             <svg
               xmlns='http://www.w3.org/2000/svg'
-              width='20'
-              height='20'
+              width='28'
+              height='28'
               viewBox='0 0 24 24'
               fill='none'
               stroke='currentColor'
@@ -75,13 +163,28 @@ const VideoPlayer = ({ src }: { src: string }) => {
               strokeLinecap='round'
               strokeLinejoin='round'
             >
-              <rect x='6' y='4' width='4' height='16'></rect>
-              <rect x='14' y='4' width='4' height='16'></rect>
+              <line x1='18' y1='6' x2='6' y2='18'></line>
+              <line x1='6' y1='6' x2='18' y2='18'></line>
             </svg>
+          </button>
+
+          <div 
+            className='relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center'
+            onClick={(e) => e.stopPropagation()}
+          >
+            <video
+              ref={fullScreenVideoRef}
+              src={src}
+              className='w-full h-full object-contain'
+              controls
+              autoPlay={isPlaying}
+              onPlay={() => setIsPlaying(true)}
+              onPause={() => setIsPlaying(false)}
+            />
           </div>
         </div>
       )}
-    </div>
+    </>
   )
 }
 
@@ -195,7 +298,7 @@ const SeasonCard = ({
                 </h4>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   {season.videos!.map((video, idx) => (
-                    <VideoPlayer key={idx} src={video} />
+                    <VideoPlayer key={idx} src={video} onToggleLightbox={onToggleLightbox} />
                   ))}
                 </div>
               </div>
