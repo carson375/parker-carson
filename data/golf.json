@@ -89,6 +89,56 @@
         "highlight": "First birdie of the year!",
         "photos": [],
         "videos": []
+      },
+      {
+        "month": "September",
+        "roundsDetail": [
+          { "score": 47, "course": "Sydney R. Marovitz", "date": "September 2, 2025" },
+          { "score": 48, "course": "Sydney R. Marovitz", "date": "September 2, 2025" },
+          { 
+            "score": 97, 
+            "course": "The Missouri Bluffs Golf Club", 
+            "date": "September 6, 2025",
+            "photos": [
+              "/golfing/2025_September/IMG_4821.JPG"
+            ]
+          },
+          { 
+            "score": 105, 
+            "course": "Gateway National Golf Links", 
+            "date": "September 7, 2025",
+            "photos": [
+              "/golfing/2025_September/IMG_4829.JPG",
+              "/golfing/2025_September/IMG_4830.JPG",
+              "/golfing/2025_September/IMG_4833.JPG",
+              "/golfing/2025_September/IMG_4834.JPG",
+              "/golfing/2025_September/IMG_4839.JPG",
+              "/golfing/2025_September/IMG_4841.JPG"
+            ]
+          },
+          { "score": 44, "course": "Sydney R. Marovitz", "date": "September 13, 2025" },
+          { "score": 51, "course": "Sydney R. Marovitz", "date": "September 25, 2025" }
+        ],
+        "birdies": 0,
+        "girPercent": 19.4,
+        "highlight": "Golf trip to St. Louis with Drew and James.",
+        "photos": [],
+        "videos": []
+      },
+      {
+        "month": "October",
+        "roundsDetail": [
+          { "score": 44, "course": "Sydney R. Marovitz", "date": "October 3, 2025" },
+          { "score": 50, "course": "Sydney R. Marovitz", "date": "October 5, 2025" },
+          { "score": 47, "course": "Sydney R. Marovitz", "date": "October 13, 2025", "photos":["/golfing/2025_October/IMG_5150.JPG"] },
+          { "score": 50, "course": "Sydney R. Marovitz", "date": "October 21, 2025", "photos":["/golfing/2025_October/IMG_5213.JPG"] },
+          { "score": 50, "course": "Sydney R. Marovitz", "date": "October 22, 2025", "photos":["/golfing/2025_October/IMG_5221.JPG"] }
+        ],
+        "birdies": 1,
+        "girPercent": 22.2,
+        "highlight": "Second birdie of the year! Fun season excited for next year. :)",
+        "photos": [],
+        "videos": []
       }
     ]
   }
