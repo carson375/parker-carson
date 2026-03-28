@@ -1300,5 +1300,49 @@
         "lng": 126.9854
       }
     ]
+  },
+  {
+    "name": "Louisville 2024",
+    "photos": [
+      "/photography/Louisville 2024/IMG_2833.JPG",
+      "/photography/Louisville 2024/IMG_2834.JPG",
+      "/photography/Louisville 2024/IMG_2838.JPG",
+      "/photography/Louisville 2024/IMG_2839.JPG",
+      "/photography/Louisville 2024/IMG_2840.JPG",
+      "/photography/Louisville 2024/IMG_2843.JPG",
+      "/photography/Louisville 2024/IMG_2845.JPG",
+      "/photography/Louisville 2024/IMG_2847.JPG",
+      "/photography/Louisville 2024/IMG_2848.JPG",
+      "/photography/Louisville 2024/IMG_2849.JPG",
+      "/photography/Louisville 2024/IMG_2852.JPG",
+      "/photography/Louisville 2024/IMG_2859.JPG"
+    ],
+    "locations": [
+      {
+        "name": "Bernheim Forest and Arboretum",
+        "lat": 37.9001,
+        "lng": -85.6250
+      },
+      {
+        "name": "Heaven Hill Distillery",
+        "lat": 37.7933,
+        "lng": -85.4657
+      },
+      {
+        "name": "Angels Envy Distillery",
+        "lat": 38.2550,
+        "lng": -85.7434
+      },
+      {
+        "name": "Louisville Slugger Museum & Factory",
+        "lat": 38.2571,
+        "lng": -85.7640
+      },
+      {
+        "name": "Churchill Downs",
+        "lat": 38.2037,
+        "lng": -85.7724
+      }
+    ]
   }
 ]
