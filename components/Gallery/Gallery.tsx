@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 import Image from 'next/image'
+import { cloudinaryLoader } from 'lib/cloudinary'
 
 interface GalleryProps {
   images: string[]
@@ -115,6 +116,7 @@ export const Gallery = ({
               }}
             >
               <Image
+                loader={cloudinaryLoader}
                 src={image}
                 alt={`Gallery image ${index + 1}`}
                 fill
@@ -198,6 +200,7 @@ export const Gallery = ({
                   onClick={e => e.stopPropagation()}
                 >
                   <Image
+                    loader={cloudinaryLoader}
                     src={image}
                     alt={`Full screen view ${index + 1}`}
                     fill

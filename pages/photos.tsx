@@ -5,6 +5,7 @@ import Image from 'next/image'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
+import { cloudinaryLoader } from 'lib/cloudinary'
 import photosDataRaw from 'data/photos.json'
 import dynamic from 'next/dynamic'
 
@@ -213,6 +214,7 @@ export default function Photos() {
               className='group relative aspect-[4/3] overflow-hidden rounded-2xl border border-gray-200 dark:border-gray-800 transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] bg-gray-100 dark:bg-gray-800'
             >
               <Image
+                loader={cloudinaryLoader}
                 src={trip.photos[0]}
                 alt={trip.name}
                 fill

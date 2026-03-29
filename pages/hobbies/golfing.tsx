@@ -2,6 +2,7 @@ import { useState, useRef } from 'react'
 import Image from 'next/image'
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
+import { cloudinaryLoader } from 'lib/cloudinary'
 import golfData from 'data/golf.json'
 
 interface RoundEntry {
@@ -88,6 +89,7 @@ const RoundTile = ({ round }: { round: RoundEntry }) => {
         {hasPhotos && (
           <div className='absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300'>
             <Image
+              loader={cloudinaryLoader}
               src={round.photos![0]}
               alt={round.course}
               fill

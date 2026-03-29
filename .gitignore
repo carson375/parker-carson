@@ -41,3 +41,7 @@ yarn-error.log*
 *.tsbuildinfo
 eslint.config.mjs
 next-env.d.ts
+public/photography/
+public/golfing/
+public/running/
+public/skiing/
