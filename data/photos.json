@@ -1344,5 +1344,47 @@
         "lng": -85.7724
       }
     ]
+  },
+    {
+    "name": "Los Angeles 2025",
+    "photos": [
+      "/photography/Los Angeles 2025/IMG_3807.JPG",
+      "/photography/Los Angeles 2025/IMG_3809.JPG",
+      "/photography/Los Angeles 2025/IMG_3816.JPG",
+      "/photography/Los Angeles 2025/IMG_3819.JPG",
+      "/photography/Los Angeles 2025/IMG_3820.JPG",
+      "/photography/Los Angeles 2025/IMG_3821.JPG",
+      "/photography/Los Angeles 2025/IMG_3823.JPG",
+      "/photography/Los Angeles 2025/IMG_3826.JPG",
+      "/photography/Los Angeles 2025/IMG_3838.JPG",
+      "/photography/Los Angeles 2025/IMG_3840.JPG",
+      "/photography/Los Angeles 2025/IMG_3848.JPG",
+      "/photography/Los Angeles 2025/IMG_3896.JPG",
+      "/photography/Los Angeles 2025/IMG_3897.JPG",
+      "/photography/Los Angeles 2025/IMG_3898.JPG",
+      "/photography/Los Angeles 2025/IMG_3903.JPG"
+    ],
+    "locations": [
+      {
+        "name": "Venice Beach",
+        "lat": 33.9771,
+        "lng": -118.4676
+      },
+      {
+        "name": "Griffith Observatory",
+        "lat": 34.1184,
+        "lng": -118.3004
+      },
+      {
+        "name": "Dodger Stadium",
+        "lat": 34.0739,
+        "lng": -118.2400
+      },
+      {
+        "name": "Diamond Bar",
+        "lat": 34.0010,
+        "lng": -117.8112
+      }
+    ]
   }
 ]
