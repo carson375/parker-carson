@@ -9,6 +9,7 @@ interface GalleryProps {
   initialIndex?: number | null
   onOpen?: () => void
   onClose?: () => void
+  showThumbnails?: boolean
 }
 
 export const Gallery = ({
@@ -18,6 +19,7 @@ export const Gallery = ({
   initialIndex = null,
   onOpen,
   onClose,
+  showThumbnails = true,
 }: GalleryProps) => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(
     initialIndex
@@ -89,43 +91,45 @@ export const Gallery = ({
   }
 
   return (
-    <div className={isStack ? 'w-full' : 'p-1 md:p-6'}>
-      <div
-        className={
-          isStack
-            ? 'flex flex-col gap-12'
-            : `grid gap-1 md:gap-4 ${getGridCols(perRow)}`
-        }
-      >
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-zoom-in group transition-all duration-500 hover:z-10 ${
-              isStack
-                ? 'aspect-[4/3] rounded-3xl'
-                : 'aspect-[4/3] rounded-sm md:rounded-2xl md:hover:scale-[1.02] md:hover:shadow-2xl'
-            }`}
-            onClick={() => {
-              setSelectedIndex(index)
-              setActiveIndex(index)
-              onOpen?.()
-            }}
-          >
-            <Image
-              src={image}
-              alt={`Gallery image ${index + 1}`}
-              fill
-              sizes={
+    <div className={showThumbnails ? (isStack ? 'w-full' : 'p-1 md:p-6') : ''}>
+      {showThumbnails && (
+        <div
+          className={
+            isStack
+              ? 'flex flex-col gap-12'
+              : `grid gap-1 md:gap-4 ${getGridCols(perRow)}`
+          }
+        >
+          {images.map((image, index) => (
+            <div
+              key={index}
+              className={`relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-zoom-in group transition-all duration-500 hover:z-10 ${
                 isStack
-                  ? '100vw'
-                  : '(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw'
-              }
-              className='object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110'
-              loading='lazy'
-            />
-          </div>
-        ))}
-      </div>
+                  ? 'aspect-[4/3] rounded-3xl'
+                  : 'aspect-[4/3] rounded-sm md:rounded-2xl md:hover:scale-[1.02] md:hover:shadow-2xl'
+              }`}
+              onClick={() => {
+                setSelectedIndex(index)
+                setActiveIndex(index)
+                onOpen?.()
+              }}
+            >
+              <Image
+                src={image}
+                alt={`Gallery image ${index + 1}`}
+                fill
+                sizes={
+                  isStack
+                    ? '100vw'
+                    : '(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw'
+                }
+                className='object-cover transition-transform duration-700 group-hover:scale-110 group-hover:brightness-110'
+                loading='lazy'
+              />
+            </div>
+          ))}
+        </div>
+      )}
 
       {/* Lightbox Modal - Cinema & Scrubber Version */}
       {selectedIndex !== null && (
