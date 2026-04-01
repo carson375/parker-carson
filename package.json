@@ -8,8 +8,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext=jsx,ts,tsx .",
-    "lint:fix": "eslint --ext=jsx,ts,tsx . --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install"
   },
