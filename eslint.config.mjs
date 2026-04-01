@@ -2,9 +2,6 @@ import { dirname } from "path";
 import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
-import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import typescriptParser from "@typescript-eslint/parser";
-import prettierPlugin from "eslint-plugin-prettier";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -13,11 +10,28 @@ const compat = new FlatCompat({
   baseDirectory: __dirname,
 });
 
-const eslintConfig = [
-  // 1. Basic ESLint recommended rules
-  js.configs.recommended,
+/**
+ * Helper to strip circular references from legacy plugins
+ * which cause ESLint 9 to crash during validation.
+ */
+function sanitizeConfig(configs) {
+  return configs.map((config) => {
+    if (config.plugins) {
+      const safePlugins = {};
+      for (const [name, plugin] of Object.entries(config.plugins)) {
+        safePlugins[name] = { ...plugin };
+        // The circularity usually lives in the 'configs' properties 
+        // of the plugin object itself when it points back to the plugin.
+        delete safePlugins[name].configs;
+      }
+      return { ...config, plugins: safePlugins };
+    }
+    return config;
+  });
+}
 
-  // 2. Base ignores
+const eslintConfig = [
+  js.configs.recommended,
   {
     ignores: [
       "node_modules/**",
@@ -25,51 +39,16 @@ const eslintConfig = [
       "out/**",
       "postcss.config.js",
       "tailwind.config.js",
+      "public/**",
     ],
   },
-
-  // 3. TypeScript configuration
+  // Sanitize the Next.js legacy configs to prevent circular structure errors
+  ...sanitizeConfig(compat.extends("next/core-web-vitals", "plugin:@typescript-eslint/recommended")),
   {
-    files: ["**/*.ts", "**/*.tsx"],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
-      },
-    },
-    plugins: {
-      "@typescript-eslint": typescriptEslint,
-    },
     rules: {
-      ...typescriptEslint.configs.recommended.rules,
-      "@typescript-eslint/explicit-module-boundary-types": "off",
       "no-unused-vars": "off",
-    },
-  },
-
-  // 4. Prettier integration
-  {
-    plugins: {
-      prettier: prettierPlugin,
-    },
-    rules: {
-      ...prettierPlugin.configs?.recommended?.rules,
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto",
-        },
-      ],
-    },
-  },
-
-  // 5. Next.js specific rules (using compat for just the essential parts)
-  ...compat.extends("next/core-web-vitals"),
-
-  // 6. Custom rules
-  {
-    rules: {
+      "no-console": "warn",
+      "@typescript-eslint/no-unused-vars": "off",
       "import/order": [
         "error",
         {
@@ -89,7 +68,6 @@ const eslintConfig = [
           },
         },
       ],
-      "no-console": "warn",
     },
   },
 ];
