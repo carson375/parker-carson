@@ -39,7 +39,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-eslint.config.mjs
 next-env.d.ts
 public/photography/
 public/golfing/
