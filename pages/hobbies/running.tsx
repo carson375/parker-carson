@@ -251,7 +251,9 @@ const RaceCard = ({ race }: { race: Race }) => {
 
 export default function Running() {
   const [races] = useState<Race[]>(runningData as Race[])
-  const [collapsedYears, setCollapsedYears] = useState<{ [key: string]: boolean }>({})
+  const [collapsedYears, setCollapsedYears] = useState<{
+    [key: string]: boolean
+  }>({})
 
   // Group races by year from the date string (e.g., "March 23, 2025")
   const groupedRaces = races.reduce((acc: { [key: string]: Race[] }, race) => {
@@ -266,7 +268,7 @@ export default function Running() {
   const toggleYear = (year: string) => {
     setCollapsedYears(prev => ({
       ...prev,
-      [year]: !prev[year]
+      [year]: !prev[year],
     }))
   }
 
@@ -292,7 +294,7 @@ export default function Running() {
             const isCollapsed = collapsedYears[year]
             return (
               <div key={year} className='space-y-8 md:space-y-12'>
-                <button 
+                <button
                   onClick={() => toggleYear(year)}
                   className='flex items-center gap-4 md:gap-6 w-full text-left group'
                 >
@@ -300,7 +302,9 @@ export default function Running() {
                     {year} Races
                   </h2>
                   <div className='flex-grow hidden md:block h-px bg-gray-100 dark:bg-gray-800' />
-                  <div className={`p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-primary transition-transform duration-300 ${isCollapsed ? '' : 'rotate-180'}`}>
+                  <div
+                    className={`p-2 rounded-full bg-gray-50 dark:bg-gray-800 text-primary transition-transform duration-300 ${isCollapsed ? '' : 'rotate-180'}`}
+                  >
                     <svg
                       xmlns='http://www.w3.org/2000/svg'
                       width='24'

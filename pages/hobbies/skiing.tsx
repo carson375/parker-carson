@@ -18,12 +18,12 @@ interface SkiSeason {
   videos?: string[]
 }
 
-const VideoPlayer = ({ 
-  src, 
-  onToggleLightbox 
-}: { 
-  src: string; 
-  onToggleLightbox: (open: boolean) => void 
+const VideoPlayer = ({
+  src,
+  onToggleLightbox,
+}: {
+  src: string
+  onToggleLightbox: (open: boolean) => void
 }) => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const fullScreenVideoRef = useRef<HTMLVideoElement>(null)
@@ -48,7 +48,7 @@ const VideoPlayer = ({
     const nextState = !isFullScreen
     setIsFullScreen(nextState)
     onToggleLightbox(nextState)
-    
+
     // If we were playing, pause the small player and we'll handle the big one via effect or manual sync
     if (isPlaying && videoRef.current) {
       videoRef.current.pause()
@@ -81,7 +81,7 @@ const VideoPlayer = ({
           playsInline
           onEnded={() => setIsPlaying(false)}
         />
-        
+
         {/* Hover Controls */}
         <div className='absolute inset-0 flex items-center justify-center bg-black/20 opacity-0 group-hover:opacity-100 transition-all'>
           {!isPlaying && (
@@ -100,7 +100,7 @@ const VideoPlayer = ({
         </div>
 
         {/* Full Screen Button (Top Right) */}
-        <button 
+        <button
           onClick={toggleFullScreen}
           className='absolute top-4 right-4 p-2 rounded-full bg-black/40 backdrop-blur-md text-white opacity-0 group-hover:opacity-100 transition-opacity hover:bg-black/60'
         >
@@ -143,7 +143,7 @@ const VideoPlayer = ({
 
       {/* Full Screen Lightbox */}
       {isFullScreen && (
-        <div 
+        <div
           className='fixed inset-0 z-[10001] bg-white/95 dark:bg-black/95 backdrop-blur-3xl animate-in fade-in duration-500 flex items-center justify-center p-4 md:p-12'
           onClick={toggleFullScreen}
         >
@@ -168,9 +168,9 @@ const VideoPlayer = ({
             </svg>
           </button>
 
-          <div 
+          <div
             className='relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center'
-            onClick={(e) => e.stopPropagation()}
+            onClick={e => e.stopPropagation()}
           >
             <video
               ref={fullScreenVideoRef}
@@ -298,7 +298,11 @@ const SeasonCard = ({
                 </h4>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                   {season.videos!.map((video, idx) => (
-                    <VideoPlayer key={idx} src={video} onToggleLightbox={onToggleLightbox} />
+                    <VideoPlayer
+                      key={idx}
+                      src={video}
+                      onToggleLightbox={onToggleLightbox}
+                    />
                   ))}
                 </div>
               </div>
@@ -311,9 +315,9 @@ const SeasonCard = ({
                   Season Gallery
                 </h4>
                 <div className='w-full'>
-                  <Gallery 
-                    images={season.photos} 
-                    perRow={3} 
+                  <Gallery
+                    images={season.photos}
+                    perRow={3}
                     onOpen={() => onToggleLightbox(true)}
                     onClose={() => onToggleLightbox(false)}
                   />
@@ -359,9 +363,9 @@ export default function Skiing() {
 
           <div className='grid grid-cols-1 gap-12'>
             {seasons.map((season, index) => (
-              <SeasonCard 
-                key={index} 
-                season={season} 
+              <SeasonCard
+                key={index}
+                season={season}
                 onToggleLightbox={setIsLightboxOpen}
               />
             ))}

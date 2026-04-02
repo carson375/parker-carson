@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react'
-import { useRouter } from 'next/router'
 
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
-import { cloudinaryLoader } from 'lib/cloudinary'
 import photosDataRaw from 'data/photos.json'
-import dynamic from 'next/dynamic'
+import { cloudinaryLoader } from 'lib/cloudinary'
 
 const TripMap = dynamic(
   () => import('components/Gallery/TripMap').then(mod => mod.TripMap),

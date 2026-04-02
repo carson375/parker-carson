@@ -222,8 +222,18 @@ export default function Container(props: any) {
                           ></line>
                           <line x1='1' y1='12' x2='3' y2='12'></line>
                           <line x1='21' y1='12' x2='23' y2='12'></line>
-                          <line x1='4.22' y1='17.78' x2='5.64' y2='16.36'></line>
-                          <line x1='18.36' y1='5.64' x2='19.78' y2='4.22'></line>
+                          <line
+                            x1='4.22'
+                            y1='17.78'
+                            x2='5.64'
+                            y2='16.36'
+                          ></line>
+                          <line
+                            x1='18.36'
+                            y1='5.64'
+                            x2='19.78'
+                            y2='4.22'
+                          ></line>
                         </>
                       ) : (
                         <path d='M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z'></path>
@@ -287,11 +297,13 @@ export default function Container(props: any) {
           className={cn(
             !clean &&
               'px-4 mt-6 mx-auto flex flex-col justify-center gap-12 divide-y divide-gray-200 dark:divide-gray-900 rounded-lg py-6 md:py-12',
-            !clean && (fullWidth ? 'max-w-[1600px]' : 'max-w-2xl md:max-w-5xl lg:max-w-6xl xl:max-w-[1400px]'),
+            !clean &&
+              (fullWidth
+                ? 'max-w-[1600px]'
+                : 'max-w-2xl md:max-w-5xl lg:max-w-6xl xl:max-w-[1400px]'),
             clean && 'w-full mx-auto'
           )}
         >
-
           <div>{children}</div>
           <footer>
             <Footer />

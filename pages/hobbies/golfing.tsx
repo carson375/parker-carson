@@ -1,9 +1,11 @@
 import { useState, useRef } from 'react'
+
 import Image from 'next/image'
+
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
-import { cloudinaryLoader } from 'lib/cloudinary'
 import golfData from 'data/golf.json'
+import { cloudinaryLoader } from 'lib/cloudinary'
 
 interface RoundEntry {
   score: number
@@ -154,10 +156,12 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
   const roundsCount = data.roundsDetail.length
   const rounds9 = data.roundsDetail.filter(r => r.score < 70)
   const rounds18 = data.roundsDetail.filter(r => r.score >= 70)
-  
-  const low9 = rounds9.length > 0 ? Math.min(...rounds9.map(r => r.score)) : '--'
-  const low18 = rounds18.length > 0 ? Math.min(...rounds18.map(r => r.score)) : '--'
-  
+
+  const low9 =
+    rounds9.length > 0 ? Math.min(...rounds9.map(r => r.score)) : '--'
+  const low18 =
+    rounds18.length > 0 ? Math.min(...rounds18.map(r => r.score)) : '--'
+
   const uniqueCourses = Array.from(
     new Set(data.roundsDetail.map(r => r.course))
   )
@@ -193,19 +197,25 @@ const MonthlyCard = ({ data }: { data: GolfMonth }) => {
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               Rounds
             </p>
-            <p className='text-2xl md:text-3xl font-black text-primary'>{roundsCount}</p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>
+              {roundsCount}
+            </p>
           </div>
           <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               Low 9
             </p>
-            <p className='text-2xl md:text-3xl font-black text-primary'>{low9}</p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>
+              {low9}
+            </p>
           </div>
           <div className='p-4 md:p-6 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1 md:mb-2'>
               Low 18
             </p>
-            <p className='text-2xl md:text-3xl font-black text-primary'>{low18}</p>
+            <p className='text-2xl md:text-3xl font-black text-primary'>
+              {low18}
+            </p>
           </div>
           <div className='p-4 md:p-6 rounded-2xl bg-emerald-50/50 dark:bg-emerald-500/10 border border-emerald-100 dark:border-emerald-500/20 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-emerald-600 dark:text-emerald-400 tracking-widest mb-1 md:mb-2'>
@@ -315,9 +325,13 @@ export default function Golfing() {
             const allRounds = season.months.flatMap(m => m.roundsDetail)
             const rounds9 = allRounds.filter(r => r.score < 70)
             const rounds18 = allRounds.filter(r => r.score >= 70)
-  
-            const low9 = rounds9.length > 0 ? Math.min(...rounds9.map(r => r.score)) : '--'
-            const low18 = rounds18.length > 0 ? Math.min(...rounds18.map(r => r.score)) : '--'
+
+            const low9 =
+              rounds9.length > 0 ? Math.min(...rounds9.map(r => r.score)) : '--'
+            const low18 =
+              rounds18.length > 0
+                ? Math.min(...rounds18.map(r => r.score))
+                : '--'
             const totalRounds = allRounds.length
             const totalBirdies = season.months.reduce(
               (acc, m) => acc + m.birdies,
@@ -351,7 +365,7 @@ export default function Golfing() {
                         {low9}
                       </p>
                     </div>
-                                        <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
+                    <div className='px-3 py-1.5 md:px-4 md:py-2 rounded-xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50'>
                       <p className='text-[8px] md:text-[10px] font-bold text-secondary uppercase tracking-widest mb-0.5'>
                         Low 18 Hole Round
                       </p>

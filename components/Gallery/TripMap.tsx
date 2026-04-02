@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
-import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
+
 import L from 'leaflet'
+import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
 interface Location {
@@ -37,9 +38,10 @@ export const TripMap = ({ locations, route }: TripMapProps) => {
     ...locations.map(loc => [loc.lat, loc.lng] as [number, number]),
     ...(route || []),
   ]
-  const bounds = points.length > 0 
-    ? L.latLngBounds(points)
-    : L.latLngBounds([[37.2982, -113.0263]]) // Default to Zion if no points
+  const bounds =
+    points.length > 0
+      ? L.latLngBounds(points)
+      : L.latLngBounds([[37.2982, -113.0263]]) // Default to Zion if no points
 
   return (
     <div className='w-full h-[450px] rounded-[24px] overflow-hidden border border-gray-100 dark:border-gray-800'>

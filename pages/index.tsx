@@ -30,10 +30,10 @@ export default function Home() {
                 at Ohio State. I’m now based in Chicago, working as a Software
                 Engineer at{' '}
                 <span className='font-semibold text-primary'>Capital One</span>.
-                When I&apos;m not working, I stay active through running, skiing,
-                golfing and I used to rock climb. I also enjoy photography and
-                love exploring the city of Chicago on my bike. This summer my
-                goal is to learn how to skateboard / long board.
+                When I&apos;m not working, I stay active through running,
+                skiing, golfing and I used to rock climb. I also enjoy
+                photography and love exploring the city of Chicago on my bike.
+                This summer my goal is to learn how to skateboard / long board.
               </p>
               <p className='text-sm md:text-base text-tertiary'>
                 For work, my team focuses on the post-approval customer journey

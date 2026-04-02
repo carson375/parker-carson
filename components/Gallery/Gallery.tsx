@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 import Image from 'next/image'
+
 import { cloudinaryLoader } from 'lib/cloudinary'
 
 interface GalleryProps {
@@ -205,7 +206,10 @@ export const Gallery = ({
                     alt={`Full screen view ${index + 1}`}
                     fill
                     className='object-contain'
-                    priority={index === selectedIndex || Math.abs(index - activeIndex) <= 1}
+                    priority={
+                      index === selectedIndex ||
+                      Math.abs(index - activeIndex) <= 1
+                    }
                   />
                 </div>
               </div>
