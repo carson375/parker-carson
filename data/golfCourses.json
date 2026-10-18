@@ -1,0 +1,135 @@
+{
+  "Sydney R. Marovitz": {
+    "name": "Sydney R. Marovitz Golf Course",
+    "cityState": "Chicago, IL",
+    "lat": 41.9568,
+    "lng": -87.6439,
+    "zoom": 15
+  },
+  "Cog Hill Golf & Country Club": {
+    "name": "Cog Hill Golf & Country Club",
+    "cityState": "Lemont, IL",
+    "lat": 41.6708,
+    "lng": -87.9481,
+    "zoom": 14
+  },
+  "Indian Boundary Golf Course": {
+    "name": "Indian Boundary Golf Course",
+    "cityState": "Chicago, IL",
+    "lat": 41.9422,
+    "lng": -87.8427,
+    "zoom": 15
+  },
+  "Charlie Vettiner Golf Course": {
+    "name": "Charlie Vettiner Golf Course",
+    "cityState": "Louisville, KY",
+    "lat": 38.1691,
+    "lng": -85.5488,
+    "zoom": 14
+  },
+  "Mt. Prospect Golf Club": {
+    "name": "Mt. Prospect Golf Club",
+    "cityState": "Mount Prospect, IL",
+    "lat": 42.0526,
+    "lng": -87.9392,
+    "zoom": 15
+  },
+  "Recreation Park Golf Course": {
+    "name": "Recreation Park Golf Course",
+    "cityState": "Long Beach, CA",
+    "lat": 33.7749,
+    "lng": -118.1362,
+    "zoom": 15
+  },
+  "Jackson Park Golf Course": {
+    "name": "Jackson Park Golf Course",
+    "cityState": "Chicago, IL",
+    "lat": 41.7786,
+    "lng": -87.5815,
+    "zoom": 15
+  },
+  "Legend Lake": {
+    "name": "Legend Lake Golf Club",
+    "cityState": "Chardon, OH",
+    "lat": 41.5478,
+    "lng": -81.2429,
+    "zoom": 14
+  },
+  "Turtle Creek Golf Course": {
+    "name": "Turtle Creek Golf Course",
+    "cityState": "Limerick, PA",
+    "lat": 40.1873,
+    "lng": -75.5039,
+    "zoom": 14
+  },
+  "Jeffersonville Golf Club": {
+    "name": "Jeffersonville Golf Club",
+    "cityState": "Norristown, PA",
+    "lat": 40.1342,
+    "lng": -75.3853,
+    "zoom": 14
+  },
+  "Rock Manor Golf Club": {
+    "name": "Rock Manor Golf Club",
+    "cityState": "Wilmington, DE",
+    "lat": 39.7788,
+    "lng": -75.5413,
+    "zoom": 14
+  },
+  "Highland Woods Golf Course": {
+    "name": "Highland Woods Golf Course",
+    "cityState": "Hoffman Estates, IL",
+    "lat": 42.0722,
+    "lng": -88.1068,
+    "zoom": 14
+  },
+  "Catawba Island Club": {
+    "name": "Catawba Island Club",
+    "cityState": "Port Clinton, OH",
+    "lat": 41.5583,
+    "lng": -82.8427,
+    "zoom": 14
+  },
+  "Harborside International Golf Center": {
+    "name": "Harborside International Golf Center",
+    "cityState": "Chicago, IL",
+    "lat": 41.6888,
+    "lng": -87.5991,
+    "zoom": 14
+  },
+  "Buffalo Grove Golf Course": {
+    "name": "Buffalo Grove Golf Course",
+    "cityState": "Buffalo Grove, IL",
+    "lat": 42.1558,
+    "lng": -87.9739,
+    "zoom": 14
+  },
+  "St Denis Golf Club": {
+    "name": "St Denis Golf Club",
+    "cityState": "Chardon, OH",
+    "lat": 41.5312,
+    "lng": -81.2405,
+    "zoom": 14
+  },
+  "Marquette Park": {
+    "name": "Marquette Park Golf Course",
+    "cityState": "Chicago, IL",
+    "lat": 41.7719,
+    "lng": -87.6974,
+    "zoom": 15
+  },
+  "The Missouri Bluffs Golf Club": {
+    "name": "The Missouri Bluffs Golf Club",
+    "cityState": "St. Charles, MO",
+    "lat": 38.7088,
+    "lng": -90.6403,
+    "zoom": 14
+  },
+  "Gateway National Golf Links": {
+    "name": "Gateway National Golf Links",
+    "cityState": "Madison, IL",
+    "lat": 38.6473,
+    "lng": -90.1384,
+    "zoom": 14
+  }
+}
