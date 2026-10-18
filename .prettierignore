@@ -41,3 +41,4 @@ out_functions
 out_publish
 .next
 yarn.lock
+next-env.d.ts
