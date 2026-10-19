@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useMemo } from 'react'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
@@ -83,9 +83,29 @@ const VideoPlayer = ({ src }: { src: string }) => {
 }
 
 const formatRaceDistance = (distance: string) => {
-  const normalized = distance.toLowerCase()
+  const normalized = distance.toLowerCase().trim()
+  if (normalized.includes('half')) {
+    return {
+      primary: '13.1 Mi',
+      secondary: '21.08 K',
+    }
+  }
+  if (normalized.includes('marathon') && !normalized.includes('half')) {
+    return {
+      primary: '26.2 Mi',
+      secondary: '42.16 K',
+    }
+  }
+
   const isKm = normalized.includes('k')
   const val = parseFloat(distance)
+
+  if (isNaN(val)) {
+    return {
+      primary: distance,
+      secondary: '',
+    }
+  }
 
   if (isKm) {
     const miles = val * 0.621371
@@ -152,29 +172,33 @@ const RaceCard = ({ race }: { race: Race }) => {
         </div>
 
         <div className='flex flex-wrap items-center justify-center md:justify-start gap-3 md:gap-4 mb-8'>
-          <a
-            href={race.results}
-            target='_blank'
-            rel='noreferrer'
-            className='inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-primary text-background text-sm md:text-base font-bold hover:opacity-90 transition-all active:scale-95'
-          >
-            View Results
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='18'
-              height='18'
-              viewBox='0 0 24 24'
-              fill='none'
-              stroke='currentColor'
-              strokeWidth='2.5'
-              strokeLinecap='round'
-              strokeLinejoin='round'
-            >
-              <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'></path>
-              <polyline points='15 3 21 3 21 9'></polyline>
-              <line x1='10' y1='14' x2='21' y2='3'></line>
-            </svg>
-          </a>
+          {race.results &&
+            race.results.trim() !== '' &&
+            race.results !== '#' && (
+              <a
+                href={race.results}
+                target='_blank'
+                rel='noreferrer'
+                className='inline-flex items-center gap-2 px-5 py-2.5 md:px-6 md:py-3 rounded-full bg-primary text-background text-sm md:text-base font-bold hover:opacity-90 transition-all active:scale-95'
+              >
+                View Results
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='18'
+                  height='18'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6'></path>
+                  <polyline points='15 3 21 3 21 9'></polyline>
+                  <line x1='10' y1='14' x2='21' y2='3'></line>
+                </svg>
+              </a>
+            )}
 
           {(hasPhotos || hasVideos) && (
             <button
@@ -249,6 +273,236 @@ const RaceCard = ({ race }: { race: Race }) => {
   )
 }
 
+interface PersonalRecord {
+  category: string
+  subtitle: string
+  time: string
+  raceName: string
+  date: string
+  pace: string
+  results?: string
+}
+
+const computePersonalRecords = (racesList: Race[]): PersonalRecord[] => {
+  const canonicalDistances = [
+    {
+      key: 'marathon',
+      label: 'Marathon',
+      sub: '26.2 Mi',
+      match: (d: string) =>
+        d.includes('26.2') || d.toLowerCase().includes('marathon'),
+    },
+    {
+      key: 'half',
+      label: 'Half Marathon',
+      sub: '13.1 Mi',
+      match: (d: string) =>
+        d.includes('13.1') || d.toLowerCase().includes('half'),
+    },
+    {
+      key: '10k',
+      label: '10K',
+      sub: '6.2 Mi',
+      match: (d: string) => d.toLowerCase().includes('10k'),
+    },
+    {
+      key: '8k',
+      label: '8K',
+      sub: '5.0 Mi',
+      match: (d: string) => d.toLowerCase().includes('8k'),
+    },
+    {
+      key: '5k',
+      label: '5K',
+      sub: '3.1 Mi',
+      match: (d: string) => d.toLowerCase().includes('5k'),
+    },
+    {
+      key: '3.5m',
+      label: '3.5 Miles',
+      sub: '3.5 Mi',
+      match: (d: string) => d.includes('3.5'),
+    },
+    {
+      key: '1m',
+      label: '1 Mile',
+      sub: '1 Mi',
+      match: (d: string) => /^\s*1\s*(mi|mile)/i.test(d),
+    },
+  ]
+
+  const parseTimeToSeconds = (timeStr: string) => {
+    if (!timeStr || timeStr === '--:--' || timeStr === '00:00') return 0
+    const parts = timeStr.trim().split(':').map(Number)
+    if (parts.length === 3) {
+      return parts[0] * 3600 + parts[1] * 60 + parts[2]
+    } else if (parts.length === 2) {
+      return parts[0] * 60 + parts[1]
+    }
+    return 0
+  }
+
+  const parseDistanceMiles = (distStr: string) => {
+    const norm = distStr.toLowerCase().trim()
+    const val = parseFloat(norm)
+    if (norm.includes('k')) {
+      return val * 0.621371
+    }
+    return val
+  }
+
+  const formatPace = (totalSeconds: number, miles: number) => {
+    if (!miles || !totalSeconds) return ''
+    const paceSec = totalSeconds / miles
+    const mins = Math.floor(paceSec / 60)
+    const secs = Math.round(paceSec % 60)
+    return `${mins}:${secs < 10 ? '0' : ''}${secs} / mi`
+  }
+
+  const prs: PersonalRecord[] = []
+  for (const cat of canonicalDistances) {
+    const matchingRaces = racesList.filter(
+      r => cat.match(r.distance) && parseTimeToSeconds(r.time) > 0
+    )
+    if (matchingRaces.length === 0) continue
+
+    let bestRace = matchingRaces[0]
+    let bestSec = parseTimeToSeconds(bestRace.time)
+
+    for (let i = 1; i < matchingRaces.length; i++) {
+      const sec = parseTimeToSeconds(matchingRaces[i].time)
+      if (sec > 0 && (bestSec === 0 || sec < bestSec)) {
+        bestSec = sec
+        bestRace = matchingRaces[i]
+      }
+    }
+
+    if (bestSec > 0) {
+      const miles = parseDistanceMiles(bestRace.distance)
+      prs.push({
+        category: cat.label,
+        subtitle: cat.sub,
+        time: bestRace.time,
+        raceName: bestRace.name,
+        date: bestRace.date,
+        pace: formatPace(bestSec, miles),
+        results: bestRace.results,
+      })
+    }
+  }
+
+  return prs
+}
+
+const PersonalBests = ({ races }: { races: Race[] }) => {
+  const prs = useMemo(() => computePersonalRecords(races), [races])
+  if (prs.length === 0) return null
+
+  return (
+    <div className='w-full max-w-[1400px] mx-auto px-4'>
+      <div className='relative overflow-hidden rounded-3xl border border-amber-500/30 dark:border-amber-500/20 bg-gradient-to-b from-amber-50/40 via-white to-white dark:from-amber-950/10 dark:via-gray-900 dark:to-gray-900 p-6 md:p-10 shadow-sm'>
+        {/* Glow backdrop accent */}
+        <div className='absolute -top-24 -right-24 w-72 h-72 bg-amber-500/10 dark:bg-amber-400/5 rounded-full blur-3xl pointer-events-none' />
+
+        {/* Section Header */}
+        <div className='flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-gray-100 dark:border-gray-800/80'>
+          <div className='flex items-center gap-3'>
+            <div className='flex items-center justify-center w-10 h-10 rounded-xl bg-amber-500/10 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/20'>
+              <svg
+                xmlns='http://www.w3.org/2000/svg'
+                width='20'
+                height='20'
+                viewBox='0 0 24 24'
+                fill='none'
+                stroke='currentColor'
+                strokeWidth='2.2'
+                strokeLinecap='round'
+                strokeLinejoin='round'
+              >
+                <circle cx='12' cy='12' r='10'></circle>
+                <polyline points='12 6 12 12 16 14'></polyline>
+              </svg>
+            </div>
+            <div>
+              <div className='flex items-center gap-2'>
+                <h2 className='text-xl md:text-2xl font-black text-primary tracking-tight'>
+                  Personal Bests
+                </h2>
+                <span className='px-2.5 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30'>
+                  PBs
+                </span>
+              </div>
+              <p className='text-xs text-secondary font-medium mt-0.5'>
+                Fastest times across official race distances.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* PR Cards Grid - 1 line on desktop, 2 balanced rows on tablet, 3 on mobile */}
+        <div className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 md:gap-4'>
+          {prs.map(pr => {
+            const Content = (
+              <div className='h-full flex flex-col justify-between bg-white dark:bg-gray-800/80 rounded-2xl p-3.5 sm:p-4 md:p-5 border border-gray-200/80 dark:border-gray-700/60 hover:border-amber-500/50 dark:hover:border-amber-400/50 transition-all duration-300 hover:shadow-md group'>
+                <div>
+                  <div className='flex items-center justify-between gap-1 mb-2'>
+                    <span className='text-[9px] sm:text-[10px] font-black uppercase tracking-tight sm:tracking-wider text-amber-600 dark:text-amber-400'>
+                      {pr.category}
+                    </span>
+                    <span className='text-[8.5px] sm:text-[9px] font-bold text-secondary bg-gray-100 dark:bg-gray-700/60 px-1.5 py-0.5 rounded-full shrink-0'>
+                      {pr.subtitle}
+                    </span>
+                  </div>
+
+                  <div className='text-2xl sm:text-3xl font-black text-primary tracking-tight my-1 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors'>
+                    {pr.time}
+                  </div>
+
+                  {pr.pace && (
+                    <div className='inline-flex items-center gap-1 text-[11px] font-semibold text-secondary mb-2'>
+                      <span className='text-amber-500'>⚡</span>
+                      <span>{pr.pace}</span>
+                    </div>
+                  )}
+                </div>
+
+                <div className='pt-2.5 border-t border-gray-100 dark:border-gray-700/50 mt-1'>
+                  <p
+                    className='text-xs font-bold text-primary truncate'
+                    title={pr.raceName}
+                  >
+                    {pr.raceName}
+                  </p>
+                  <p className='text-[10px] text-secondary font-medium mt-0.5 truncate'>
+                    {pr.date}
+                  </p>
+                </div>
+              </div>
+            )
+
+            if (pr.results && pr.results.trim() !== '' && pr.results !== '#') {
+              return (
+                <a
+                  key={pr.category}
+                  href={pr.results}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='block transform transition-transform active:scale-95'
+                  title={`View ${pr.raceName} results`}
+                >
+                  {Content}
+                </a>
+              )
+            }
+
+            return <div key={pr.category}>{Content}</div>
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Running() {
   const [races] = useState<Race[]>(runningData as Race[])
   const [collapsedYears, setCollapsedYears] = useState<{
@@ -257,11 +511,20 @@ export default function Running() {
 
   // Group races by year from the date string (e.g., "March 23, 2025")
   const groupedRaces = races.reduce((acc: { [key: string]: Race[] }, race) => {
-    const year = race.date.split(', ')[1] || 'Upcoming'
+    const year = race.date.split(', ')[1]?.trim() || 'Upcoming'
     if (!acc[year]) acc[year] = []
     acc[year].push(race)
     return acc
   }, {})
+
+  // Sort races within each year reverse chronologically (newest first)
+  Object.keys(groupedRaces).forEach(year => {
+    groupedRaces[year].sort((a, b) => {
+      const timeA = new Date(a.date).getTime()
+      const timeB = new Date(b.date).getTime()
+      return isNaN(timeB) || isNaN(timeA) ? 0 : timeB - timeA
+    })
+  })
 
   const years = Object.keys(groupedRaces).sort((a, b) => b.localeCompare(a))
 
@@ -287,6 +550,9 @@ export default function Running() {
             </p>
           </div>
         </div>
+
+        {/* Personal Bests */}
+        <PersonalBests races={races} />
 
         {/* Race Sections by Year */}
         <div className='w-full px-4 max-w-[1400px] mx-auto space-y-8 md:space-y-12'>
