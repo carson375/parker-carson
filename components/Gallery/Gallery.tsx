@@ -65,7 +65,9 @@ export const Gallery = ({
       setActiveIndex(selectedIndex)
       const timer = setTimeout(() => {
         if (scrollContainerRef.current) {
-          const element = document.getElementById(`lightbox-img-${selectedIndex}`)
+          const element = document.getElementById(
+            `lightbox-img-${selectedIndex}`
+          )
           if (element) {
             scrollContainerRef.current.scrollTop = element.offsetTop
           }
@@ -74,7 +76,6 @@ export const Gallery = ({
       return () => clearTimeout(timer)
     }
   }, [selectedIndex])
-
 
   // Track active index during scroll
   useEffect(() => {

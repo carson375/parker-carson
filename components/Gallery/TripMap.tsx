@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react'
 
 import L from 'leaflet'
+import Image from 'next/image'
 import { MapContainer, TileLayer, Marker, Popup, Polyline } from 'react-leaflet'
 
 import 'leaflet/dist/leaflet.css'
@@ -157,15 +158,13 @@ export const TripMap = ({ locations, route, onPhotoClick }: TripMapProps) => {
                             className='relative w-16 h-16 shrink-0 rounded-lg overflow-hidden border border-gray-200 hover:border-blue-500 hover:ring-2 hover:ring-blue-400/50 transition-all shadow-sm group bg-gray-100 cursor-pointer'
                             title='View full size'
                           >
-                            <img
-                              src={cloudinaryLoader({
-                                src: photo,
-                                width: 140,
-                                quality: 75,
-                              })}
+                            <Image
+                              loader={cloudinaryLoader}
+                              src={photo}
                               alt={`${loc.name} photo ${pIdx + 1}`}
-                              className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-300'
-                              loading='lazy'
+                              fill
+                              sizes='64px'
+                              className='object-cover group-hover:scale-110 transition-transform duration-300'
                             />
                           </button>
                         ))}
