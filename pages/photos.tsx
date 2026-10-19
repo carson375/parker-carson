@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -24,6 +24,7 @@ interface Location {
   lat: number
   lng: number
   description?: string
+  photos?: string[]
 }
 
 interface Trip {
@@ -46,6 +47,7 @@ export default function Photos() {
   const router = useRouter()
   const [selectedTrip, setSelectedTrip] = useState<number | null>(null)
   const [showMap, setShowMap] = useState(false)
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
 
   // Handle initial load and browser back/forward
   useEffect(() => {
@@ -70,11 +72,12 @@ export default function Photos() {
     setSelectedTrip(index)
   }
 
-  const handleCloseTrip = () => {
+  const handleCloseTrip = useCallback(() => {
     router.push({ query: {} }, undefined, { shallow: true })
     setSelectedTrip(null)
     setShowMap(false)
-  }
+    setLightboxIndex(null)
+  }, [router])
 
   // Scroll to top when trip selection changes
   useEffect(() => {
@@ -88,7 +91,7 @@ export default function Photos() {
     }
     window.addEventListener('keydown', handleEsc)
     return () => window.removeEventListener('keydown', handleEsc)
-  }, [])
+  }, [handleCloseTrip])
 
   // GALLERY VIEW (Continuous Scroll)
   if (selectedTrip !== null) {
@@ -172,13 +175,31 @@ export default function Photos() {
               {showMap && hasLocations && (
                 <div className='w-full'>
                   <TripMap
+                    key={currentTrip.name}
                     locations={currentTrip.locations || []}
                     route={currentTrip.route}
+                    onPhotoClick={photo => {
+                      const idx = currentTrip.photos.findIndex(p => p === photo)
+                      if (idx !== -1) {
+                        setLightboxIndex(idx)
+                      }
+                    }}
                   />
                 </div>
               )}
 
               <Gallery images={currentTrip.photos} perRow={3} />
+
+              {/* Lightbox Triggered from Map Pin Thumbnails */}
+              {lightboxIndex !== null && (
+                <Gallery
+                  key={`map-lightbox-${lightboxIndex}`}
+                  images={currentTrip.photos}
+                  initialIndex={lightboxIndex}
+                  showThumbnails={false}
+                  onClose={() => setLightboxIndex(null)}
+                />
+              )}
             </div>
           </div>
         </div>
