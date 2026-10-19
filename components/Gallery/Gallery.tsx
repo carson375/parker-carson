@@ -26,7 +26,7 @@ export const Gallery = ({
   const [selectedIndex, setSelectedIndex] = useState<number | null>(
     initialIndex
   )
-  const [activeIndex, setActiveIndex] = useState<number>(0)
+  const [activeIndex, setActiveIndex] = useState<number>(initialIndex ?? 0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
   // Handle Keyboard Navigation
@@ -46,16 +46,34 @@ export const Gallery = ({
       window.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = 'unset'
     }
+  }, [selectedIndex, onClose])
+
+  // Prevent background scroll when lightbox is open
+  useEffect(() => {
+    if (selectedIndex !== null) {
+      const originalOverflow = document.body.style.overflow
+      document.body.style.overflow = 'hidden'
+      return () => {
+        document.body.style.overflow = originalOverflow
+      }
+    }
   }, [selectedIndex])
 
   // Scroll to the selected image when the lightbox opens
   useEffect(() => {
-    if (selectedIndex !== null && scrollContainerRef.current) {
-      const element = document.getElementById(`lightbox-img-${selectedIndex}`)
-      if (element) {
-        element.scrollIntoView({ behavior: 'auto' })
-        setActiveIndex(selectedIndex)
-      }
+    if (selectedIndex !== null) {
+      setActiveIndex(selectedIndex)
+      const timer = setTimeout(() => {
+        if (scrollContainerRef.current) {
+          const element = document.getElementById(
+            `lightbox-img-${selectedIndex}`
+          )
+          if (element) {
+            scrollContainerRef.current.scrollTop = element.offsetTop
+          }
+        }
+      }, 50)
+      return () => clearTimeout(timer)
     }
   }, [selectedIndex])
 

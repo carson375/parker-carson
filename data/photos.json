@@ -24,27 +24,67 @@
       {
         "name": "Jardin du Luxembourg",
         "lat": 48.8462,
-        "lng": 2.3371
+        "lng": 2.3371,
+        "description": "Luxembourg Palace and tree-lined gardens.",
+        "photos": [
+          "/photography/Paris2022/LuxemborgGardens.JPG",
+          "/photography/Paris2022/LuxGardens2.JPG",
+          "/photography/Paris2022/LuxGardensBuilding.JPG",
+          "/photography/Paris2022/LuxGardensBuilding2.JPG",
+          "/photography/Paris2022/LuxGardensEiffel.JPG",
+          "/photography/Paris2022/LuxGardensStatue.JPG"
+        ]
       },
       {
         "name": "Notre-Dame de Paris",
         "lat": 48.853,
-        "lng": 2.3499
+        "lng": 2.3499,
+        "description": "Historic medieval cathedral on the Île de la Cité.",
+        "photos": [
+          "/photography/Paris2022/NotreDame.JPG",
+          "/photography/Paris2022/NotreDame2.JPG",
+          "/photography/Paris2022/NotreDameSide.JPG"
+        ]
       },
       {
         "name": "The Panthéon",
         "lat": 48.8462,
-        "lng": 2.3464
+        "lng": 2.3464,
+        "description": "Neoclassical monument in the 5th arrondissement.",
+        "photos": [
+          "/photography/Paris2022/Pantheon.JPG",
+          "/photography/Paris2022/PantheonClose.JPG"
+        ]
       },
       {
         "name": "The Seine River",
         "lat": 48.8575,
-        "lng": 2.3413
+        "lng": 2.3413,
+        "description": "Bridges and riverside views along the Seine.",
+        "photos": [
+          "/photography/Paris2022/Bridge.JPG",
+          "/photography/Paris2022/ASundayAfternoonInParis.JPG"
+        ]
       },
       {
         "name": "The Latin Quarter",
         "lat": 48.8502,
-        "lng": 2.3444
+        "lng": 2.3444,
+        "description": "Charming Parisian streets and classic architecture.",
+        "photos": [
+          "/photography/Paris2022/ParisBuilding.JPG",
+          "/photography/Paris2022/Street.JPG"
+        ]
+      },
+      {
+        "name": "Eiffel Tower",
+        "lat": 48.8584,
+        "lng": 2.2945,
+        "description": "Views of the iconic Eiffel Tower.",
+        "photos": [
+          "/photography/Paris2022/Eiffel.JPG",
+          "/photography/Paris2022/Eiffel2.JPG"
+        ]
       }
     ]
   },
@@ -77,54 +117,93 @@
         "name": "Parliament Square",
         "lat": 51.5007,
         "lng": -0.1268,
-        "description": "Saw Big Ben and the Houses of Parliament."
+        "description": "Saw Big Ben and the Houses of Parliament.",
+        "photos": [
+          "/photography/London2024/IMG_1085.JPEG",
+          "/photography/London2024/IMG_1090.JPEG",
+          "/photography/London2024/IMG_1092.JPEG",
+          "/photography/London2024/IMG_1098.JPEG"
+        ]
       },
       {
         "name": "The Globe Theatre",
         "lat": 51.5081,
-        "lng": -0.0971
+        "lng": -0.0971,
+        "photos": [
+          "/photography/London2024/IMG_1065.JPEG"
+        ]
       },
       {
         "name": "The Shard",
         "lat": 51.5045,
         "lng": -0.0865,
-        "description": "Saw the shard from Borough Market."
+        "description": "Saw the shard from Borough Market.",
+        "photos": [
+          "/photography/London2024/IMG_1064.JPEG"
+        ]
       },
       {
         "name": "Tower Bridge",
         "lat": 51.5055,
-        "lng": -0.0754
+        "lng": -0.0754,
+        "photos": [
+          "/photography/London2024/IMG_1056.JPEG",
+          "/photography/London2024/IMG_1059.JPEG",
+          "/photography/London2024/IMG_1061.JPEG"
+        ]
       },
       {
         "name": "The British Museum",
         "lat": 51.5194,
-        "lng": -0.127
+        "lng": -0.127,
+        "photos": [
+          "/photography/London2024/IMG_1076.JPEG"
+        ]
       },
       {
         "name": "The London Eye",
         "lat": 51.5033,
-        "lng": -0.1196
+        "lng": -0.1196,
+        "photos": [
+          "/photography/London2024/IMG_1101.JPEG"
+        ]
       },
       {
         "name": "Stamford Bridge Stadium",
         "lat": 51.4816,
         "lng": -0.191,
-        "description": "Chelsea vs Fulham (1-0), Jan. 13 2024, Palmer (P) 45'+4'"
+        "description": "Chelsea vs Fulham (1-0), Jan. 13 2024, Palmer (P) 45'+4'",
+        "photos": [
+          "/photography/London2024/IMG_1121.JPEG",
+          "/photography/London2024/IMG_1122.JPEG",
+          "/photography/London2024/IMG_1123.JPEG",
+          "/photography/London2024/IMG_1124.JPEG"
+        ]
       },
       {
         "name": "Buckingham Palace",
         "lat": 51.5014,
-        "lng": -0.1419
+        "lng": -0.1419,
+        "photos": [
+          "/photography/London2024/IMG_1103.JPEG",
+          "/photography/London2024/IMG_1105.JPEG",
+          "/photography/London2024/IMG_1112.JPEG",
+          "/photography/London2024/IMG_1115.JPEG"
+        ]
       },
       {
         "name": "Westminster Bridge",
         "lat": 51.5009,
-        "lng": -0.1218
+        "lng": -0.1218,
+        "photos": [
+          "/photography/London2024/IMG_1088.JPEG"
+        ]
       },
       {
         "name": "The George Inn",
         "lat": 51.5043,
-        "lng": -0.0899
+        "lng": -0.0899,
+        "photos": []
       }
     ]
   },
@@ -157,42 +236,85 @@
       {
         "name": "Eiffel Tower / Trocadéro",
         "lat": 48.8616,
-        "lng": 2.2893
+        "lng": 2.2893,
+        "photos": [
+          "/photography/Paris 2024/IMG_1220.JPEG",
+          "/photography/Paris 2024/IMG_1224.JPEG",
+          "/photography/Paris 2024/IMG_1226.JPEG"
+        ]
       },
       {
         "name": "Place de la Concorde",
         "lat": 48.8655,
-        "lng": 2.3212
+        "lng": 2.3212,
+        "photos": [
+          "/photography/Paris 2024/IMG_1217.JPEG"
+        ]
       },
       {
         "name": "Pont Alexandre III",
         "lat": 48.8639,
-        "lng": 2.3136
+        "lng": 2.3136,
+        "photos": []
       },
       {
         "name": "Grand Palais",
         "lat": 48.8661,
-        "lng": 2.3125
+        "lng": 2.3125,
+        "photos": []
       },
       {
         "name": "The Louvre / Tuileries Garden",
         "lat": 48.8635,
-        "lng": 2.3275
+        "lng": 2.3275,
+        "photos": [
+          "/photography/Paris 2024/IMG_1167.JPEG",
+          "/photography/Paris 2024/IMG_1210.JPEG",
+          "/photography/Paris 2024/IMG_1213.JPEG"
+        ]
       },
       {
         "name": "Hôtel de Ville",
         "lat": 48.8565,
-        "lng": 2.3522
+        "lng": 2.3522,
+        "photos": [
+          "/photography/Paris 2024/IMG_1147.JPEG",
+          "/photography/Paris 2024/IMG_1150.JPEG",
+          "/photography/Paris 2024/IMG_1152.JPEG",
+          "/photography/Paris 2024/IMG_1156.JPEG",
+          "/photography/Paris 2024/IMG_1160.JPEG"
+        ]
       },
       {
         "name": "Arc de Triomphe",
         "lat": 48.8738,
-        "lng": 2.295
+        "lng": 2.295,
+        "photos": [
+          "/photography/Paris 2024/IMG_1241.JPEG",
+          "/photography/Paris 2024/IMG_1256.JPEG",
+          "/photography/Paris 2024/IMG_1258.JPEG"
+        ]
       },
       {
         "name": "Sacré-Cœur Basilica",
         "lat": 48.8867,
-        "lng": 2.3431
+        "lng": 2.3431,
+        "photos": [
+          "/photography/Paris 2024/IMG_1230.JPEG",
+          "/photography/Paris 2024/IMG_1233.JPEG"
+        ]
+      },
+      {
+        "name": "Notre-Dame Cathedral",
+        "lat": 48.853,
+        "lng": 2.3499,
+        "description": "Notre-Dame Cathedral and Île de la Cité.",
+        "photos": [
+          "/photography/Paris 2024/IMG_1141.JPEG",
+          "/photography/Paris 2024/IMG_1142.JPEG",
+          "/photography/Paris 2024/IMG_1143.JPEG",
+          "/photography/Paris 2024/IMG_1145.JPEG"
+        ]
       }
     ]
   },
@@ -231,42 +353,85 @@
       {
         "name": "Colosseum",
         "lat": 41.8902,
-        "lng": 12.4922
+        "lng": 12.4922,
+        "photos": [
+          "/photography/Rome 2024/IMG_1271.JPEG",
+          "/photography/Rome 2024/IMG_1273.JPEG",
+          "/photography/Rome 2024/IMG_1275.JPEG",
+          "/photography/Rome 2024/IMG_1279.JPEG",
+          "/photography/Rome 2024/IMG_1284.JPEG",
+          "/photography/Rome 2024/IMG_1289.JPEG",
+          "/photography/Rome 2024/IMG_1294.JPEG",
+          "/photography/Rome 2024/IMG_1406.JPEG"
+        ]
       },
       {
         "name": "Roman Forum & Palatine Hill",
         "lat": 41.8925,
-        "lng": 12.4853
+        "lng": 12.4853,
+        "photos": [
+          "/photography/Rome 2024/IMG_1297.JPEG",
+          "/photography/Rome 2024/IMG_1300.JPEG",
+          "/photography/Rome 2024/IMG_1302.JPEG",
+          "/photography/Rome 2024/IMG_1304.JPEG"
+        ]
       },
       {
         "name": "Trevi Fountain",
         "lat": 41.9009,
-        "lng": 12.4833
+        "lng": 12.4833,
+        "photos": [
+          "/photography/Rome 2024/IMG_1371.JPEG"
+        ]
       },
       {
         "name": "The Pantheon",
         "lat": 41.8986,
-        "lng": 12.4769
+        "lng": 12.4769,
+        "photos": [
+          "/photography/Rome 2024/IMG_1318.JPEG",
+          "/photography/Rome 2024/IMG_1366.JPEG"
+        ]
       },
       {
         "name": "Piazza Navona",
         "lat": 41.8992,
-        "lng": 12.4731
+        "lng": 12.4731,
+        "photos": [
+          "/photography/Rome 2024/IMG_1368.JPEG"
+        ]
       },
       {
         "name": "Spanish Steps",
         "lat": 41.9057,
-        "lng": 12.4823
+        "lng": 12.4823,
+        "photos": [
+          "/photography/Rome 2024/IMG_1380.JPEG",
+          "/photography/Rome 2024/IMG_1382.JPEG",
+          "/photography/Rome 2024/IMG_1383.JPEG"
+        ]
       },
       {
         "name": "Vatican City",
         "lat": 41.9029,
-        "lng": 12.4534
+        "lng": 12.4534,
+        "photos": [
+          "/photography/Rome 2024/IMG_1327.JPEG",
+          "/photography/Rome 2024/IMG_1347.JPEG",
+          "/photography/Rome 2024/IMG_1352.JPEG",
+          "/photography/Rome 2024/IMG_1363.JPEG",
+          "/photography/Rome 2024/IMG_1365.JPEG"
+        ]
       },
       {
         "name": "Vittoriano",
         "lat": 41.8956,
-        "lng": 12.4823
+        "lng": 12.4823,
+        "photos": [
+          "/photography/Rome 2024/IMG_1387.JPEG",
+          "/photography/Rome 2024/IMG_1393.JPEG",
+          "/photography/Rome 2024/IMG_1398.JPEG"
+        ]
       }
     ]
   },
@@ -294,17 +459,39 @@
       {
         "name": "Pompeii Archaeological Park",
         "lat": 40.7489,
-        "lng": 14.4848
+        "lng": 14.4848,
+        "photos": [
+          "/photography/Naples 2024/IMG_1418.JPEG",
+          "/photography/Naples 2024/IMG_1420.JPEG",
+          "/photography/Naples 2024/IMG_1421.JPEG",
+          "/photography/Naples 2024/IMG_1422.JPEG",
+          "/photography/Naples 2024/IMG_1424.JPEG",
+          "/photography/Naples 2024/IMG_1425.JPEG",
+          "/photography/Naples 2024/IMG_1427.JPEG",
+          "/photography/Naples 2024/IMG_1428.JPEG",
+          "/photography/Naples 2024/IMG_1433.JPEG",
+          "/photography/Naples 2024/IMG_1435.JPEG",
+          "/photography/Naples 2024/IMG_1436.JPEG",
+          "/photography/Naples 2024/IMG_1437.JPEG"
+        ]
       },
       {
         "name": "Mount Vesuvius",
         "lat": 40.8224,
-        "lng": 14.4289
+        "lng": 14.4289,
+        "photos": [
+          "/photography/Naples 2024/IMG_1410.JPEG"
+        ]
       },
       {
         "name": "Napoli Centrale",
         "lat": 40.8524,
-        "lng": 14.2722
+        "lng": 14.2722,
+        "photos": [
+          "/photography/Naples 2024/IMG_1438.JPEG",
+          "/photography/Naples 2024/IMG_1441.JPEG",
+          "/photography/Naples 2024/IMG_1443.JPEG"
+        ]
       }
     ]
   },
@@ -332,22 +519,46 @@
       {
         "name": "Duomo (Cattedrale di Santa Maria del Fiore)",
         "lat": 43.7731,
-        "lng": 11.2558
+        "lng": 11.2558,
+        "photos": [
+          "/photography/Florence 2024/IMG_1481.JPEG",
+          "/photography/Florence 2024/IMG_1485.JPEG",
+          "/photography/Florence 2024/IMG_1486.JPEG",
+          "/photography/Florence 2024/IMG_1488.JPEG"
+        ]
       },
       {
         "name": "Ponte Vecchio",
         "lat": 43.7679,
-        "lng": 11.2532
+        "lng": 11.2532,
+        "photos": [
+          "/photography/Florence 2024/IMG_1493.JPEG",
+          "/photography/Florence 2024/IMG_1496.JPEG"
+        ]
       },
       {
         "name": "Piazzale Michelangelo",
         "lat": 43.7629,
-        "lng": 11.2651
+        "lng": 11.2651,
+        "photos": [
+          "/photography/Florence 2024/IMG_1498.JPEG",
+          "/photography/Florence 2024/IMG_1500.JPEG"
+        ]
       },
       {
         "name": "Galleria dell'Accademia (Statue of David)",
         "lat": 43.7769,
-        "lng": 11.2587
+        "lng": 11.2587,
+        "photos": [
+          "/photography/Florence 2024/IMG_1458.JPEG",
+          "/photography/Florence 2024/IMG_1459.JPEG",
+          "/photography/Florence 2024/IMG_1460.JPEG",
+          "/photography/Florence 2024/IMG_1461.JPEG",
+          "/photography/Florence 2024/IMG_1464.JPEG",
+          "/photography/Florence 2024/IMG_1467.JPEG",
+          "/photography/Florence 2024/IMG_1468.JPEG",
+          "/photography/Florence 2024/IMG_1476.JPEG"
+        ]
       }
     ]
   },
@@ -374,32 +585,59 @@
       {
         "name": "St. Mark's Square (Piazza San Marco)",
         "lat": 45.4343,
-        "lng": 12.3388
+        "lng": 12.3388,
+        "photos": [
+          "/photography/Venice 2024/IMG_1511.JPEG",
+          "/photography/Venice 2024/IMG_1512.JPEG",
+          "/photography/Venice 2024/IMG_1514.JPEG"
+        ]
       },
       {
         "name": "Doge's Palace (Palazzo Ducale)",
         "lat": 45.4337,
-        "lng": 12.3404
+        "lng": 12.3404,
+        "photos": [
+          "/photography/Venice 2024/IMG_1517.JPEG",
+          "/photography/Venice 2024/IMG_1518.JPEG",
+          "/photography/Venice 2024/IMG_1519.JPEG"
+        ]
       },
       {
         "name": "Rialto Bridge",
         "lat": 45.438,
-        "lng": 12.336
+        "lng": 12.336,
+        "photos": [
+          "/photography/Venice 2024/IMG_1506.JPEG",
+          "/photography/Venice 2024/IMG_1508.JPEG"
+        ]
       },
       {
         "name": "Grand Canal",
         "lat": 45.4363,
-        "lng": 12.3323
+        "lng": 12.3323,
+        "photos": [
+          "/photography/Venice 2024/IMG_1504.JPEG",
+          "/photography/Venice 2024/IMG_1505.JPEG",
+          "/photography/Venice 2024/IMG_1526.JPEG"
+        ]
       },
       {
         "name": "Basilica di Santa Maria della Salute",
         "lat": 45.4305,
-        "lng": 12.3335
+        "lng": 12.3335,
+        "photos": [
+          "/photography/Venice 2024/IMG_1523.JPEG",
+          "/photography/Venice 2024/IMG_1524.JPEG"
+        ]
       },
       {
         "name": "Mozart's House in Venice",
         "lat": 45.4335,
-        "lng": 12.334
+        "lng": 12.334,
+        "photos": [
+          "/photography/Venice 2024/IMG_1521.JPEG",
+          "/photography/Venice 2024/IMG_1522.JPEG"
+        ]
       }
     ]
   },
@@ -428,32 +666,61 @@
       {
         "name": "Belvedere Palace and Gardens",
         "lat": 48.1915,
-        "lng": 16.3809
+        "lng": 16.3809,
+        "photos": [
+          "/photography/Vienna 2024/IMG_1532.JPEG",
+          "/photography/Vienna 2024/IMG_1535.JPEG",
+          "/photography/Vienna 2024/IMG_1536.JPEG",
+          "/photography/Vienna 2024/IMG_1537.JPEG",
+          "/photography/Vienna 2024/IMG_1539.JPEG"
+        ]
       },
       {
         "name": "Hofburg Palace Complex (Neue Burg)",
         "lat": 48.2052,
-        "lng": 16.365
+        "lng": 16.365,
+        "photos": [
+          "/photography/Vienna 2024/IMG_1548.JPEG",
+          "/photography/Vienna 2024/IMG_1549.JPEG",
+          "/photography/Vienna 2024/IMG_1550.JPEG",
+          "/photography/Vienna 2024/IMG_1552.JPEG"
+        ]
       },
       {
         "name": "St. Stephen's Cathedral (Stephansdom)",
         "lat": 48.2082,
-        "lng": 16.3731
+        "lng": 16.3731,
+        "photos": [
+          "/photography/Vienna 2024/IMG_1553.JPEG",
+          "/photography/Vienna 2024/IMG_1555.JPEG",
+          "/photography/Vienna 2024/IMG_1557.JPEG"
+        ]
       },
       {
         "name": "Stadtpark (Johann Strauss Monument)",
         "lat": 48.2028,
-        "lng": 16.3801
+        "lng": 16.3801,
+        "photos": [
+          "/photography/Vienna 2024/IMG_1558.JPEG"
+        ]
       },
       {
         "name": "Innere Stadt",
         "lat": 48.2092,
-        "lng": 16.3725
+        "lng": 16.3725,
+        "photos": [
+          "/photography/Vienna 2024/IMG_1544.JPEG",
+          "/photography/Vienna 2024/IMG_1546.JPEG"
+        ]
       },
       {
         "name": "Soviet War Memorial (Schwarzenbergplatz)",
         "lat": 48.1979,
-        "lng": 16.3759
+        "lng": 16.3759,
+        "photos": [
+          "/photography/Vienna 2024/IMG_1542.JPEG",
+          "/photography/Vienna 2024/IMG_1543.JPEG"
+        ]
       }
     ]
   },
@@ -485,32 +752,62 @@
       {
         "name": "Prague Astronomical Clock",
         "lat": 50.087,
-        "lng": 14.4207
+        "lng": 14.4207,
+        "photos": [
+          "/photography/Prague 2024/IMG_1560.JPEG",
+          "/photography/Prague 2024/IMG_1561.JPEG",
+          "/photography/Prague 2024/IMG_1563.JPEG",
+          "/photography/Prague 2024/IMG_1564.JPEG",
+          "/photography/Prague 2024/IMG_1565.JPEG"
+        ]
       },
       {
         "name": "Charles Bridge",
         "lat": 50.0865,
-        "lng": 14.4114
+        "lng": 14.4114,
+        "photos": [
+          "/photography/Prague 2024/IMG_1566.JPEG",
+          "/photography/Prague 2024/IMG_1571.JPEG",
+          "/photography/Prague 2024/IMG_1572.JPEG",
+          "/photography/Prague 2024/IMG_1614.JPEG"
+        ]
       },
       {
         "name": "St. Vitus Cathedral",
         "lat": 50.0909,
-        "lng": 14.4005
+        "lng": 14.4005,
+        "photos": [
+          "/photography/Prague 2024/IMG_1580.JPEG",
+          "/photography/Prague 2024/IMG_1581.JPEG",
+          "/photography/Prague 2024/IMG_1584.JPEG",
+          "/photography/Prague 2024/IMG_1585.JPEG",
+          "/photography/Prague 2024/IMG_1587.JPEG",
+          "/photography/Prague 2024/IMG_1588.JPEG",
+          "/photography/Prague 2024/IMG_1589.JPEG",
+          "/photography/Prague 2024/IMG_1590.JPEG",
+          "/photography/Prague 2024/IMG_1595.JPEG",
+          "/photography/Prague 2024/IMG_1597.JPEG"
+        ]
       },
       {
         "name": "Prague Castle Complex",
         "lat": 50.0911,
-        "lng": 14.4018
+        "lng": 14.4018,
+        "photos": [
+          "/photography/Prague 2024/IMG_1601.JPEG"
+        ]
       },
       {
         "name": "Na Příkopě",
         "lat": 50.0853,
-        "lng": 14.4261
+        "lng": 14.4261,
+        "photos": []
       },
       {
         "name": "Wenceslas Square",
         "lat": 50.0813,
-        "lng": 14.4275
+        "lng": 14.4275,
+        "photos": []
       }
     ]
   },
@@ -537,17 +834,46 @@
       {
         "name": "Hueco Tanks State Park",
         "lat": 31.926453,
-        "lng": -106.042437
+        "lng": -106.042437,
+        "photos": [
+          "/photography/El Paso 2024/IMG_1681.JPEG",
+          "/photography/El Paso 2024/IMG_1682.JPEG",
+          "/photography/El Paso 2024/IMG_1683.JPEG",
+          "/photography/El Paso 2024/IMG_1691.JPEG",
+          "/photography/El Paso 2024/IMG_1694.JPEG"
+        ]
       },
       {
         "name": "Ciudad Juarez City Center",
         "lat": 31.7386,
-        "lng": -106.4869
+        "lng": -106.4869,
+        "photos": [
+          "/photography/El Paso 2024/Facetune_09-03-2024-20-07-23.JPEG",
+          "/photography/El Paso 2024/IMG_1999.JPEG",
+          "/photography/El Paso 2024/IMG_2502.JPEG"
+        ]
       },
       {
         "name": "Paso del Norte International Bridge",
         "lat": 31.7505,
-        "lng": -106.4866
+        "lng": -106.4866,
+        "photos": [
+          "/photography/El Paso 2024/IMG_1696.JPEG",
+          "/photography/El Paso 2024/IMG_1701.JPEG"
+        ]
+      },
+      {
+        "name": "Scenic Drive Overlook",
+        "lat": 31.7825,
+        "lng": -106.4831,
+        "description": "Scenic Drive Overlook of El Paso and Juarez.",
+        "photos": [
+          "/photography/El Paso 2024/IMG_1672.JPEG",
+          "/photography/El Paso 2024/IMG_1673.JPEG",
+          "/photography/El Paso 2024/IMG_1677.JPEG",
+          "/photography/El Paso 2024/IMG_1705.JPEG",
+          "/photography/El Paso 2024/IMG_1709.JPEG"
+        ]
       }
     ]
   },
@@ -573,162 +899,569 @@
       {
         "name": "Mather Point",
         "lat": 36.0616497,
-        "lng": -112.1079463
+        "lng": -112.1079463,
+        "photos": [
+          "/photography/Grand Canyon 2024/IMG_1717.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1718.JPEG"
+        ]
       },
       {
         "name": "Ooh Aah Point",
         "lat": 36.06035109232362,
-        "lng": -112.08661705862595
+        "lng": -112.08661705862595,
+        "photos": [
+          "/photography/Grand Canyon 2024/IMG_1726.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1727.JPEG"
+        ]
       },
       {
         "name": "Cedar Ridge",
         "lat": 36.06446825627531,
-        "lng": -112.08943382931051
+        "lng": -112.08943382931051,
+        "photos": [
+          "/photography/Grand Canyon 2024/IMG_1731.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1732.JPEG"
+        ]
       },
       {
         "name": "O'Neill Butte",
         "lat": 36.07109177878849,
-        "lng": -112.08837103380974
+        "lng": -112.08837103380974,
+        "photos": [
+          "/photography/Grand Canyon 2024/IMG_1733.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1735.JPEG"
+        ]
       },
       {
         "name": "Skeleton Point",
         "lat": 36.081658393848095,
-        "lng": -112.09035129098851
+        "lng": -112.09035129098851,
+        "photos": [
+          "/photography/Grand Canyon 2024/IMG_1737.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1738.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1739.JPEG",
+          "/photography/Grand Canyon 2024/IMG_1747.JPEG"
+        ]
       },
       {
         "name": "Campsite",
         "lat": 36.04987342937377,
-        "lng": -112.11692049002764
+        "lng": -112.11692049002764,
+        "photos": [
+          "/photography/Grand Canyon 2024/IMG_1713.JPEG",
+          "/photography/Grand Canyon 2024/73190584065__BF3B2348-88D6-4B60-B256-CCFA04AD2123.JPEG"
+        ]
       }
     ],
     "route": [
-      [36.052188213887796, -112.08275393945034],
-      [36.052535433399804, -112.08297932081237],
-      [36.0527437643718, -112.08303298304142],
-      [36.05296945563584, -112.08356960533199],
-      [36.05338611473073, -112.08343008353643],
-      [36.053880784996615, -112.08318910345625],
-      [36.053728879245135, -112.08351107683058],
-      [36.05361169460798, -112.08354327416802],
-      [36.05363339547988, -112.08387061376526],
-      [36.05377662108433, -112.08406379778984],
-      [36.053728879245135, -112.0836344999574],
-      [36.053906825953156, -112.0840047693379],
-      [36.053880784996615, -112.08381695153618],
-      [36.05402401015088, -112.08372035952388],
-      [36.053989288925294, -112.08393500844011],
-      [36.054860711071804, -112.08369889643714],
-      [36.05560286571578, -112.08399403869694],
-      [36.056371053502346, -112.08409599693213],
-      [36.05673127457118, -112.0845413934333],
-      [36.05734321260718, -112.08469701389757],
-      [36.05746039168827, -112.08482580324728],
-      [36.05774248876039, -112.08475067612662],
-      [36.058241581103104, -112.08475604234951],
-      [36.05839347814434, -112.08492239525957],
-      [36.05855405469768, -112.08516387529033],
-      [36.05876236973807, -112.08522290374228],
-      [36.05904446214292, -112.08517997395904],
-      [36.059430710103136, -112.08561463801438],
-      [36.05941335068495, -112.08575952603285],
-      [36.05967808139634, -112.08617272519656],
-      [36.05992579044995, -112.0862950852516],
-      [36.06035109232362, -112.08661705862595],
-      [36.06064619839525, -112.08651510039071],
-      [36.060685256468865, -112.08645607193877],
-      [36.060858847672534, -112.08645070571588],
-      [36.06152717023118, -112.08707318757293],
-      [36.06123206746359, -112.08682097509634],
-      [36.06098904082396, -112.08667608707792],
-      [36.06082412946244, -112.08664925596338],
-      [36.060802430573354, -112.08665462218627],
-      [36.06094998290115, -112.0867995102047],
-      [36.06121470844279, -112.08694976444608],
-      [36.061396977970126, -112.08722880803717],
-      [36.0617571760325, -112.08771713432155],
-      [36.06179189383091, -112.08811423481656],
-      [36.061870008821295, -112.08810886859365],
-      [36.06193944430321, -112.08809276992494],
-      [36.062004540011856, -112.08811960103945],
-      [36.06205661654, -112.08791568456905],
-      [36.06215088844414, -112.08821569671096],
-      [36.06224636187516, -112.08828009138581],
-      [36.06215522814808, -112.08828009138581],
-      [36.06230711763458, -112.08838741584391],
-      [36.06261089572792, -112.08865036076631],
-      [36.06270636860075, -112.0886557269892],
-      [36.06287127601731, -112.08873085410987],
-      [36.062814860361065, -112.08866109321211],
-      [36.062728066964794, -112.08859133231435],
-      [36.062584857651615, -112.08832302116907],
-      [36.062441648077765, -112.08807617491541],
-      [36.06246334651478, -112.08802251268634],
-      [36.06262391476288, -112.08825862649421],
-      [36.06279316202097, -112.08839278206683],
-      [36.06294938993609, -112.0884518105188],
-      [36.06309693823778, -112.08851620519366],
-      [36.063209769105285, -112.0886342620976],
-      [36.06322278804111, -112.08874695277858],
-      [36.06321844839607, -112.08890793946577],
-      [36.06317939157994, -112.08899379903225],
-      [36.06314033474442, -112.0890420950384],
-      [36.063088258933554, -112.08906892615293],
-      [36.063018824465466, -112.08909575726747],
-      [36.06298844686641, -112.08916551816523],
-      [36.06292335197178, -112.08920844794845],
-      [36.06283221902885, -112.08925137773171],
-      [36.06278882235224, -112.08928894129205],
-      [36.06309693823778, -112.08929967373787],
-      [36.06330524125139, -112.0893372372982],
-      [36.06345278888573, -112.08924601150882],
-      [36.063609015491075, -112.08936943463564],
-      [36.063760902171055, -112.08941773064177],
-      [36.06409505183493, -112.08951432265405],
-      [36.06425127716492, -112.08954651999149],
-      [36.06435108763003, -112.08943382931051],
-      [36.06431203137617, -112.08929967373787],
-      [36.06437278554048, -112.08936406841275],
-      [36.06446825627531, -112.08943382931051],
-      [36.06468957435142, -112.08966994311834],
-      [36.065080134143415, -112.09007240983624],
-      [36.06546635247549, -112.09028705875245],
-      [36.065600877516715, -112.09038365076476],
-      [36.065574840429896, -112.09029242497537],
-      [36.0655271057484, -112.09019046674015],
-      [36.065665970195994, -112.09028169252956],
-      [36.06577445787517, -112.09037291831896],
-      [36.06629085717702, -112.09059829968096],
-      [36.06655990420969, -112.09066806057874],
-      [36.06682027142973, -112.09078611748268],
-      [36.067454057045545, -112.09105884007164],
-      [36.06830457710657, -112.09090321960736],
-      [36.06847381214425, -112.09062417601626],
-      [36.069107355462684, -112.09014658217768],
-      [36.068807941790546, -112.09007682127991],
-      [36.06900321170598, -112.08987827103242],
-      [36.06951375907355, -112.0897121310977],
-      [36.07035557836227, -112.08888036654736],
-      [36.07109177878849, -112.08837103380974],
-      [36.0715863248654, -112.0884570070834],
-      [36.07196385547791, -112.08869312811073],
-      [36.07215477840673, -112.08868776188781],
-      [36.07241078797029, -112.08951952643817],
-      [36.07266245757646, -112.09000785272256],
-      [36.07290110904531, -112.09035665721142],
-      [36.07388174202511, -112.09139233823217],
-      [36.07451668810411, -112.09200945386631],
-      [36.07548428403536, -112.09223483522833],
-      [36.07601363641261, -112.09213287699313],
-      [36.076247938786224, -112.09209531343281],
-      [36.07682935277201, -112.0922133703367],
-      [36.07721117454366, -112.09219190544509],
-      [36.078209109055585, -112.09186456584784],
-      [36.07872108793328, -112.09158015603386],
-      [36.07958884112987, -112.09098450529135],
-      [36.08060843889925, -112.09037812210305],
-      [36.081276593670765, -112.09003468383709],
-      [36.08153691217462, -112.09019030430137],
-      [36.081658393848095, -112.09035129098851]
+      [
+        36.052188213887796,
+        -112.08275393945034
+      ],
+      [
+        36.052535433399804,
+        -112.08297932081237
+      ],
+      [
+        36.0527437643718,
+        -112.08303298304142
+      ],
+      [
+        36.05296945563584,
+        -112.08356960533199
+      ],
+      [
+        36.05338611473073,
+        -112.08343008353643
+      ],
+      [
+        36.053880784996615,
+        -112.08318910345625
+      ],
+      [
+        36.053728879245135,
+        -112.08351107683058
+      ],
+      [
+        36.05361169460798,
+        -112.08354327416802
+      ],
+      [
+        36.05363339547988,
+        -112.08387061376526
+      ],
+      [
+        36.05377662108433,
+        -112.08406379778984
+      ],
+      [
+        36.053728879245135,
+        -112.0836344999574
+      ],
+      [
+        36.053906825953156,
+        -112.0840047693379
+      ],
+      [
+        36.053880784996615,
+        -112.08381695153618
+      ],
+      [
+        36.05402401015088,
+        -112.08372035952388
+      ],
+      [
+        36.053989288925294,
+        -112.08393500844011
+      ],
+      [
+        36.054860711071804,
+        -112.08369889643714
+      ],
+      [
+        36.05560286571578,
+        -112.08399403869694
+      ],
+      [
+        36.056371053502346,
+        -112.08409599693213
+      ],
+      [
+        36.05673127457118,
+        -112.0845413934333
+      ],
+      [
+        36.05734321260718,
+        -112.08469701389757
+      ],
+      [
+        36.05746039168827,
+        -112.08482580324728
+      ],
+      [
+        36.05774248876039,
+        -112.08475067612662
+      ],
+      [
+        36.058241581103104,
+        -112.08475604234951
+      ],
+      [
+        36.05839347814434,
+        -112.08492239525957
+      ],
+      [
+        36.05855405469768,
+        -112.08516387529033
+      ],
+      [
+        36.05876236973807,
+        -112.08522290374228
+      ],
+      [
+        36.05904446214292,
+        -112.08517997395904
+      ],
+      [
+        36.059430710103136,
+        -112.08561463801438
+      ],
+      [
+        36.05941335068495,
+        -112.08575952603285
+      ],
+      [
+        36.05967808139634,
+        -112.08617272519656
+      ],
+      [
+        36.05992579044995,
+        -112.0862950852516
+      ],
+      [
+        36.06035109232362,
+        -112.08661705862595
+      ],
+      [
+        36.06064619839525,
+        -112.08651510039071
+      ],
+      [
+        36.060685256468865,
+        -112.08645607193877
+      ],
+      [
+        36.060858847672534,
+        -112.08645070571588
+      ],
+      [
+        36.06152717023118,
+        -112.08707318757293
+      ],
+      [
+        36.06123206746359,
+        -112.08682097509634
+      ],
+      [
+        36.06098904082396,
+        -112.08667608707792
+      ],
+      [
+        36.06082412946244,
+        -112.08664925596338
+      ],
+      [
+        36.060802430573354,
+        -112.08665462218627
+      ],
+      [
+        36.06094998290115,
+        -112.0867995102047
+      ],
+      [
+        36.06121470844279,
+        -112.08694976444608
+      ],
+      [
+        36.061396977970126,
+        -112.08722880803717
+      ],
+      [
+        36.0617571760325,
+        -112.08771713432155
+      ],
+      [
+        36.06179189383091,
+        -112.08811423481656
+      ],
+      [
+        36.061870008821295,
+        -112.08810886859365
+      ],
+      [
+        36.06193944430321,
+        -112.08809276992494
+      ],
+      [
+        36.062004540011856,
+        -112.08811960103945
+      ],
+      [
+        36.06205661654,
+        -112.08791568456905
+      ],
+      [
+        36.06215088844414,
+        -112.08821569671096
+      ],
+      [
+        36.06224636187516,
+        -112.08828009138581
+      ],
+      [
+        36.06215522814808,
+        -112.08828009138581
+      ],
+      [
+        36.06230711763458,
+        -112.08838741584391
+      ],
+      [
+        36.06261089572792,
+        -112.08865036076631
+      ],
+      [
+        36.06270636860075,
+        -112.0886557269892
+      ],
+      [
+        36.06287127601731,
+        -112.08873085410987
+      ],
+      [
+        36.062814860361065,
+        -112.08866109321211
+      ],
+      [
+        36.062728066964794,
+        -112.08859133231435
+      ],
+      [
+        36.062584857651615,
+        -112.08832302116907
+      ],
+      [
+        36.062441648077765,
+        -112.08807617491541
+      ],
+      [
+        36.06246334651478,
+        -112.08802251268634
+      ],
+      [
+        36.06262391476288,
+        -112.08825862649421
+      ],
+      [
+        36.06279316202097,
+        -112.08839278206683
+      ],
+      [
+        36.06294938993609,
+        -112.0884518105188
+      ],
+      [
+        36.06309693823778,
+        -112.08851620519366
+      ],
+      [
+        36.063209769105285,
+        -112.0886342620976
+      ],
+      [
+        36.06322278804111,
+        -112.08874695277858
+      ],
+      [
+        36.06321844839607,
+        -112.08890793946577
+      ],
+      [
+        36.06317939157994,
+        -112.08899379903225
+      ],
+      [
+        36.06314033474442,
+        -112.0890420950384
+      ],
+      [
+        36.063088258933554,
+        -112.08906892615293
+      ],
+      [
+        36.063018824465466,
+        -112.08909575726747
+      ],
+      [
+        36.06298844686641,
+        -112.08916551816523
+      ],
+      [
+        36.06292335197178,
+        -112.08920844794845
+      ],
+      [
+        36.06283221902885,
+        -112.08925137773171
+      ],
+      [
+        36.06278882235224,
+        -112.08928894129205
+      ],
+      [
+        36.06309693823778,
+        -112.08929967373787
+      ],
+      [
+        36.06330524125139,
+        -112.0893372372982
+      ],
+      [
+        36.06345278888573,
+        -112.08924601150882
+      ],
+      [
+        36.063609015491075,
+        -112.08936943463564
+      ],
+      [
+        36.063760902171055,
+        -112.08941773064177
+      ],
+      [
+        36.06409505183493,
+        -112.08951432265405
+      ],
+      [
+        36.06425127716492,
+        -112.08954651999149
+      ],
+      [
+        36.06435108763003,
+        -112.08943382931051
+      ],
+      [
+        36.06431203137617,
+        -112.08929967373787
+      ],
+      [
+        36.06437278554048,
+        -112.08936406841275
+      ],
+      [
+        36.06446825627531,
+        -112.08943382931051
+      ],
+      [
+        36.06468957435142,
+        -112.08966994311834
+      ],
+      [
+        36.065080134143415,
+        -112.09007240983624
+      ],
+      [
+        36.06546635247549,
+        -112.09028705875245
+      ],
+      [
+        36.065600877516715,
+        -112.09038365076476
+      ],
+      [
+        36.065574840429896,
+        -112.09029242497537
+      ],
+      [
+        36.0655271057484,
+        -112.09019046674015
+      ],
+      [
+        36.065665970195994,
+        -112.09028169252956
+      ],
+      [
+        36.06577445787517,
+        -112.09037291831896
+      ],
+      [
+        36.06629085717702,
+        -112.09059829968096
+      ],
+      [
+        36.06655990420969,
+        -112.09066806057874
+      ],
+      [
+        36.06682027142973,
+        -112.09078611748268
+      ],
+      [
+        36.067454057045545,
+        -112.09105884007164
+      ],
+      [
+        36.06830457710657,
+        -112.09090321960736
+      ],
+      [
+        36.06847381214425,
+        -112.09062417601626
+      ],
+      [
+        36.069107355462684,
+        -112.09014658217768
+      ],
+      [
+        36.068807941790546,
+        -112.09007682127991
+      ],
+      [
+        36.06900321170598,
+        -112.08987827103242
+      ],
+      [
+        36.06951375907355,
+        -112.0897121310977
+      ],
+      [
+        36.07035557836227,
+        -112.08888036654736
+      ],
+      [
+        36.07109177878849,
+        -112.08837103380974
+      ],
+      [
+        36.0715863248654,
+        -112.0884570070834
+      ],
+      [
+        36.07196385547791,
+        -112.08869312811073
+      ],
+      [
+        36.07215477840673,
+        -112.08868776188781
+      ],
+      [
+        36.07241078797029,
+        -112.08951952643817
+      ],
+      [
+        36.07266245757646,
+        -112.09000785272256
+      ],
+      [
+        36.07290110904531,
+        -112.09035665721142
+      ],
+      [
+        36.07388174202511,
+        -112.09139233823217
+      ],
+      [
+        36.07451668810411,
+        -112.09200945386631
+      ],
+      [
+        36.07548428403536,
+        -112.09223483522833
+      ],
+      [
+        36.07601363641261,
+        -112.09213287699313
+      ],
+      [
+        36.076247938786224,
+        -112.09209531343281
+      ],
+      [
+        36.07682935277201,
+        -112.0922133703367
+      ],
+      [
+        36.07721117454366,
+        -112.09219190544509
+      ],
+      [
+        36.078209109055585,
+        -112.09186456584784
+      ],
+      [
+        36.07872108793328,
+        -112.09158015603386
+      ],
+      [
+        36.07958884112987,
+        -112.09098450529135
+      ],
+      [
+        36.08060843889925,
+        -112.09037812210305
+      ],
+      [
+        36.081276593670765,
+        -112.09003468383709
+      ],
+      [
+        36.08153691217462,
+        -112.09019030430137
+      ],
+      [
+        36.081658393848095,
+        -112.09035129098851
+      ]
     ]
   },
   {
@@ -748,47 +1481,70 @@
       {
         "name": "New York-New York",
         "lat": 36.1024,
-        "lng": -115.1745
+        "lng": -115.1745,
+        "photos": [
+          "/photography/Las Vegas 2024/IMG_1759.JPEG",
+          "/photography/Las Vegas 2024/IMG_1760.JPEG",
+          "/photography/Las Vegas 2024/IMG_1766.JPEG"
+        ]
       },
       {
         "name": "Hoover Dam",
         "lat": 36.016045,
-        "lng": -114.737839
+        "lng": -114.737839,
+        "photos": [
+          "/photography/Las Vegas 2024/IMG_1769.JPEG"
+        ]
       },
       {
         "name": "Excalibur",
         "lat": 36.0988,
-        "lng": -115.1754
+        "lng": -115.1754,
+        "photos": []
       },
       {
         "name": "MGM Grand",
         "lat": 36.1026,
-        "lng": -115.1699
+        "lng": -115.1699,
+        "photos": []
       },
       {
         "name": "Paris",
         "lat": 36.1125,
-        "lng": -115.1707
+        "lng": -115.1707,
+        "photos": [
+          "/photography/Las Vegas 2024/IMG_1761.JPEG",
+          "/photography/Las Vegas 2024/IMG_1765.JPEG"
+        ]
       },
       {
         "name": "Bellagio",
         "lat": 36.1126,
-        "lng": -115.1767
+        "lng": -115.1767,
+        "photos": [
+          "/photography/Las Vegas 2024/IMG_1764.JPEG"
+        ]
       },
       {
         "name": "Caesars Palace",
         "lat": 36.1162,
-        "lng": -115.1745
+        "lng": -115.1745,
+        "photos": [
+          "/photography/Las Vegas 2024/IMG_1762.JPEG",
+          "/photography/Las Vegas 2024/IMG_1763.JPEG"
+        ]
       },
       {
         "name": "Luxor",
         "lat": 36.0955,
-        "lng": -115.1761
+        "lng": -115.1761,
+        "photos": []
       },
       {
         "name": "Mandalay Bay",
         "lat": 36.0907,
-        "lng": -115.1764
+        "lng": -115.1764,
+        "photos": []
       }
     ]
   },
@@ -816,135 +1572,502 @@
       {
         "name": "Grotto Trailhead (Angels Landing Base)",
         "lat": 37.25907,
-        "lng": -112.951006
+        "lng": -112.951006,
+        "photos": [
+          "/photography/Zion 2024/IMG_1795.JPEG",
+          "/photography/Zion 2024/IMG_1797.JPEG",
+          "/photography/Zion 2024/IMG_1798.JPEG"
+        ]
       },
       {
         "name": "Angels Landing",
         "lat": 37.26944,
-        "lng": -112.94806
+        "lng": -112.94806,
+        "photos": [
+          "/photography/Zion 2024/IMG_1799.JPEG",
+          "/photography/Zion 2024/IMG_1803.JPEG",
+          "/photography/Zion 2024/IMG_1808.JPEG",
+          "/photography/Zion 2024/IMG_1809.JPEG",
+          "/photography/Zion 2024/IMG_1810.JPEG",
+          "/photography/Zion 2024/IMG_1811.JPEG",
+          "/photography/Zion 2024/IMG_1812.JPEG",
+          "/photography/Zion 2024/IMG_1816.JPEG",
+          "/photography/Zion 2024/IMG_1817.JPEG",
+          "/photography/Zion 2024/IMG_1821.JPEG"
+        ]
       },
       {
         "name": "Pyramid Ridge Campground",
         "lat": 37.61335861225011,
-        "lng": -113.10034507883894
+        "lng": -113.10034507883894,
+        "photos": [
+          "/photography/Zion 2024/IMG_1789.JPEG",
+          "/photography/Zion 2024/IMG_1827.JPEG",
+          "/photography/Zion 2024/IMG_1828.JPEG"
+        ]
       }
     ],
     "route": [
-      [37.25911116815315, -112.95118833828614],
-      [37.259470077705416, -112.95143518453978],
-      [37.25982044014253, -112.95140298720236],
-      [37.26005116573555, -112.95160690367278],
-      [37.26048697881615, -112.95098442181573],
-      [37.26090569881243, -112.95069464577882],
-      [37.261162056844974, -112.95070537822464],
-      [37.26137568787219, -112.95068391333302],
-      [37.261606408700985, -112.95072684311626],
-      [37.26187130952172, -112.95069464577882],
-      [37.26206784823826, -112.9507805053453],
-      [37.2623156571933, -112.95063025110396],
-      [37.26258055551944, -112.95064098354977],
-      [37.262905268325625, -112.95065171599559],
-      [37.263238524749845, -112.95066244844142],
-      [37.263477784862964, -112.9505443915375],
-      [37.26419556064158, -112.95046926441682],
-      [37.264281009683366, -112.9505443915375],
-      [37.26446899723397, -112.95040486974194],
-      [37.26463989460003, -112.95040486974194],
-      [37.26484497092741, -112.95044779952518],
-      [37.26463989460003, -112.95058732132073],
-      [37.26456299083331, -112.95071611067044],
-      [37.26505004669634, -112.95084490002019],
-      [37.26528930105423, -112.9509736893699],
-      [37.26535765930258, -112.95095222447831],
-      [37.2655114651345, -112.95074830800787],
-      [37.2656909048747, -112.95056585642912],
-      [37.26581907585593, -112.95064098354977],
-      [37.26607541716389, -112.95065171599559],
-      [37.266186498126395, -112.95063025110396],
-      [37.26630612359503, -112.95079123779114],
-      [37.26633175759932, -112.950855632466],
-      [37.26620358749071, -112.95082343512857],
-      [37.266126685320806, -112.95086636491182],
-      [37.26607541716389, -112.95088782980343],
-      [37.26615231938616, -112.9509307595867],
-      [37.26620358749071, -112.9510488164906],
-      [37.266220676851106, -112.95114540850288],
-      [37.266220676851106, -112.95129566274426],
-      [37.266220676851106, -112.95138152231074],
-      [37.26654537396222, -112.95184301748061],
-      [37.26669917736829, -112.95177862280575],
-      [37.266844435852285, -112.9515425089979],
-      [37.26719476398427, -112.95138152231074],
-      [37.267425466986026, -112.95143518453978],
-      [37.267792881418515, -112.95134932497331],
-      [37.26790395984749, -112.9513600574191],
-      [37.2684080829658, -112.95151031166047],
-      [37.26863878225015, -112.95160690367278],
-      [37.2687498594313, -112.9513600574191],
-      [37.26886948082774, -112.95129566274426],
-      [37.26881821453824, -112.95139225475656],
-      [37.268972013301976, -112.95127419785263],
-      [37.269031823847484, -112.95117760584031],
-      [37.269040368207264, -112.95101661915317],
-      [37.26907454563662, -112.95101661915317],
-      [37.26912581175157, -112.95109174627383],
-      [37.26913435610066, -112.95116687339451],
-      [37.26905745692386, -112.95129566274426],
-      [37.268972013301976, -112.9514459169856],
-      [37.26892929145467, -112.95152104410627],
-      [37.26902327948674, -112.95146738187722],
-      [37.26911726740151, -112.95134932497331],
-      [37.26922834387679, -112.95127419785263],
-      [37.26916853348738, -112.95134932497331],
-      [37.26913435610066, -112.95143518453978],
-      [37.26907454563662, -112.95157470633532],
-      [37.26907454563662, -112.95166056590183],
-      [37.26926252122081, -112.9514566494314],
-      [37.26936505315987, -112.95124200051518],
-      [37.269424863393155, -112.95092002714087],
-      [37.26938214180279, -112.9507697728995],
-      [37.26957011661906, -112.95089856224925],
-      [37.26950176219472, -112.95102735159897],
-      [37.269647015272284, -112.95084490002019],
-      [37.269424863393155, -112.95057658887492],
-      [37.269647015272284, -112.95028681283803],
-      [37.26998878611416, -112.95036193995868],
-      [37.27005714009638, -112.95021168571733],
-      [37.27214190674437, -112.95088782980343],
-      [37.27496992004852, -112.95157470633532],
-      [37.27529457943034, -112.95164983345602],
-      [37.27515788091391, -112.9515532414437],
-      [37.27549962673953, -112.95163910101019],
-      [37.27549962673953, -112.9515425089979],
-      [37.275713217092694, -112.9514459169856],
-      [37.27549108311278, -112.95138152231074],
-      [37.27567049907053, -112.95139225475656],
-      [37.27551671399008, -112.95133859252749],
-      [37.27567049907053, -112.95137078986491],
-      [37.27543982133204, -112.95130639519006],
-      [37.275251861170624, -112.9513278600817],
-      [37.275200599226984, -112.95124200051518],
-      [37.27502972582933, -112.95098442181573],
-      [37.27494439680532, -112.95079164208329],
-      [37.274525754867405, -112.95066285273354],
-      [37.274243811025855, -112.95050186604638],
-      [37.27403021650354, -112.95046966870898],
-      [37.27379098991904, -112.9504911336006],
-      [37.27295369088685, -112.95022282245529],
-      [37.27241542230581, -112.9502442873469],
-      [37.27168918081981, -112.95005110332234],
-      [37.271142359077814, -112.94973986239381],
-      [37.271116726711206, -112.94980425706868],
-      [37.27100565302177, -112.94980425706868],
-      [37.27094584404417, -112.94972912994801],
-      [37.270826225946486, -112.94972912994801],
-      [37.27065534262013, -112.94966473527315],
-      [37.270552812438154, -112.94952521347759],
-      [37.27015977878043, -112.94907445075353],
-      [37.26998889394151, -112.94877394227083],
-      [37.26982655298528, -112.9485485609088],
-      [37.26974965451543, -112.9483446444384],
-      [37.269424971221284, -112.94801193861825]
+      [
+        37.25911116815315,
+        -112.95118833828614
+      ],
+      [
+        37.259470077705416,
+        -112.95143518453978
+      ],
+      [
+        37.25982044014253,
+        -112.95140298720236
+      ],
+      [
+        37.26005116573555,
+        -112.95160690367278
+      ],
+      [
+        37.26048697881615,
+        -112.95098442181573
+      ],
+      [
+        37.26090569881243,
+        -112.95069464577882
+      ],
+      [
+        37.261162056844974,
+        -112.95070537822464
+      ],
+      [
+        37.26137568787219,
+        -112.95068391333302
+      ],
+      [
+        37.261606408700985,
+        -112.95072684311626
+      ],
+      [
+        37.26187130952172,
+        -112.95069464577882
+      ],
+      [
+        37.26206784823826,
+        -112.9507805053453
+      ],
+      [
+        37.2623156571933,
+        -112.95063025110396
+      ],
+      [
+        37.26258055551944,
+        -112.95064098354977
+      ],
+      [
+        37.262905268325625,
+        -112.95065171599559
+      ],
+      [
+        37.263238524749845,
+        -112.95066244844142
+      ],
+      [
+        37.263477784862964,
+        -112.9505443915375
+      ],
+      [
+        37.26419556064158,
+        -112.95046926441682
+      ],
+      [
+        37.264281009683366,
+        -112.9505443915375
+      ],
+      [
+        37.26446899723397,
+        -112.95040486974194
+      ],
+      [
+        37.26463989460003,
+        -112.95040486974194
+      ],
+      [
+        37.26484497092741,
+        -112.95044779952518
+      ],
+      [
+        37.26463989460003,
+        -112.95058732132073
+      ],
+      [
+        37.26456299083331,
+        -112.95071611067044
+      ],
+      [
+        37.26505004669634,
+        -112.95084490002019
+      ],
+      [
+        37.26528930105423,
+        -112.9509736893699
+      ],
+      [
+        37.26535765930258,
+        -112.95095222447831
+      ],
+      [
+        37.2655114651345,
+        -112.95074830800787
+      ],
+      [
+        37.2656909048747,
+        -112.95056585642912
+      ],
+      [
+        37.26581907585593,
+        -112.95064098354977
+      ],
+      [
+        37.26607541716389,
+        -112.95065171599559
+      ],
+      [
+        37.266186498126395,
+        -112.95063025110396
+      ],
+      [
+        37.26630612359503,
+        -112.95079123779114
+      ],
+      [
+        37.26633175759932,
+        -112.950855632466
+      ],
+      [
+        37.26620358749071,
+        -112.95082343512857
+      ],
+      [
+        37.266126685320806,
+        -112.95086636491182
+      ],
+      [
+        37.26607541716389,
+        -112.95088782980343
+      ],
+      [
+        37.26615231938616,
+        -112.9509307595867
+      ],
+      [
+        37.26620358749071,
+        -112.9510488164906
+      ],
+      [
+        37.266220676851106,
+        -112.95114540850288
+      ],
+      [
+        37.266220676851106,
+        -112.95129566274426
+      ],
+      [
+        37.266220676851106,
+        -112.95138152231074
+      ],
+      [
+        37.26654537396222,
+        -112.95184301748061
+      ],
+      [
+        37.26669917736829,
+        -112.95177862280575
+      ],
+      [
+        37.266844435852285,
+        -112.9515425089979
+      ],
+      [
+        37.26719476398427,
+        -112.95138152231074
+      ],
+      [
+        37.267425466986026,
+        -112.95143518453978
+      ],
+      [
+        37.267792881418515,
+        -112.95134932497331
+      ],
+      [
+        37.26790395984749,
+        -112.9513600574191
+      ],
+      [
+        37.2684080829658,
+        -112.95151031166047
+      ],
+      [
+        37.26863878225015,
+        -112.95160690367278
+      ],
+      [
+        37.2687498594313,
+        -112.9513600574191
+      ],
+      [
+        37.26886948082774,
+        -112.95129566274426
+      ],
+      [
+        37.26881821453824,
+        -112.95139225475656
+      ],
+      [
+        37.268972013301976,
+        -112.95127419785263
+      ],
+      [
+        37.269031823847484,
+        -112.95117760584031
+      ],
+      [
+        37.269040368207264,
+        -112.95101661915317
+      ],
+      [
+        37.26907454563662,
+        -112.95101661915317
+      ],
+      [
+        37.26912581175157,
+        -112.95109174627383
+      ],
+      [
+        37.26913435610066,
+        -112.95116687339451
+      ],
+      [
+        37.26905745692386,
+        -112.95129566274426
+      ],
+      [
+        37.268972013301976,
+        -112.9514459169856
+      ],
+      [
+        37.26892929145467,
+        -112.95152104410627
+      ],
+      [
+        37.26902327948674,
+        -112.95146738187722
+      ],
+      [
+        37.26911726740151,
+        -112.95134932497331
+      ],
+      [
+        37.26922834387679,
+        -112.95127419785263
+      ],
+      [
+        37.26916853348738,
+        -112.95134932497331
+      ],
+      [
+        37.26913435610066,
+        -112.95143518453978
+      ],
+      [
+        37.26907454563662,
+        -112.95157470633532
+      ],
+      [
+        37.26907454563662,
+        -112.95166056590183
+      ],
+      [
+        37.26926252122081,
+        -112.9514566494314
+      ],
+      [
+        37.26936505315987,
+        -112.95124200051518
+      ],
+      [
+        37.269424863393155,
+        -112.95092002714087
+      ],
+      [
+        37.26938214180279,
+        -112.9507697728995
+      ],
+      [
+        37.26957011661906,
+        -112.95089856224925
+      ],
+      [
+        37.26950176219472,
+        -112.95102735159897
+      ],
+      [
+        37.269647015272284,
+        -112.95084490002019
+      ],
+      [
+        37.269424863393155,
+        -112.95057658887492
+      ],
+      [
+        37.269647015272284,
+        -112.95028681283803
+      ],
+      [
+        37.26998878611416,
+        -112.95036193995868
+      ],
+      [
+        37.27005714009638,
+        -112.95021168571733
+      ],
+      [
+        37.27214190674437,
+        -112.95088782980343
+      ],
+      [
+        37.27496992004852,
+        -112.95157470633532
+      ],
+      [
+        37.27529457943034,
+        -112.95164983345602
+      ],
+      [
+        37.27515788091391,
+        -112.9515532414437
+      ],
+      [
+        37.27549962673953,
+        -112.95163910101019
+      ],
+      [
+        37.27549962673953,
+        -112.9515425089979
+      ],
+      [
+        37.275713217092694,
+        -112.9514459169856
+      ],
+      [
+        37.27549108311278,
+        -112.95138152231074
+      ],
+      [
+        37.27567049907053,
+        -112.95139225475656
+      ],
+      [
+        37.27551671399008,
+        -112.95133859252749
+      ],
+      [
+        37.27567049907053,
+        -112.95137078986491
+      ],
+      [
+        37.27543982133204,
+        -112.95130639519006
+      ],
+      [
+        37.275251861170624,
+        -112.9513278600817
+      ],
+      [
+        37.275200599226984,
+        -112.95124200051518
+      ],
+      [
+        37.27502972582933,
+        -112.95098442181573
+      ],
+      [
+        37.27494439680532,
+        -112.95079164208329
+      ],
+      [
+        37.274525754867405,
+        -112.95066285273354
+      ],
+      [
+        37.274243811025855,
+        -112.95050186604638
+      ],
+      [
+        37.27403021650354,
+        -112.95046966870898
+      ],
+      [
+        37.27379098991904,
+        -112.9504911336006
+      ],
+      [
+        37.27295369088685,
+        -112.95022282245529
+      ],
+      [
+        37.27241542230581,
+        -112.9502442873469
+      ],
+      [
+        37.27168918081981,
+        -112.95005110332234
+      ],
+      [
+        37.271142359077814,
+        -112.94973986239381
+      ],
+      [
+        37.271116726711206,
+        -112.94980425706868
+      ],
+      [
+        37.27100565302177,
+        -112.94980425706868
+      ],
+      [
+        37.27094584404417,
+        -112.94972912994801
+      ],
+      [
+        37.270826225946486,
+        -112.94972912994801
+      ],
+      [
+        37.27065534262013,
+        -112.94966473527315
+      ],
+      [
+        37.270552812438154,
+        -112.94952521347759
+      ],
+      [
+        37.27015977878043,
+        -112.94907445075353
+      ],
+      [
+        37.26998889394151,
+        -112.94877394227083
+      ],
+      [
+        37.26982655298528,
+        -112.9485485609088
+      ],
+      [
+        37.26974965451543,
+        -112.9483446444384
+      ],
+      [
+        37.269424971221284,
+        -112.94801193861825
+      ]
     ]
   },
   {
@@ -991,94 +2114,165 @@
     "locations": [
       {
         "name": "Yoyogi Park",
-        "lat": 35.6720,
-        "lng": 139.6977
+        "lat": 35.672,
+        "lng": 139.6977,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2026.JPEG",
+          "/photography/Tokyo 2024/IMG_2027.JPEG",
+          "/photography/Tokyo 2024/IMG_2028.JPEG",
+          "/photography/Tokyo 2024/IMG_2030.JPEG"
+        ]
       },
       {
         "name": "Meiji Jingu",
         "lat": 35.6764,
-        "lng": 139.6993
+        "lng": 139.6993,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2038.JPEG",
+          "/photography/Tokyo 2024/IMG_2043.JPEG",
+          "/photography/Tokyo 2024/IMG_2047.JPEG"
+        ]
       },
       {
         "name": "Ueno Zoo",
         "lat": 35.7172,
-        "lng": 139.7695
+        "lng": 139.7695,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2076.JPEG"
+        ]
       },
       {
         "name": "Senso-Ji",
         "lat": 35.7147,
-        "lng": 139.7968
+        "lng": 139.7968,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2090.JPEG",
+          "/photography/Tokyo 2024/IMG_2095.JPEG",
+          "/photography/Tokyo 2024/IMG_2098.JPEG",
+          "/photography/Tokyo 2024/IMG_2103.JPEG",
+          "/photography/Tokyo 2024/IMG_2168.JPEG"
+        ]
       },
       {
         "name": "Kappabashi Avenue",
         "lat": 35.7144,
-        "lng": 139.7889
+        "lng": 139.7889,
+        "photos": []
       },
       {
         "name": "Shinjuku Gyoen National Garden",
         "lat": 35.6853,
-        "lng": 139.7094
+        "lng": 139.7094,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2123.JPEG",
+          "/photography/Tokyo 2024/IMG_2144.JPEG"
+        ]
       },
       {
         "name": "Gardens of the Imperial Palace",
         "lat": 35.6875,
-        "lng": 139.7575
+        "lng": 139.7575,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2207.JPEG"
+        ]
       },
       {
         "name": "Tokyo Station",
         "lat": 35.6752,
-        "lng": 139.7668
+        "lng": 139.7668,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2209.JPEG"
+        ]
       },
       {
         "name": "Mega Don Quijote Shibuya",
         "lat": 35.6605,
-        "lng": 139.6979
+        "lng": 139.6979,
+        "photos": []
       },
       {
         "name": "Golden Gai",
         "lat": 35.6939,
-        "lng": 139.7047
+        "lng": 139.7047,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2148.JPEG",
+          "/photography/Tokyo 2024/IMG_2150.JPEG",
+          "/photography/Tokyo 2024/IMG_2152.JPEG"
+        ]
       },
       {
         "name": "Shibuya Crossing",
         "lat": 35.6595,
-        "lng": 139.7006
+        "lng": 139.7006,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2055.JPEG",
+          "/photography/Tokyo 2024/IMG_2058.JPEG"
+        ]
       },
       {
         "name": "Tokyo Tower",
         "lat": 35.6586,
-        "lng": 139.7454
+        "lng": 139.7454,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2227.JPEG",
+          "/photography/Tokyo 2024/IMG_2229.JPEG",
+          "/photography/Tokyo 2024/IMG_2232.JPEG",
+          "/photography/Tokyo 2024/IMG_2239.JPEG",
+          "/photography/Tokyo 2024/IMG_2241.JPEG"
+        ]
       },
       {
         "name": "teamLab Planets Tokyo",
         "lat": 35.6491,
-        "lng": 139.7908
+        "lng": 139.7908,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2172.JPEG",
+          "/photography/Tokyo 2024/IMG_2183.JPEG",
+          "/photography/Tokyo 2024/IMG_2189.JPEG"
+        ]
       },
       {
         "name": "Godzilla Head Shinjuku",
         "lat": 35.6951,
-        "lng": 139.7019
+        "lng": 139.7019,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2251.JPEG"
+        ]
       },
       {
         "name": "Starbucks Reserve Roastery Tokyo",
         "lat": 35.6492,
-        "lng": 139.6924
+        "lng": 139.6924,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2157.JPEG",
+          "/photography/Tokyo 2024/IMG_2160.JPEG"
+        ]
       },
       {
         "name": "Akihabara",
         "lat": 35.6982,
-        "lng": 139.7737
+        "lng": 139.7737,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2164.JPEG"
+        ]
       },
       {
         "name": "Hotel",
         "lat": 35.6795,
         "lng": 139.7798,
-        "description": "Smile Hotel Tokyo Nihombashi"
+        "description": "Smile Hotel Tokyo Nihombashi",
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2243.JPEG",
+          "/photography/Tokyo 2024/IMG_2249.JPEG"
+        ]
       },
       {
         "name": "Tokyo National Museum",
         "lat": 35.7189,
-        "lng": 139.7764
+        "lng": 139.7764,
+        "photos": [
+          "/photography/Tokyo 2024/IMG_2069.JPEG"
+        ]
       }
     ]
   },
@@ -1142,52 +2336,124 @@
       {
         "name": "Funaoka Onsen",
         "lat": 35.0369,
-        "lng": 135.7444
+        "lng": 135.7444,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2286.JPEG",
+          "/photography/Kyoto 2024/IMG_2289.JPEG",
+          "/photography/Kyoto 2024/IMG_2293.JPEG",
+          "/photography/Kyoto 2024/IMG_2294.JPEG",
+          "/photography/Kyoto 2024/IMG_2441.JPEG",
+          "/photography/Kyoto 2024/IMG_2497.JPEG"
+        ]
       },
       {
         "name": "Nanzen-ji Temple",
         "lat": 35.0111,
-        "lng": 135.7911
+        "lng": 135.7911,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2275.JPEG",
+          "/photography/Kyoto 2024/IMG_2279.JPEG",
+          "/photography/Kyoto 2024/IMG_2297.JPEG",
+          "/photography/Kyoto 2024/IMG_2300.JPEG",
+          "/photography/Kyoto 2024/IMG_2302.JPEG",
+          "/photography/Kyoto 2024/IMG_2310.JPEG",
+          "/photography/Kyoto 2024/IMG_2314.JPEG",
+          "/photography/Kyoto 2024/IMG_2433.JPEG",
+          "/photography/Kyoto 2024/IMG_2434.JPEG"
+        ]
       },
       {
         "name": "Arashiyama Bamboo Forest",
-        "lat": 35.0170,
-        "lng": 135.6720
+        "lat": 35.017,
+        "lng": 135.672,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2445.JPEG",
+          "/photography/Kyoto 2024/IMG_2447.JPEG",
+          "/photography/Kyoto 2024/IMG_2448.JPEG",
+          "/photography/Kyoto 2024/IMG_2451.JPEG",
+          "/photography/Kyoto 2024/IMG_2459.JPEG"
+        ]
       },
       {
         "name": "Fushimi Inari Shrine",
         "lat": 34.9671,
-        "lng": 135.7727
+        "lng": 135.7727,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2401.JPEG",
+          "/photography/Kyoto 2024/IMG_2406.JPEG",
+          "/photography/Kyoto 2024/IMG_2410.JPEG",
+          "/photography/Kyoto 2024/IMG_2411.JPEG",
+          "/photography/Kyoto 2024/IMG_2412.JPEG",
+          "/photography/Kyoto 2024/IMG_2413.JPEG",
+          "/photography/Kyoto 2024/IMG_2414.JPEG",
+          "/photography/Kyoto 2024/IMG_2421.JPEG",
+          "/photography/Kyoto 2024/IMG_2424.JPEG",
+          "/photography/Kyoto 2024/IMG_2429.JPEG",
+          "/photography/Kyoto 2024/IMG_2430.JPEG",
+          "/photography/Kyoto 2024/IMG_2431.JPEG"
+        ]
       },
       {
         "name": "Kiyomizu-dera Temple",
         "lat": 34.9949,
-        "lng": 135.7850
+        "lng": 135.785,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2316.JPEG",
+          "/photography/Kyoto 2024/IMG_2335.JPEG",
+          "/photography/Kyoto 2024/IMG_2340.JPEG",
+          "/photography/Kyoto 2024/IMG_2347.JPEG",
+          "/photography/Kyoto 2024/IMG_2350.JPEG"
+        ]
       },
       {
         "name": "Nishiki Market",
-        "lat": 35.0050,
-        "lng": 135.7649
+        "lat": 35.005,
+        "lng": 135.7649,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2542.JPEG",
+          "/photography/Kyoto 2024/IMG_2547.JPEG",
+          "/photography/Kyoto 2024/IMG_2551.JPEG"
+        ]
       },
       {
         "name": "Hokan-ji Temple",
         "lat": 34.9986,
-        "lng": 135.7811
+        "lng": 135.7811,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2319.JPEG",
+          "/photography/Kyoto 2024/IMG_2321.JPEG",
+          "/photography/Kyoto 2024/IMG_2325.JPEG",
+          "/photography/Kyoto 2024/IMG_2354.JPEG"
+        ]
       },
       {
         "name": "Nintendo Kyoto",
         "lat": 35.0037,
-        "lng": 135.7692
+        "lng": 135.7692,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2486.JPEG"
+        ]
       },
       {
         "name": "Nara Deer Park",
-        "lat": 34.6850,
-        "lng": 135.8430
+        "lat": 34.685,
+        "lng": 135.843,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2522.JPEG",
+          "/photography/Kyoto 2024/IMG_2537.JPEG"
+        ]
       },
       {
         "name": "Monkey Park Iwatayama",
         "lat": 35.0089,
-        "lng": 135.6747
+        "lng": 135.6747,
+        "photos": [
+          "/photography/Kyoto 2024/IMG_2474.JPEG",
+          "/photography/Kyoto 2024/IMG_2475.JPEG",
+          "/photography/Kyoto 2024/IMG_2477.JPEG",
+          "/photography/Kyoto 2024/IMG_2482.JPEG",
+          "/photography/Kyoto 2024/IMG_2484.JPEG"
+        ]
       }
     ]
   },
@@ -1205,13 +2471,24 @@
     "locations": [
       {
         "name": "Glico Man Sign",
-        "lat": 34.6690,
-        "lng": 135.5013
+        "lat": 34.669,
+        "lng": 135.5013,
+        "photos": [
+          "/photography/Osaka 2024/IMG_2565.JPEG",
+          "/photography/Osaka 2024/IMG_2571.JPEG"
+        ]
       },
       {
         "name": "Don Quijote Dotonbori",
         "lat": 34.6691,
-        "lng": 135.5024
+        "lng": 135.5024,
+        "photos": [
+          "/photography/Osaka 2024/IMG_2558.JPEG",
+          "/photography/Osaka 2024/IMG_2563.JPEG",
+          "/photography/Osaka 2024/IMG_2564.JPEG",
+          "/photography/Osaka 2024/IMG_2573.JPEG",
+          "/photography/Osaka 2024/IMG_2574.JPEG"
+        ]
       }
     ]
   },
@@ -1255,49 +2532,99 @@
       {
         "name": "Deoksugung",
         "lat": 37.5661,
-        "lng": 126.9750
+        "lng": 126.975,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2591.JPEG",
+          "/photography/Seoul 2024/IMG_2592.JPEG"
+        ]
       },
       {
         "name": "Seoul Metropolitan Library",
         "lat": 37.5664,
-        "lng": 126.9778
+        "lng": 126.9778,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2580.JPEG",
+          "/photography/Seoul 2024/IMG_2581.JPEG"
+        ]
       },
       {
         "name": "Seoul Tower",
         "lat": 37.5512,
-        "lng": 126.9882
+        "lng": 126.9882,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2597.JPEG"
+        ]
       },
       {
         "name": "Namsan Park",
         "lat": 37.5517,
-        "lng": 126.9884
+        "lng": 126.9884,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2601.JPEG",
+          "/photography/Seoul 2024/IMG_2603.JPEG",
+          "/photography/Seoul 2024/IMG_2605.JPEG",
+          "/photography/Seoul 2024/IMG_2607.JPEG",
+          "/photography/Seoul 2024/IMG_2608.JPEG",
+          "/photography/Seoul 2024/IMG_2611.JPEG",
+          "/photography/Seoul 2024/IMG_2613.JPEG"
+        ]
       },
       {
         "name": "The Gangnam Hands",
         "lat": 37.5116,
         "lng": 127.0592,
-        "description": "Gangnam Style Statue at COEX Mall"
+        "description": "Gangnam Style Statue at COEX Mall",
+        "photos": [
+          "/photography/Seoul 2024/IMG_2622.JPEG",
+          "/photography/Seoul 2024/IMG_2631.JPEG"
+        ]
       },
       {
         "name": "Olympic Park",
         "lat": 37.5204,
-        "lng": 127.1226
+        "lng": 127.1226,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2667.JPEG",
+          "/photography/Seoul 2024/IMG_2672.JPEG",
+          "/photography/Seoul 2024/IMG_2677.JPEG",
+          "/photography/Seoul 2024/IMG_2684.JPEG",
+          "/photography/Seoul 2024/IMG_2687.JPEG",
+          "/photography/Seoul 2024/IMG_2689.JPEG",
+          "/photography/Seoul 2024/IMG_2691.JPEG",
+          "/photography/Seoul 2024/IMG_2692.JPEG"
+        ]
       },
       {
         "name": "War Memorial Of Korea",
         "lat": 37.5372,
-        "lng": 126.9771
+        "lng": 126.9771,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2649.JPEG",
+          "/photography/Seoul 2024/IMG_2655.JPEG"
+        ]
       },
       {
         "name": "Paradise City",
         "lat": 37.4372,
         "lng": 126.4599,
-        "description": "Mall and Casino near Incheon Airport"
+        "description": "Mall and Casino near Incheon Airport",
+        "photos": [
+          "/photography/Seoul 2024/IMG_2697.JPEG",
+          "/photography/Seoul 2024/IMG_2698.JPEG"
+        ]
       },
       {
         "name": "Myeong-dong",
         "lat": 37.5632,
-        "lng": 126.9854
+        "lng": 126.9854,
+        "photos": [
+          "/photography/Seoul 2024/IMG_2578.JPEG",
+          "/photography/Seoul 2024/IMG_2579.JPEG",
+          "/photography/Seoul 2024/IMG_2588.JPEG",
+          "/photography/Seoul 2024/IMG_2589.JPEG",
+          "/photography/Seoul 2024/IMG_2663.JPEG",
+          "/photography/Seoul 2024/IMG_2665.JPEG"
+        ]
       }
     ]
   },
@@ -1321,31 +2648,52 @@
       {
         "name": "Bernheim Forest and Arboretum",
         "lat": 37.9001,
-        "lng": -85.6250
+        "lng": -85.625,
+        "photos": [
+          "/photography/Louisville 2024/IMG_2833.JPG",
+          "/photography/Louisville 2024/IMG_2834.JPG"
+        ]
       },
       {
         "name": "Heaven Hill Distillery",
         "lat": 37.7933,
-        "lng": -85.4657
+        "lng": -85.4657,
+        "photos": [
+          "/photography/Louisville 2024/IMG_2838.JPG",
+          "/photography/Louisville 2024/IMG_2839.JPG",
+          "/photography/Louisville 2024/IMG_2840.JPG",
+          "/photography/Louisville 2024/IMG_2843.JPG"
+        ]
       },
       {
         "name": "Angels Envy Distillery",
-        "lat": 38.2550,
-        "lng": -85.7434
+        "lat": 38.255,
+        "lng": -85.7434,
+        "photos": []
       },
       {
         "name": "Louisville Slugger Museum & Factory",
         "lat": 38.2571,
-        "lng": -85.7640
+        "lng": -85.764,
+        "photos": [
+          "/photography/Louisville 2024/IMG_2845.JPG",
+          "/photography/Louisville 2024/IMG_2847.JPG",
+          "/photography/Louisville 2024/IMG_2848.JPG",
+          "/photography/Louisville 2024/IMG_2849.JPG"
+        ]
       },
       {
         "name": "Churchill Downs",
         "lat": 38.2037,
-        "lng": -85.7724
+        "lng": -85.7724,
+        "photos": [
+          "/photography/Louisville 2024/IMG_2852.JPG",
+          "/photography/Louisville 2024/IMG_2859.JPG"
+        ]
       }
     ]
   },
-    {
+  {
     "name": "Los Angeles 2025",
     "photos": [
       "/photography/Los Angeles 2025/IMG_3807.JPG",
@@ -1368,22 +2716,45 @@
       {
         "name": "Venice Beach",
         "lat": 33.9771,
-        "lng": -118.4676
+        "lng": -118.4676,
+        "photos": [
+          "/photography/Los Angeles 2025/IMG_3807.JPG",
+          "/photography/Los Angeles 2025/IMG_3809.JPG"
+        ]
       },
       {
         "name": "Griffith Observatory",
         "lat": 34.1184,
-        "lng": -118.3004
+        "lng": -118.3004,
+        "photos": [
+          "/photography/Los Angeles 2025/IMG_3816.JPG",
+          "/photography/Los Angeles 2025/IMG_3819.JPG",
+          "/photography/Los Angeles 2025/IMG_3820.JPG",
+          "/photography/Los Angeles 2025/IMG_3821.JPG",
+          "/photography/Los Angeles 2025/IMG_3823.JPG"
+        ]
       },
       {
         "name": "Dodger Stadium",
         "lat": 34.0739,
-        "lng": -118.2400
+        "lng": -118.24,
+        "photos": [
+          "/photography/Los Angeles 2025/IMG_3826.JPG"
+        ]
       },
       {
         "name": "Diamond Bar",
-        "lat": 34.0010,
-        "lng": -117.8112
+        "lat": 34.001,
+        "lng": -117.8112,
+        "photos": [
+          "/photography/Los Angeles 2025/IMG_3838.JPG",
+          "/photography/Los Angeles 2025/IMG_3840.JPG",
+          "/photography/Los Angeles 2025/IMG_3848.JPG",
+          "/photography/Los Angeles 2025/IMG_3896.JPG",
+          "/photography/Los Angeles 2025/IMG_3897.JPG",
+          "/photography/Los Angeles 2025/IMG_3898.JPG",
+          "/photography/Los Angeles 2025/IMG_3903.JPG"
+        ]
       }
     ]
   }
