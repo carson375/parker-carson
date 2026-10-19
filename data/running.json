@@ -1,5 +1,50 @@
 [
   {
+    "name": "Chicago Marathon",
+    "date": "Oct 11, 2026",
+    "distance": "26.2 Miles",
+    "time": "3:06:27",
+    "place": "4464",
+    "results": "https://results.chicagomarathon.com/2026/?content=detail&fpid=search&pid=search&idp=2EFG96382D1D04&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=Carson&search%5Bfirstname%5D=Parker&search%5Bstart_no%5D=22716&search_event=MAR",
+    "photos": []
+  },
+  {
+    "name": "Run Mag Mile",
+    "date": "Sept 12, 2026",
+    "distance": "10k",
+    "time": "40:38",
+    "place": "50",
+    "results": "https://gallery.us.runnertag.site/events/2026-run-mag-mile-presented-by-hoka/search/participants/7426",
+    "photos": []
+  },
+  {
+    "name": "Chitown Miles",
+    "date": "July 18, 2026",
+    "distance": "1 Mile",
+    "time": "5:30",
+    "place": "101",
+    "results": "https://www.webscorer.com/racealldetails?pid=1&raceid=441037&groupid=425431",
+    "photos": []
+  },
+  {
+    "name": "JPMC Corporate Challenge",
+    "date": "June 1, 2026",
+    "distance": "3.5 Miles",
+    "time": "22:31",
+    "place": "305",
+    "results": "https://leaderboard.jpmorgancc.com/leaderboard/2026/individual?entrantId=949784&eventIds=271",
+    "photos": []
+  },
+  {
+    "name": "Run For The Zoo",
+    "date": "May 31, 2026",
+    "distance": "10k",
+    "time": "42:46",
+    "place": "16",
+    "results": "https://my.raceresult.com/393639/details0?pid=4237",
+    "photos": []
+  },
+  {
     "name": "Shamrock Shuffle",
     "date": "March 22, 2026",
     "distance": "8k",
@@ -14,40 +59,34 @@
     ]
   },
   {
-    "name": "Shamrock Shuffle",
-    "date": "March 23, 2025",
-    "distance": "8k",
-    "time": "34:54",
-    "place": "1624",
-    "results": "https://track.rtrt.me/e/BASS2025#/tracker/RS5EA4V2",
-    "photos": ["/running/RacePhotos/2025_ShamrockShuffle/IMG_6371.jpg"]
-  },
-  {
-    "name": "JPMC Corporate Challenge",
-    "date": "April 23, 2025",
-    "distance": "3.5 Miles",
-    "time": "22:58",
-    "place": "256",
-    "results": "https://leaderboard.jpmorgancc.com/leaderboard/2025/individual?entrantId=690398&eventIds=242",
-    "photos": [],
-    "videos": ["/running/RacePhotos/2025_JPMC/IMG_3829 (1).MOV"]
-  },
-  {
-    "name": "Run For The Zoo",
-    "date": "June 8, 2025",
-    "distance": "10k",
-    "time": "43:12",
-    "place": "19",
-    "results": "https://my.raceresult.com/336635/",
+    "name": "Columbus Marathon",
+    "date": "October 18, 2025",
+    "distance": "26.2 Miles",
+    "time": "3:07:29",
+    "place": "228",
+    "results": "https://www.mtecresults.com/runner/show?race=19623&rid=96038688",
     "photos": [
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4371.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4370.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4369.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4367.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4368.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4365.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4364.JPG",
-      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4363.JPG"
+      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5175.jpg",
+      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5177.jpg",
+      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5178.jpg",
+      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5180.jpg",
+      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5181.jpg",
+      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_FCB67B4BE97F-1.jpeg"
+    ]
+  },
+  {
+    "name": "Lifetime Chicago Half Marathon",
+    "date": "September 28, 2025",
+    "distance": "13.1 Miles",
+    "time": "1:30:51",
+    "place": "141",
+    "results": "https://www.athlinks.com/event/20834/results/Event/1072616/Course/2440334/Bib/5500",
+    "photos": [
+      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4954.jpg",
+      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4953.jpg",
+      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4951.jpg",
+      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4950.jpg",
+      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4947.jpg"
     ]
   },
   {
@@ -77,34 +116,44 @@
     ]
   },
   {
-    "name": "Lifetime Chicago Half Marathon",
-    "date": "September 28, 2025",
-    "distance": "13.1 Miles",
-    "time": "1:30:51",
-    "place": "141",
-    "results": "https://www.athlinks.com/event/20834/results/Event/1072616/Course/2440334/Bib/5500",
+    "name": "Run For The Zoo",
+    "date": "June 8, 2025",
+    "distance": "10k",
+    "time": "43:12",
+    "place": "19",
+    "results": "https://my.raceresult.com/336635/details0?pid=5028",
     "photos": [
-      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4954.jpg",
-      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4953.jpg",
-      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4951.jpg",
-      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4950.jpg",
-      "/running/RacePhotos/2025_LifetimeHalf/Photos-3-001 (2)/IMG_4947.jpg"
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4371.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4370.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4369.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4367.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4368.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4365.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4364.JPG",
+      "/running/RacePhotos/2025_RunForTheZoo/Photos-3-001/IMG_4363.JPG"
     ]
   },
   {
-    "name": "Columbus Marathon",
-    "date": "October 18, 2025",
-    "distance": "26.2 Miles",
-    "time": "3:07:29",
-    "place": "228",
-    "results": "https://www.mtecresults.com/runner/show?race=19623&rid=96038688",
+    "name": "JPMC Corporate Challenge",
+    "date": "April 23, 2025",
+    "distance": "3.5 Miles",
+    "time": "22:58",
+    "place": "256",
+    "results": "https://leaderboard.jpmorgancc.com/leaderboard/2025/individual?entrantId=690398&eventIds=242",
+    "photos": [],
+    "videos": [
+      "/running/RacePhotos/2025_JPMC/IMG_3829 (1).MOV"
+    ]
+  },
+  {
+    "name": "Shamrock Shuffle",
+    "date": "March 23, 2025",
+    "distance": "8k",
+    "time": "34:54",
+    "place": "1624",
+    "results": "https://track.rtrt.me/e/BASS2025#/tracker/RS5EA4V2",
     "photos": [
-      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5175.jpg",
-      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5177.jpg",
-      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5178.jpg",
-      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5180.jpg",
-      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_5181.jpg",
-      "/running/RacePhotos/2025_ColumbusMarathon/Photos-3-001 (3)/IMG_FCB67B4BE97F-1.jpeg"
+      "/running/RacePhotos/2025_ShamrockShuffle/IMG_6371.jpg"
     ]
   }
 ]
