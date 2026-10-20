@@ -886,7 +886,7 @@ const MonthlyCard = ({
           </div>
           <div className='p-4 md:p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800/50 flex flex-col justify-center'>
             <p className='text-[10px] uppercase font-black text-secondary tracking-widest mb-1'>
-              FIR %
+              FH %
             </p>
             <div className='flex items-end justify-between gap-2 mb-1'>
               <p className='text-2xl md:text-3xl font-black text-primary leading-none'>

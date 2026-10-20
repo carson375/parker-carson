@@ -6,7 +6,24 @@
     "time": "3:06:27",
     "place": "4464",
     "results": "https://results.chicagomarathon.com/2026/?content=detail&fpid=search&pid=search&idp=2EFG96382D1D04&lang=EN_CAP&event=MAR&event_main_group=runner&search%5Bname%5D=Carson&search%5Bfirstname%5D=Parker&search%5Bstart_no%5D=22716&search_event=MAR",
-    "photos": []
+    "photos": [
+      "/running/RacePhotos/2026_ChicagoMarathon/IMG_7743.jpeg",
+      "/running/RacePhotos/2026_ChicagoMarathon/IMG_7747.jpeg",
+      "/running/RacePhotos/2026_ChicagoMarathon/IMG_7748.jpeg",
+      "/running/RacePhotos/2026_ChicagoMarathon/01_869454_1057_0035.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/02_869470_1074_0020.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/03_877043_1031_0041.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/04_869453_1164_0005.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/05_877054_1658_0025.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/06_877271_3021_0004.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/07_869474_1068_0013.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/08_869448_1056_0030.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/09_869518_1095_0032.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/10_869526_1117_0042.jpg",
+      "/running/RacePhotos/2026_ChicagoMarathon/877274_1062_0035.jpeg",
+      "/running/RacePhotos/2026_ChicagoMarathon/IMG_7755.jpeg",
+      "/running/RacePhotos/2026_ChicagoMarathon/IMG_7758.jpeg"
+    ]
   },
   {
     "name": "Run Mag Mile",
@@ -15,7 +32,20 @@
     "time": "40:38",
     "place": "50",
     "results": "https://gallery.us.runnertag.site/events/2026-run-mag-mile-presented-by-hoka/search/participants/7426",
-    "photos": []
+    "photos": [
+      "/running/RacePhotos/2026_RunMagMile/IMG_6797.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/IMG_6801.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/IMG_6821.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/IMG_6822.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/IMG_6850.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/IMG_6862.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/IMG_6863.jpeg",
+      "/running/RacePhotos/2026_RunMagMile/Image (2).jpeg"
+
+    ],
+    "videos": [
+      "/running/RacePhotos/2026_RunMagMile/IMG_6857.mp4"
+    ]
   },
   {
     "name": "Chitown Miles",
@@ -24,11 +54,21 @@
     "time": "5:30",
     "place": "101",
     "results": "https://www.webscorer.com/racealldetails?pid=1&raceid=441037&groupid=425431",
-    "photos": []
+    "photos": [
+      "/running/RacePhotos/2026_ChitownMiles/Image 5.jpeg",
+      "/running/RacePhotos/2026_ChitownMiles/Image 6.jpeg",
+      "/running/RacePhotos/2026_ChitownMiles/Image 9.jpeg",
+      "/running/RacePhotos/2026_ChitownMiles/Image 12.jpeg",
+      "/running/RacePhotos/2026_ChitownMiles/Image.jpeg",
+      "/running/RacePhotos/2026_ChitownMiles/Image 17.jpeg"
+    ],
+    "videos": [
+      "/running/RacePhotos/2026_ChitownMiles/IMG_6414.mp4"
+    ]
   },
   {
     "name": "JPMC Corporate Challenge",
-    "date": "June 1, 2026",
+    "date": "May 14, 2026",
     "distance": "3.5 Miles",
     "time": "22:31",
     "place": "305",
@@ -42,7 +82,17 @@
     "time": "42:46",
     "place": "16",
     "results": "https://my.raceresult.com/393639/details0?pid=4237",
-    "photos": []
+    "photos": [
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_6422.jpeg",
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_6007.jpeg",
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_6018.jpeg",
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_6423.jpeg",
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_6436.jpeg",
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_6026.jpeg"
+    ],
+    "videos": [
+      "/running/RacePhotos/2026_RunForTheZoo/IMG_5998.mp4"
+    ]
   },
   {
     "name": "Shamrock Shuffle",

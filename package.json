@@ -12,6 +12,8 @@
     "lint:fix": "eslint --ext=jsx,ts,tsx . --fix",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx}\"",
     "test": "node tests/verify-golf-data.js",
+    "upload:photos": "node scripts/upload-to-cloudinary.js",
+    "upload:running": "node scripts/upload-to-cloudinary.js --running",
     "prepare": "husky install"
   },
   "dependencies": {

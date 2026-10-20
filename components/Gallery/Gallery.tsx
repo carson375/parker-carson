@@ -27,9 +27,10 @@ export const Gallery = ({
     initialIndex
   )
   const [activeIndex, setActiveIndex] = useState<number>(initialIndex ?? 0)
+  const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({})
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  // Handle Keyboard Navigation
+  // Handle Keyboard Navigation & Background Scroll Lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return
@@ -38,42 +39,36 @@ export const Gallery = ({
         onClose?.()
       }
     }
+
     if (selectedIndex !== null) {
       window.addEventListener('keydown', handleKeyDown)
       document.body.style.overflow = 'hidden'
     }
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
     }
   }, [selectedIndex, onClose])
 
-  // Prevent background scroll when lightbox is open
-  useEffect(() => {
-    if (selectedIndex !== null) {
-      const originalOverflow = document.body.style.overflow
-      document.body.style.overflow = 'hidden'
-      return () => {
-        document.body.style.overflow = originalOverflow
-      }
-    }
-  }, [selectedIndex])
-
-  // Scroll to the selected image when the lightbox opens
+  // Scroll directly to the selected image when the lightbox opens
   useEffect(() => {
     if (selectedIndex !== null) {
       setActiveIndex(selectedIndex)
-      const timer = setTimeout(() => {
+      // Instant positioning to avoid animating through and triggering intermediate fetches
+      requestAnimationFrame(() => {
         if (scrollContainerRef.current) {
           const element = document.getElementById(
             `lightbox-img-${selectedIndex}`
           )
           if (element) {
-            scrollContainerRef.current.scrollTop = element.offsetTop
+            scrollContainerRef.current.scrollTo({
+              top: element.offsetTop,
+              behavior: 'instant' as ScrollBehavior,
+            })
           }
         }
-      }, 50)
-      return () => clearTimeout(timer)
+      })
     }
   }, [selectedIndex])
 
@@ -203,35 +198,79 @@ export const Gallery = ({
             ref={scrollContainerRef}
             className='h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth overscroll-contain no-scrollbar'
           >
-            {images.map((image, index) => (
-              <div
-                key={`lightbox-${index}`}
-                id={`lightbox-img-${index}`}
-                className='h-screen w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-12'
-                onClick={() => setSelectedIndex(null)}
-              >
+            {images.map((image, index) => {
+              // Only load images that are currently active or within 1 slide of the active slide
+              const shouldRender =
+                selectedIndex !== null && Math.abs(index - activeIndex) <= 1
+              const isLoaded = loadedImages[index]
+
+              return (
                 <div
-                  className={`relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center transition-all duration-700 ${
-                    images.length === 1 || activeIndex === index
-                      ? 'scale-100 opacity-100 blur-0'
-                      : 'scale-95 opacity-20 blur-sm'
-                  }`}
-                  onClick={e => e.stopPropagation()}
+                  key={`lightbox-${index}`}
+                  id={`lightbox-img-${index}`}
+                  className='h-screen w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-12'
+                  onClick={() => setSelectedIndex(null)}
                 >
-                  <Image
-                    loader={cloudinaryLoader}
-                    src={image}
-                    alt={`Full screen view ${index + 1}`}
-                    fill
-                    className='object-contain'
-                    priority={
-                      index === selectedIndex ||
-                      Math.abs(index - activeIndex) <= 1
-                    }
-                  />
+                  <div
+                    className={`relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center transition-all duration-700 ${
+                      images.length === 1 || activeIndex === index
+                        ? 'scale-100 opacity-100 blur-0'
+                        : 'scale-95 opacity-20 blur-sm'
+                    }`}
+                    onClick={e => e.stopPropagation()}
+                  >
+                    {shouldRender ? (
+                      <>
+                        {/* Instant low-res preview reusing the already-cached thumbnail */}
+                        {!isLoaded && (
+                          <Image
+                            loader={cloudinaryLoader}
+                            src={image}
+                            alt=''
+                            fill
+                            sizes='(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw'
+                            className='object-contain blur-sm opacity-60 scale-95 pointer-events-none'
+                            priority
+                          />
+                        )}
+
+                        {/* Spinner indicator while full-res loads */}
+                        {!isLoaded && (
+                          <div className='absolute inset-0 flex items-center justify-center pointer-events-none'>
+                            <div className='w-8 h-8 rounded-full border-2 border-primary/20 border-t-primary animate-spin' />
+                          </div>
+                        )}
+
+                        {/* Crisp full-resolution image */}
+                        <Image
+                          loader={cloudinaryLoader}
+                          src={image}
+                          alt={`Full screen view ${index + 1}`}
+                          fill
+                          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 1200px, 1600px'
+                          className={`object-contain transition-opacity duration-300 ${
+                            isLoaded ? 'opacity-100' : 'opacity-0'
+                          }`}
+                          priority={
+                            index === selectedIndex ||
+                            Math.abs(index - activeIndex) <= 1
+                          }
+                          onLoad={() =>
+                            setLoadedImages(prev => ({
+                              ...prev,
+                              [index]: true,
+                            }))
+                          }
+                        />
+                      </>
+                    ) : (
+                      /* Lightweight placeholder for distant slides to preserve scroll height */
+                      <div className='w-full h-full' />
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              )
+            })}
           </div>
 
           {/* Mobile Scroll Hint */}
