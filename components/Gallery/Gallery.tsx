@@ -29,7 +29,7 @@ export const Gallery = ({
   const [activeIndex, setActiveIndex] = useState<number>(initialIndex ?? 0)
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
-  // Handle Keyboard Navigation
+  // Handle Keyboard Navigation & Background Scroll Lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (selectedIndex === null) return
@@ -38,26 +38,17 @@ export const Gallery = ({
         onClose?.()
       }
     }
+
     if (selectedIndex !== null) {
       window.addEventListener('keydown', handleKeyDown)
       document.body.style.overflow = 'hidden'
     }
+
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
     }
   }, [selectedIndex, onClose])
-
-  // Prevent background scroll when lightbox is open
-  useEffect(() => {
-    if (selectedIndex !== null) {
-      const originalOverflow = document.body.style.overflow
-      document.body.style.overflow = 'hidden'
-      return () => {
-        document.body.style.overflow = originalOverflow
-      }
-    }
-  }, [selectedIndex])
 
   // Scroll to the selected image when the lightbox opens
   useEffect(() => {
