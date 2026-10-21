@@ -5,7 +5,7 @@
   "description": "Customizable Front-End Template",
   "packageManager": "pnpm@7.9.5",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "eslint --ext=jsx,ts,tsx .",
