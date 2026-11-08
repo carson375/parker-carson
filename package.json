@@ -50,7 +50,7 @@
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
     "husky": "^9.1.7",
-    "lint-staged": "^15.4.3",
+    "lint-staged": "^17.6.0",
     "postcss": "^8.5.2",
     "prettier": "^3.5.1",
     "puppeteer": "^25.14.0",
