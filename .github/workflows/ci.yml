@@ -24,7 +24,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v4
       with:
-        node-version: '20'
+        node-version: '22'
         cache: 'npm'
 
     - name: Install dependencies
@@ -34,23 +34,31 @@ jobs:
       run: npm run lint
 
     # --- Start of Vercel Integration ---
+    # Dependabot-triggered runs do not receive repository Actions secrets
+    # (GitHub security boundary), so the Vercel steps can only fail there
+    # with an empty token. Vercel's own GitHub integration already builds
+    # PR previews, so skip these steps for Dependabot PRs; lint above
+    # still gates them. Human PRs and master pushes run them as before.
     - name: Install Vercel CLI
+      if: github.actor != 'dependabot[bot]'
       run: npm install --global vercel
 
     - name: Pull Vercel Environment Information
+      if: github.actor != 'dependabot[bot]'
       run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
       env:
         VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
     - name: Build Project Artifacts (on GitHub)
+      if: github.actor != 'dependabot[bot]'
       run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
       env:
         VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
     - name: Deploy Project Artifacts to Vercel
-      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master' && github.actor != 'dependabot[bot]'
       run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
       env:
         VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
