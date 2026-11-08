@@ -46,6 +46,10 @@ export default function Container(props: any) {
       >
         <Head>
           <title>{meta.title}</title>
+          <meta
+            name='viewport'
+            content='width=device-width, initial-scale=1, viewport-fit=cover'
+          />
           <meta name='robots' content='follow, index' />
           <meta
             property='og:url'
@@ -67,7 +71,7 @@ export default function Container(props: any) {
 
         {!hideNav && (
           <>
-            <nav className='sticky top-4 z-[9999] w-[calc(100%-2rem)] max-w-[1400px] mx-auto flex justify-between items-center px-4 md:px-6 py-3 rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm'>
+            <nav className='sticky top-[calc(1rem+env(safe-area-inset-top,0px))] z-[9999] w-[calc(100%-2rem)] max-w-[1400px] mx-auto flex justify-between items-center px-4 md:px-6 py-3 rounded-2xl bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl border border-gray-200/50 dark:border-gray-800/50 shadow-sm'>
               {/* Desktop Navigation */}
               <div className='hidden md:flex flex-row items-center gap-6'>
                 <Link
