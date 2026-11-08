@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import Container from 'components/Container'
+import NextRaces from 'components/NextRaces/NextRaces'
 
 export default function Home() {
   return (
@@ -44,6 +45,8 @@ export default function Home() {
             </div>
           </div>
         </div>
+
+        <NextRaces />
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 w-full px-4'>
           {/* Featured Card: Photography */}

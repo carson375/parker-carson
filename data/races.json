@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Chardon Turkey Trot",
+    "date": "2026-11-26",
+    "location": "Chardon, Ohio",
+    "note": "Thanksgiving Day"
+  },
+  {
+    "name": "Shamrock Shuffle",
+    "date": "2027-03-21",
+    "location": "Chicago, Illinois",
+    "distance": "8K"
+  },
+  {
+    "name": "Cleveland Marathon",
+    "date": "2027-05-16",
+    "location": "Cleveland, Ohio",
+    "distance": "Marathon"
+  },
+  {
+    "name": "Chicago 13.1",
+    "date": "2027-06-06",
+    "location": "Chicago, Illinois",
+    "distance": "13.1 Miles"
+  },
+  {
+    "name": "Chicago Marathon",
+    "date": "2027-10-10",
+    "location": "Chicago, Illinois",
+    "distance": "Marathon",
+    "note": "Team Ronald McDonald House"
+  }
+]
