@@ -1,8 +1,8 @@
 {
-  "name": "ts-next-tailwind-template",
+  "name": "parker-carson",
   "version": "0.5.0",
   "private": "true",
-  "description": "Customizable Front-End Template",
+  "description": "Parker Carson's personal website",
   "packageManager": "pnpm@7.9.5",
   "scripts": {
     "dev": "next dev --webpack",
@@ -68,15 +68,11 @@
     }
   },
   "author": {
-    "email": "crisemcr@gmail.com",
-    "name": "Cristian Crețu",
-    "url": "https://cretu.dev"
+    "name": "Parker Carson",
+    "url": "https://parker-carson.com"
   },
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/cristicretu/ts-next-tailwind-template/issues"
-  },
-  "homepage": "https://template.cretu.dev",
+  "homepage": "https://parker-carson.com",
   "browserslist": {
     "production": [
       ">0.2%",

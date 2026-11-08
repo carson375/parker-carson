@@ -41,19 +41,6 @@
     scrollbar-width: none; /* Firefox */
   }
 
-  /* https://seek-oss.github.io/capsize/ */
-  .capsize::before {
-    content: '';
-    margin-bottom: -0.098em;
-    display: table;
-  }
-
-  .capsize::after {
-    content: '';
-    margin-top: -0.219em;
-    display: table;
-  }
-
   ::-moz-selection {
     color: #fff;
     background: #000;
@@ -212,6 +199,15 @@
 
   .highlight-link {
     @apply -mx-0.5 bg-opacity-20 px-0.5 text-gray-1000 dark:bg-gray-100 dark:bg-opacity-20 dark:text-gray-300 md:hover:bg-opacity-30 md:dark:hover:bg-yellow-500 md:dark:hover:bg-opacity-100 md:dark:hover:text-gray-1000;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   .blink {

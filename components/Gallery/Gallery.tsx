@@ -30,6 +30,11 @@ export const Gallery = ({
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({})
   const scrollContainerRef = useRef<HTMLDivElement>(null)
 
+  // Reset per-image load state when the gallery's image set changes
+  useEffect(() => {
+    setLoadedImages({})
+  }, [images])
+
   // Handle Keyboard Navigation & Background Scroll Lock
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -118,10 +123,10 @@ export const Gallery = ({
           {images.map((image, index) => (
             <div
               key={index}
-              className={`relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-zoom-in group transition-all duration-500 hover:z-10 ${
+              className={`relative w-full overflow-hidden bg-gray-100 dark:bg-gray-800 cursor-zoom-in group transition-shadow duration-500 hover:z-10 ${
                 isStack
                   ? 'aspect-[4/3] rounded-3xl'
-                  : 'aspect-[4/3] rounded-sm md:rounded-2xl md:hover:scale-[1.02] md:hover:shadow-2xl'
+                  : 'aspect-[4/3] rounded-sm md:rounded-2xl md:hover:shadow-2xl'
               }`}
               onClick={() => {
                 setSelectedIndex(index)
@@ -149,7 +154,7 @@ export const Gallery = ({
 
       {/* Lightbox Modal - Cinema & Scrubber Version */}
       {selectedIndex !== null && (
-        <div className='fixed inset-0 z-[10005] bg-white/95 dark:bg-black/95 backdrop-blur-3xl animate-in fade-in duration-500'>
+        <div className='fixed inset-0 z-[10005] bg-white/95 dark:bg-black/95 animate-in fade-in duration-500'>
           {/* Top Pill Navigation */}
           <div className='absolute top-6 left-1/2 -translate-x-1/2 z-[10006] flex items-center gap-3 px-4 py-2 rounded-full bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-md border border-white/20 text-xs font-bold tracking-widest uppercase text-primary animate-in slide-in-from-top-4 duration-700'>
             <span>{activeIndex + 1}</span>
@@ -196,7 +201,7 @@ export const Gallery = ({
           {/* Scrollable Container */}
           <div
             ref={scrollContainerRef}
-            className='h-screen w-full overflow-y-scroll snap-y snap-mandatory scroll-smooth overscroll-contain no-scrollbar'
+            className='h-dvh w-full overflow-y-scroll snap-y snap-mandatory overscroll-contain no-scrollbar'
           >
             {images.map((image, index) => {
               // Only load images that are currently active or within 1 slide of the active slide
@@ -208,14 +213,14 @@ export const Gallery = ({
                 <div
                   key={`lightbox-${index}`}
                   id={`lightbox-img-${index}`}
-                  className='h-screen w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-12'
+                  className='h-dvh w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-12'
                   onClick={() => setSelectedIndex(null)}
                 >
                   <div
-                    className={`relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center transition-all duration-700 ${
+                    className={`relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center transition-opacity duration-300 ${
                       images.length === 1 || activeIndex === index
-                        ? 'scale-100 opacity-100 blur-0'
-                        : 'scale-95 opacity-20 blur-sm'
+                        ? 'opacity-100'
+                        : 'opacity-20'
                     }`}
                     onClick={e => e.stopPropagation()}
                   >

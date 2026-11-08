@@ -147,7 +147,7 @@ const ScorecardModal = ({
     document.body.style.overflow = 'hidden'
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = ''
     }
   }, [galleryIndex, onClose])
 
