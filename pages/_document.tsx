@@ -12,6 +12,13 @@ class MyDocument extends Document {
             type='font/woff2'
             crossOrigin='anonymous'
           />
+          <meta name='mobile-web-app-capable' content='yes' />
+          <meta name='apple-mobile-web-app-capable' content='yes' />
+          <meta
+            name='apple-mobile-web-app-status-bar-style'
+            content='black-translucent'
+          />
+          <meta name='apple-mobile-web-app-title' content='Parker Carson' />
           <link href='/static/favicons/favicon.ico' rel='shortcut icon' />
           <link href='/static/favicons/site.webmanifest' rel='manifest' />
           <link
