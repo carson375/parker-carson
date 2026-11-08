@@ -5,6 +5,17 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    # Major bumps are migrations, not maintenance (ESLint 9/10 flat config,
+    # Tailwind 4, TypeScript majors, MUI majors) - propose them never;
+    # they get planned deliberately instead. Minor/patch arrive grouped
+    # into a single weekly PR.
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
+    groups:
+      minor-and-patch:
+        patterns: ["*"]
+        update-types: ["minor", "patch"]
   - package-ecosystem: github-actions
     directory: /
     schedule:
