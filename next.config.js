@@ -21,7 +21,10 @@ const contentSecurityPolicy = [
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self'",
-  "frame-ancestors 'none'",
+  // Production allows no framing at all. In dev, Home Base's Preview
+  // page (same tailnet host, :8443) may frame the dev server so Parker
+  // can demo phone layouts from his dashboard; nothing else may.
+  `frame-ancestors ${isDev ? "'self' https://parkers-macbook.tail88a216.ts.net:8443" : "'none'"}`,
   'upgrade-insecure-requests',
 ].join('; ')
 
@@ -32,7 +35,9 @@ const securityHeaders = [
     value: 'max-age=63072000; includeSubDomains; preload',
   },
   { key: 'X-Content-Type-Options', value: 'nosniff' },
-  { key: 'X-Frame-Options', value: 'DENY' },
+  // X-Frame-Options is the legacy framing switch; dev omits it because
+  // the CSP frame-ancestors above is the (finer-grained) dev allowance.
+  ...(isDev ? [] : [{ key: 'X-Frame-Options', value: 'DENY' }]),
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
   {
     key: 'Permissions-Policy',
