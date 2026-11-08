@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 
 import Container from 'components/Container'
 import { Gallery } from 'components/Gallery/Gallery'
@@ -43,17 +43,20 @@ const VideoPlayer = ({
     }
   }
 
-  const toggleFullScreen = (e?: React.MouseEvent) => {
-    if (e) e.stopPropagation()
-    const nextState = !isFullScreen
-    setIsFullScreen(nextState)
-    onToggleLightbox(nextState)
+  const toggleFullScreen = useCallback(
+    (e?: React.MouseEvent) => {
+      if (e) e.stopPropagation()
+      const nextState = !isFullScreen
+      setIsFullScreen(nextState)
+      onToggleLightbox(nextState)
 
-    // If we were playing, pause the small player and we'll handle the big one via effect or manual sync
-    if (isPlaying && videoRef.current) {
-      videoRef.current.pause()
-    }
-  }
+      // If we were playing, pause the small player and we'll handle the big one via effect or manual sync
+      if (isPlaying && videoRef.current) {
+        videoRef.current.pause()
+      }
+    },
+    [isFullScreen, isPlaying, onToggleLightbox]
+  )
 
   // Handle Escape key
   useEffect(() => {
@@ -64,7 +67,7 @@ const VideoPlayer = ({
     }
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [isFullScreen])
+  }, [isFullScreen, toggleFullScreen])
 
   return (
     <>
