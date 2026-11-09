@@ -2761,6 +2761,7 @@
   {
     "name": "New York 2025",
     "photos": [
+      "/photography/New York 2025/IMG_4594.JPG",
       "/photography/New York 2025/IMG_4595.JPG",
       "/photography/New York 2025/IMG_4597.JPG",
       "/photography/New York 2025/IMG_4599.JPG",
@@ -2772,10 +2773,9 @@
       "/photography/New York 2025/IMG_4622.JPG",
       "/photography/New York 2025/IMG_4624.JPG",
       "/photography/New York 2025/IMG_4626.JPG",
-      "/photography/New York 2025/IMG_4627.JPG",
       "/photography/New York 2025/IMG_4631.JPG",
       "/photography/New York 2025/IMG_4636.JPG",
-      "/photography/New York 2025/IMG_4643.JPG",
+      "/photography/New York 2025/IMG_4638.JPG",
       "/photography/New York 2025/IMG_4652.JPG",
       "/photography/New York 2025/IMG_4661.JPG",
       "/photography/New York 2025/IMG_4662.JPG",
@@ -2792,6 +2792,7 @@
         "lat": 40.7536,
         "lng": -74.0023,
         "photos": [
+          "/photography/New York 2025/IMG_4594.JPG",
           "/photography/New York 2025/IMG_4595.JPG",
           "/photography/New York 2025/IMG_4597.JPG",
           "/photography/New York 2025/IMG_4599.JPG"
@@ -2805,7 +2806,7 @@
           "/photography/New York 2025/IMG_4607.JPG",
           "/photography/New York 2025/IMG_4631.JPG",
           "/photography/New York 2025/IMG_4636.JPG",
-          "/photography/New York 2025/IMG_4643.JPG",
+          "/photography/New York 2025/IMG_4638.JPG",
           "/photography/New York 2025/IMG_4652.JPG",
           "/photography/New York 2025/IMG_4661.JPG",
           "/photography/New York 2025/IMG_4662.JPG"
@@ -2836,8 +2837,7 @@
         "lat": 40.758,
         "lng": -73.9855,
         "photos": [
-          "/photography/New York 2025/IMG_4626.JPG",
-          "/photography/New York 2025/IMG_4627.JPG"
+          "/photography/New York 2025/IMG_4626.JPG"
         ]
       },
       {
