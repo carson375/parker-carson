@@ -6,22 +6,28 @@ name: Deploy status bridge
 # only inside this workflow and never leaves GitHub Actions; the
 # published JSON is whitelisted fields only (state, timestamps, short
 # commit SHA, target) — no raw API payloads.
+#
+# Trigger notes (learned live, 2026-11-08): deployment_status events
+# from Vercel's GitHub App never fired this workflow, and the schedule
+# did not tick either in its first hour — so the workhorse trigger is
+# `push` to master, which is exactly when production deploys happen
+# (merges are pushes). Push runs poll until the new production deploy
+# settles, so the snapshot lands on READY, not BUILDING. The schedule
+# remains as a slow backstop for preview-only activity.
 
 on:
-  deployment_status:
+  push:
+    branches: [master]
   schedule:
     - cron: '*/10 * * * *'
   workflow_dispatch:
-  push:
-    branches: [master]
-    paths: ['.github/workflows/deploy-status.yml']
 
 permissions:
   contents: write
 
 concurrency:
   group: deploy-status
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   publish:
@@ -32,12 +38,23 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           PROJECT_ID: prj_z49V4Ayz9ibWbhvUBIZ2osFhN4dk
           TEAM_ID: team_WUIBAU9qYXbBAnZmMWkcEsoA
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -u
-          code=$(curl -s -o resp.json -w '%{http_code}' \
-            -H "Authorization: Bearer $VERCEL_TOKEN" \
-            "https://api.vercel.com/v6/deployments?projectId=$PROJECT_ID&teamId=$TEAM_ID&limit=10")
           mkdir -p out
+          attempts=1
+          if [ "$EVENT_NAME" = "push" ]; then attempts=8; fi
+          code=000
+          for i in $(seq 1 $attempts); do
+            code=$(curl -s -o resp.json -w '%{http_code}' \
+              -H "Authorization: Bearer $VERCEL_TOKEN" \
+              "https://api.vercel.com/v6/deployments?projectId=$PROJECT_ID&teamId=$TEAM_ID&limit=25")
+            if [ "$code" != "200" ]; then break; fi
+            state=$(node -e 'const d=JSON.parse(require("fs").readFileSync("resp.json","utf8"));const p=(d.deployments||[]).find(x=>x.target==="production"&&(x.readyState||x.state)!=="CANCELED");process.stdout.write(p?(p.readyState||p.state||""):"")')
+            echo "attempt $i: production state $state"
+            if [ "$state" != "QUEUED" ] && [ "$state" != "BUILDING" ] && [ "$state" != "INITIALIZING" ]; then break; fi
+            if [ "$i" -lt "$attempts" ]; then sleep 20; fi
+          done
           if [ "$code" = "200" ]; then
             node <<'EOF'
           const fs = require('fs');
@@ -59,7 +76,11 @@ jobs:
           // as CANCELED production deployments; the live deploy is the
           // newest one that actually ran.
           const production = deps.find((x) => x.target === 'production' && x.state !== 'CANCELED') || null;
-          const previews = deps.filter((x) => x.target !== 'production').slice(0, 3);
+          // Vercel also creates (and cancels) pointless previews for this
+          // workflow's own deploy-status branch pushes; keep them out.
+          const previews = deps
+            .filter((x) => x.target !== 'production' && x.ref !== 'deploy-status')
+            .slice(0, 3);
           fs.writeFileSync('out/status.json', JSON.stringify({
             generatedAt: new Date().toISOString(),
             source: 'github-actions-bridge',
