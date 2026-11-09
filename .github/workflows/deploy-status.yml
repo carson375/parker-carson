@@ -55,7 +55,10 @@ jobs:
             ref: (d.meta && d.meta.githubCommitRef) || null,
           });
           const deps = (data.deployments || []).map(pick);
-          const production = deps.find((x) => x.target === 'production') || null;
+          // Vercel marks pushes it skips (e.g. workflow-file-only commits)
+          // as CANCELED production deployments; the live deploy is the
+          // newest one that actually ran.
+          const production = deps.find((x) => x.target === 'production' && x.state !== 'CANCELED') || null;
           const previews = deps.filter((x) => x.target !== 'production').slice(0, 3);
           fs.writeFileSync('out/status.json', JSON.stringify({
             generatedAt: new Date().toISOString(),
