@@ -1,0 +1,78 @@
+name: Deploy status bridge
+
+# Publishes a sanitized snapshot of this project's Vercel deployments to
+# the `deploy-status` branch, so Home Base can display deploy state
+# without holding a Vercel API token. The VERCEL_TOKEN secret is used
+# only inside this workflow and never leaves GitHub Actions; the
+# published JSON is whitelisted fields only (state, timestamps, short
+# commit SHA, target) — no raw API payloads.
+
+on:
+  deployment_status:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_dispatch:
+  push:
+    branches: [master]
+    paths: ['.github/workflows/deploy-status.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy-status
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch deployments and publish sanitized status
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          PROJECT_ID: prj_z49V4Ayz9ibWbhvUBIZ2osFhN4dk
+          TEAM_ID: team_WUIBAU9qYXbBAnZmMWkcEsoA
+        run: |
+          set -u
+          code=$(curl -s -o resp.json -w '%{http_code}' \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            "https://api.vercel.com/v6/deployments?projectId=$PROJECT_ID&teamId=$TEAM_ID&limit=10")
+          mkdir -p out
+          if [ "$code" = "200" ]; then
+            node <<'EOF'
+          const fs = require('fs');
+          const data = JSON.parse(fs.readFileSync('resp.json', 'utf8'));
+          const iso = (v) => {
+            if (v == null) return null;
+            const n = typeof v === 'number' ? v : Date.parse(v);
+            return Number.isFinite(n) ? new Date(n).toISOString() : null;
+          };
+          const pick = (d) => ({
+            state: d.readyState || d.state || null,
+            target: d.target || null,
+            createdAt: iso(d.createdAt != null ? d.createdAt : d.created),
+            sha: ((d.meta && d.meta.githubCommitSha) || '').slice(0, 7) || null,
+            ref: (d.meta && d.meta.githubCommitRef) || null,
+          });
+          const deps = (data.deployments || []).map(pick);
+          const production = deps.find((x) => x.target === 'production') || null;
+          const previews = deps.filter((x) => x.target !== 'production').slice(0, 3);
+          fs.writeFileSync('out/status.json', JSON.stringify({
+            generatedAt: new Date().toISOString(),
+            source: 'github-actions-bridge',
+            production,
+            previews,
+          }, null, 2));
+          console.log('published production state:', production && production.state);
+          EOF
+          else
+            echo "Vercel API answered HTTP $code"
+            printf '{\n  "generatedAt": "%s",\n  "source": "github-actions-bridge",\n  "error": "vercel_http_%s"\n}\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$code" > out/status.json
+          fi
+          cd out
+          git init -q -b deploy-status
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add status.json
+          git commit -q -m 'deploy status snapshot'
+          git push -q --force "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" deploy-status
