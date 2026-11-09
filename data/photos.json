@@ -2761,16 +2761,14 @@
   {
     "name": "New York 2025",
     "photos": [
-      "/photography/New York 2025/IMG_4594.JPG",
       "/photography/New York 2025/IMG_4595.JPG",
       "/photography/New York 2025/IMG_4597.JPG",
       "/photography/New York 2025/IMG_4599.JPG",
+      "/photography/New York 2025/IMG_4603.JPG",
       "/photography/New York 2025/IMG_4607.JPG",
-      "/photography/New York 2025/IMG_4610.JPG",
       "/photography/New York 2025/IMG_4611.JPG",
       "/photography/New York 2025/IMG_4614.JPG",
       "/photography/New York 2025/IMG_4616.JPG",
-      "/photography/New York 2025/IMG_4619.JPG",
       "/photography/New York 2025/IMG_4620.JPG",
       "/photography/New York 2025/IMG_4622.JPG",
       "/photography/New York 2025/IMG_4624.JPG",
@@ -2779,6 +2777,8 @@
       "/photography/New York 2025/IMG_4632.JPG",
       "/photography/New York 2025/IMG_4636.JPG",
       "/photography/New York 2025/IMG_4638.JPG",
+      "/photography/New York 2025/IMG_4640.JPG",
+      "/photography/New York 2025/IMG_4641.JPG",
       "/photography/New York 2025/IMG_4652.JPG",
       "/photography/New York 2025/IMG_4661.JPG",
       "/photography/New York 2025/IMG_4662.JPG",
@@ -2792,10 +2792,17 @@
         "lat": 40.7536,
         "lng": -74.0023,
         "photos": [
-          "/photography/New York 2025/IMG_4594.JPG",
           "/photography/New York 2025/IMG_4595.JPG",
           "/photography/New York 2025/IMG_4597.JPG",
           "/photography/New York 2025/IMG_4599.JPG"
+        ]
+      },
+      {
+        "name": "Little Island",
+        "lat": 40.7422,
+        "lng": -74.0112,
+        "photos": [
+          "/photography/New York 2025/IMG_4603.JPG"
         ]
       },
       {
@@ -2808,6 +2815,7 @@
           "/photography/New York 2025/IMG_4632.JPG",
           "/photography/New York 2025/IMG_4636.JPG",
           "/photography/New York 2025/IMG_4638.JPG",
+          "/photography/New York 2025/IMG_4640.JPG",
           "/photography/New York 2025/IMG_4652.JPG",
           "/photography/New York 2025/IMG_4661.JPG",
           "/photography/New York 2025/IMG_4662.JPG"
@@ -2818,7 +2826,6 @@
         "lat": 40.7411,
         "lng": -73.9897,
         "photos": [
-          "/photography/New York 2025/IMG_4610.JPG",
           "/photography/New York 2025/IMG_4611.JPG",
           "/photography/New York 2025/IMG_4624.JPG"
         ]
@@ -2830,7 +2837,6 @@
         "photos": [
           "/photography/New York 2025/IMG_4614.JPG",
           "/photography/New York 2025/IMG_4616.JPG",
-          "/photography/New York 2025/IMG_4619.JPG",
           "/photography/New York 2025/IMG_4620.JPG",
           "/photography/New York 2025/IMG_4622.JPG"
         ]
@@ -2841,6 +2847,14 @@
         "lng": -73.9855,
         "photos": [
           "/photography/New York 2025/IMG_4626.JPG"
+        ]
+      },
+      {
+        "name": "Chelsea Piers",
+        "lat": 40.7464,
+        "lng": -74.0086,
+        "photos": [
+          "/photography/New York 2025/IMG_4641.JPG"
         ]
       },
       {
