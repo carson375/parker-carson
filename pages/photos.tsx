@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 import dynamic from 'next/dynamic'
 import Image from 'next/image'
@@ -48,6 +48,7 @@ export default function Photos() {
   const [selectedTrip, setSelectedTrip] = useState<number | null>(null)
   const [showMap, setShowMap] = useState(false)
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null)
+  const gridLightboxOpen = useRef(false)
 
   // Handle initial load and browser back/forward
   useEffect(() => {
@@ -87,11 +88,14 @@ export default function Photos() {
   // Close on Escape key
   useEffect(() => {
     const handleEsc = (e: KeyboardEvent) => {
+      // A lightbox (grid or map) handles its own Escape; only close the
+      // trip itself when no lightbox is open.
+      if (lightboxIndex !== null || gridLightboxOpen.current) return
       if (e.key === 'Escape') handleCloseTrip()
     }
     window.addEventListener('keydown', handleEsc)
     return () => window.removeEventListener('keydown', handleEsc)
-  }, [handleCloseTrip])
+  }, [handleCloseTrip, lightboxIndex])
 
   // GALLERY VIEW (Continuous Scroll)
   if (selectedTrip !== null) {
@@ -188,7 +192,16 @@ export default function Photos() {
                 </div>
               )}
 
-              <Gallery images={currentTrip.photos} perRow={3} />
+              <Gallery
+                images={currentTrip.photos}
+                perRow={3}
+                onOpen={() => {
+                  gridLightboxOpen.current = true
+                }}
+                onClose={() => {
+                  gridLightboxOpen.current = false
+                }}
+              />
 
               {/* Lightbox Triggered from Map Pin Thumbnails */}
               {lightboxIndex !== null && (

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 
 import Image from 'next/image'
 
@@ -29,78 +29,88 @@ export const Gallery = ({
   const [activeIndex, setActiveIndex] = useState<number>(initialIndex ?? 0)
   const [loadedImages, setLoadedImages] = useState<Record<number, boolean>>({})
   const scrollContainerRef = useRef<HTMLDivElement>(null)
+  const wheelLockUntil = useRef(0)
 
   // Reset per-image load state when the gallery's image set changes
   useEffect(() => {
     setLoadedImages({})
   }, [images])
 
-  // Handle Keyboard Navigation & Background Scroll Lock
+  const close = useCallback(() => {
+    setSelectedIndex(null)
+    onClose?.()
+  }, [onClose])
+
+  /** Scroll the pager to a slide (clamped). Instant = no animation. */
+  const goTo = useCallback(
+    (index: number, instant = false) => {
+      const container = scrollContainerRef.current
+      if (!container) return
+      const clamped = Math.max(0, Math.min(images.length - 1, index))
+      container.scrollTo({
+        left: clamped * container.clientWidth,
+        behavior: instant ? ('instant' as ScrollBehavior) : 'smooth',
+      })
+    },
+    [images.length]
+  )
+
+  // Keyboard navigation & background scroll lock (single effect — see
+  // LESSONS.md: competing overflow effects can restore 'hidden' forever).
   useEffect(() => {
+    if (selectedIndex === null) return
+
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (selectedIndex === null) return
-      if (e.key === 'Escape') {
-        setSelectedIndex(null)
-        onClose?.()
-      }
+      if (e.key === 'Escape') close()
+      if (e.key === 'ArrowRight') goTo(activeIndex + 1)
+      if (e.key === 'ArrowLeft') goTo(activeIndex - 1)
     }
 
-    if (selectedIndex !== null) {
-      window.addEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = 'hidden'
-    }
+    window.addEventListener('keydown', handleKeyDown)
+    document.body.style.overflow = 'hidden'
 
     return () => {
       window.removeEventListener('keydown', handleKeyDown)
       document.body.style.overflow = ''
     }
-  }, [selectedIndex, onClose])
+  }, [selectedIndex, activeIndex, goTo, close])
 
-  // Scroll directly to the selected image when the lightbox opens
+  // Position the pager on the opened slide, without animating through
+  // (and fetching) every slide in between.
   useEffect(() => {
-    if (selectedIndex !== null) {
-      setActiveIndex(selectedIndex)
-      // Instant positioning to avoid animating through and triggering intermediate fetches
-      requestAnimationFrame(() => {
-        if (scrollContainerRef.current) {
-          const element = document.getElementById(
-            `lightbox-img-${selectedIndex}`
-          )
-          if (element) {
-            scrollContainerRef.current.scrollTo({
-              top: element.offsetTop,
-              behavior: 'instant' as ScrollBehavior,
-            })
-          }
-        }
-      })
+    if (selectedIndex === null) return
+    setActiveIndex(selectedIndex)
+    requestAnimationFrame(() => goTo(selectedIndex, true))
+  }, [selectedIndex, goTo])
+
+  // Derive the active slide from the scroll position itself. (The old
+  // IntersectionObserver + setState round-trip lagged behind fast swipes,
+  // which is what made slides pop in and out mid-gesture.)
+  const handleScroll = useCallback(() => {
+    const container = scrollContainerRef.current
+    if (!container || container.clientWidth === 0) return
+    const index = Math.round(container.scrollLeft / container.clientWidth)
+    setActiveIndex(prev => (prev === index ? prev : index))
+  }, [])
+
+  // Mouse wheel: a vertical wheel gesture steps one slide. Horizontal
+  // trackpad deltas are left alone — the container scrolls natively.
+  useEffect(() => {
+    const container = scrollContainerRef.current
+    if (selectedIndex === null || !container) return
+
+    const handleWheel = (e: WheelEvent) => {
+      if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return
+      e.preventDefault()
+      const now = performance.now()
+      if (now < wheelLockUntil.current) return
+      wheelLockUntil.current = now + 550
+      goTo(activeIndex + (e.deltaY > 0 ? 1 : -1))
     }
-  }, [selectedIndex])
 
-  // Track active index during scroll
-  useEffect(() => {
-    if (selectedIndex === null || !scrollContainerRef.current) return
-
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.id.split('-').pop() || '0')
-            setActiveIndex(index)
-          }
-        })
-      },
-      {
-        root: scrollContainerRef.current,
-        threshold: 0.6, // Trigger when 60% of the image is visible
-      }
-    )
-
-    const childElements = scrollContainerRef.current.children
-    Array.from(childElements).forEach(child => observer.observe(child))
-
-    return () => observer.disconnect()
-  }, [selectedIndex, images.length])
+    container.addEventListener('wheel', handleWheel, { passive: false })
+    return () => container.removeEventListener('wheel', handleWheel)
+  }, [selectedIndex, activeIndex, goTo])
 
   const isStack = layout === 'stack'
 
@@ -109,6 +119,9 @@ export const Gallery = ({
     if (cols === 2) return 'grid-cols-2'
     return 'grid-cols-2 lg:grid-cols-3'
   }
+
+  const navButtonClass =
+    'absolute top-1/2 -translate-y-1/2 z-[10006] p-3 rounded-full bg-gray-100/50 dark:bg-gray-800/50 text-primary backdrop-blur-md border border-white/20 transition-all active:scale-95 hover:bg-white dark:hover:bg-gray-700'
 
   return (
     <div className={showThumbnails ? (isStack ? 'w-full' : 'p-1 md:p-6') : ''}>
@@ -152,7 +165,7 @@ export const Gallery = ({
         </div>
       )}
 
-      {/* Lightbox Modal - Cinema & Scrubber Version */}
+      {/* Lightbox Modal - horizontal pager */}
       {selectedIndex !== null && (
         <div className='fixed inset-0 z-[10005] bg-white/95 dark:bg-black/95 animate-in fade-in duration-500'>
           {/* Top Pill Navigation */}
@@ -164,11 +177,9 @@ export const Gallery = ({
 
           {/* Close Button */}
           <button
+            aria-label='Close'
             className='absolute top-6 right-6 p-2 rounded-full bg-gray-100/50 dark:bg-gray-800/50 text-primary z-[10006] hover:bg-white dark:hover:bg-gray-700 transition-all active:scale-95 border border-white/10'
-            onClick={() => {
-              setSelectedIndex(null)
-              onClose?.()
-            }}
+            onClick={close}
           >
             <svg
               xmlns='http://www.w3.org/2000/svg'
@@ -186,54 +197,92 @@ export const Gallery = ({
             </svg>
           </button>
 
-          {/* Scrubber Progress Bar (Left Side) - Brighter & More Obvious */}
+          {/* Prev / Next Buttons */}
           {images.length > 1 && (
-            <div className='absolute left-4 top-1/2 -translate-y-1/2 h-64 w-1.5 bg-white/10 dark:bg-white/5 rounded-full z-[10006] hidden md:block overflow-hidden border border-white/10'>
-              <div
-                className='w-full bg-white shadow-[0_0_15px_rgba(255,255,255,0.5)] transition-all duration-300 rounded-full'
-                style={{
-                  height: `${((activeIndex + 1) / images.length) * 100}%`,
-                }}
-              />
-            </div>
+            <>
+              <button
+                aria-label='Previous photo'
+                className={`${navButtonClass} left-4 ${
+                  activeIndex === 0
+                    ? 'opacity-30 pointer-events-none'
+                    : 'opacity-100'
+                }`}
+                onClick={() => goTo(activeIndex - 1)}
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M15 18l-6-6 6-6'></path>
+                </svg>
+              </button>
+              <button
+                aria-label='Next photo'
+                className={`${navButtonClass} right-4 ${
+                  activeIndex === images.length - 1
+                    ? 'opacity-30 pointer-events-none'
+                    : 'opacity-100'
+                }`}
+                onClick={() => goTo(activeIndex + 1)}
+              >
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  width='24'
+                  height='24'
+                  viewBox='0 0 24 24'
+                  fill='none'
+                  stroke='currentColor'
+                  strokeWidth='2.5'
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                >
+                  <path d='M9 18l6-6-6-6'></path>
+                </svg>
+              </button>
+            </>
           )}
 
-          {/* Scrollable Container */}
+          {/* Horizontal Pager */}
           <div
             ref={scrollContainerRef}
-            className='h-dvh w-full overflow-y-scroll snap-y snap-mandatory overscroll-contain no-scrollbar'
+            onScroll={handleScroll}
+            className='h-dvh w-full flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory overscroll-contain no-scrollbar'
           >
             {images.map((image, index) => {
-              // Only load images that are currently active or within 1 slide of the active slide
-              const shouldRender =
-                selectedIndex !== null && Math.abs(index - activeIndex) <= 1
+              // Render real content two slides out in each direction so a
+              // fast swipe never lands on a blank; distant slides keep a
+              // same-size placeholder so the scroll width never changes.
+              const shouldRender = Math.abs(index - activeIndex) <= 2
               const isLoaded = loadedImages[index]
 
               return (
                 <div
                   key={`lightbox-${index}`}
                   id={`lightbox-img-${index}`}
-                  className='h-dvh w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-12'
-                  onClick={() => setSelectedIndex(null)}
+                  className='h-full w-full flex-none flex items-center justify-center snap-start snap-always p-4 md:p-12'
+                  onClick={close}
                 >
                   <div
-                    className={`relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center transition-opacity duration-300 ${
-                      images.length === 1 || activeIndex === index
-                        ? 'opacity-100'
-                        : 'opacity-20'
-                    }`}
+                    className='relative w-full h-full max-w-6xl max-h-[85vh] flex items-center justify-center'
                     onClick={e => e.stopPropagation()}
                   >
                     {shouldRender ? (
                       <>
-                        {/* Instant low-res preview reusing the already-cached thumbnail */}
+                        {/* Instant low-res preview reusing the cached grid thumbnail */}
                         {!isLoaded && (
                           <Image
                             loader={cloudinaryLoader}
                             src={image}
                             alt=''
                             fill
-                            sizes='(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw'
+                            sizes='(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw'
                             className='object-contain blur-sm opacity-60 scale-95 pointer-events-none'
                             priority
                           />
@@ -256,10 +305,7 @@ export const Gallery = ({
                           className={`object-contain transition-opacity duration-300 ${
                             isLoaded ? 'opacity-100' : 'opacity-0'
                           }`}
-                          priority={
-                            index === selectedIndex ||
-                            Math.abs(index - activeIndex) <= 1
-                          }
+                          priority={Math.abs(index - activeIndex) <= 1}
                           onLoad={() =>
                             setLoadedImages(prev => ({
                               ...prev,
@@ -269,7 +315,7 @@ export const Gallery = ({
                         />
                       </>
                     ) : (
-                      /* Lightweight placeholder for distant slides to preserve scroll height */
+                      /* Lightweight placeholder for distant slides to preserve scroll width */
                       <div className='w-full h-full' />
                     )}
                   </div>
@@ -278,23 +324,15 @@ export const Gallery = ({
             })}
           </div>
 
-          {/* Mobile Scroll Hint */}
-          {images.length > 1 && activeIndex === 0 && (
-            <div className='absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-secondary pointer-events-none opacity-40 md:hidden animate-in fade-in slide-in-from-bottom-4 duration-1000'>
-              <svg
-                xmlns='http://www.w3.org/2000/svg'
-                width='24'
-                height='24'
-                viewBox='0 0 24 24'
-                fill='none'
-                stroke='currentColor'
-                strokeWidth='2'
-                strokeLinecap='round'
-                strokeLinejoin='round'
-                className='animate-bounce'
-              >
-                <path d='M7 13l5 5 5-5M7 6l5 5 5-5'></path>
-              </svg>
+          {/* Progress Bar (bottom) */}
+          {images.length > 1 && (
+            <div className='absolute bottom-6 left-1/2 -translate-x-1/2 w-40 h-1 rounded-full bg-gray-900/10 dark:bg-white/10 overflow-hidden z-[10006]'>
+              <div
+                className='h-full bg-primary/70 rounded-full transition-all duration-300'
+                style={{
+                  width: `${((activeIndex + 1) / images.length) * 100}%`,
+                }}
+              />
             </div>
           )}
         </div>

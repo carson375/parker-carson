@@ -7,7 +7,7 @@
 // - /_next/static/*, /fonts/*, /static/*: cache-first (immutable assets).
 // - Everything else (including Cloudinary images): straight to network.
 // GET requests only; bump CACHE_VERSION to invalidate old caches.
-const CACHE_VERSION = 'parker-carson-v1'
+const CACHE_VERSION = 'parker-carson-v2'
 const SHELL = ['/', '/static/favicons/android-chrome-192x192.png']
 
 self.addEventListener('install', (event) => {
