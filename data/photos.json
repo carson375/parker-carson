@@ -2777,8 +2777,6 @@
       "/photography/New York 2025/IMG_4632.JPG",
       "/photography/New York 2025/IMG_4636.JPG",
       "/photography/New York 2025/IMG_4638.JPG",
-      "/photography/New York 2025/IMG_4640.JPG",
-      "/photography/New York 2025/IMG_4641.JPG",
       "/photography/New York 2025/IMG_4652.JPG",
       "/photography/New York 2025/IMG_4661.JPG",
       "/photography/New York 2025/IMG_4662.JPG",
@@ -2815,7 +2813,6 @@
           "/photography/New York 2025/IMG_4632.JPG",
           "/photography/New York 2025/IMG_4636.JPG",
           "/photography/New York 2025/IMG_4638.JPG",
-          "/photography/New York 2025/IMG_4640.JPG",
           "/photography/New York 2025/IMG_4652.JPG",
           "/photography/New York 2025/IMG_4661.JPG",
           "/photography/New York 2025/IMG_4662.JPG"
@@ -2847,14 +2844,6 @@
         "lng": -73.9855,
         "photos": [
           "/photography/New York 2025/IMG_4626.JPG"
-        ]
-      },
-      {
-        "name": "Chelsea Piers",
-        "lat": 40.7464,
-        "lng": -74.0086,
-        "photos": [
-          "/photography/New York 2025/IMG_4641.JPG"
         ]
       },
       {
