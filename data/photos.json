@@ -2766,14 +2766,17 @@
       "/photography/New York 2025/IMG_4597.JPG",
       "/photography/New York 2025/IMG_4599.JPG",
       "/photography/New York 2025/IMG_4607.JPG",
+      "/photography/New York 2025/IMG_4610.JPG",
       "/photography/New York 2025/IMG_4611.JPG",
       "/photography/New York 2025/IMG_4614.JPG",
       "/photography/New York 2025/IMG_4616.JPG",
+      "/photography/New York 2025/IMG_4619.JPG",
       "/photography/New York 2025/IMG_4620.JPG",
       "/photography/New York 2025/IMG_4622.JPG",
       "/photography/New York 2025/IMG_4624.JPG",
       "/photography/New York 2025/IMG_4626.JPG",
       "/photography/New York 2025/IMG_4631.JPG",
+      "/photography/New York 2025/IMG_4632.JPG",
       "/photography/New York 2025/IMG_4636.JPG",
       "/photography/New York 2025/IMG_4638.JPG",
       "/photography/New York 2025/IMG_4652.JPG",
@@ -2781,10 +2784,7 @@
       "/photography/New York 2025/IMG_4662.JPG",
       "/photography/New York 2025/IMG_4664.JPG",
       "/photography/New York 2025/IMG_4674.JPG",
-      "/photography/New York 2025/IMG_4680.JPG",
-      "/photography/New York 2025/IMG_4685.JPG",
-      "/photography/New York 2025/IMG_4689.JPG",
-      "/photography/New York 2025/IMG_4691.JPG"
+      "/photography/New York 2025/IMG_4680.JPG"
     ],
     "locations": [
       {
@@ -2805,6 +2805,7 @@
         "photos": [
           "/photography/New York 2025/IMG_4607.JPG",
           "/photography/New York 2025/IMG_4631.JPG",
+          "/photography/New York 2025/IMG_4632.JPG",
           "/photography/New York 2025/IMG_4636.JPG",
           "/photography/New York 2025/IMG_4638.JPG",
           "/photography/New York 2025/IMG_4652.JPG",
@@ -2817,6 +2818,7 @@
         "lat": 40.7411,
         "lng": -73.9897,
         "photos": [
+          "/photography/New York 2025/IMG_4610.JPG",
           "/photography/New York 2025/IMG_4611.JPG",
           "/photography/New York 2025/IMG_4624.JPG"
         ]
@@ -2828,6 +2830,7 @@
         "photos": [
           "/photography/New York 2025/IMG_4614.JPG",
           "/photography/New York 2025/IMG_4616.JPG",
+          "/photography/New York 2025/IMG_4619.JPG",
           "/photography/New York 2025/IMG_4620.JPG",
           "/photography/New York 2025/IMG_4622.JPG"
         ]
@@ -2855,16 +2858,6 @@
         "photos": [
           "/photography/New York 2025/IMG_4674.JPG",
           "/photography/New York 2025/IMG_4680.JPG"
-        ]
-      },
-      {
-        "name": "The Metropolitan Museum of Art",
-        "lat": 40.7794,
-        "lng": -73.9632,
-        "photos": [
-          "/photography/New York 2025/IMG_4685.JPG",
-          "/photography/New York 2025/IMG_4689.JPG",
-          "/photography/New York 2025/IMG_4691.JPG"
         ]
       }
     ]
