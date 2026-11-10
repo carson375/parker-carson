@@ -2757,5 +2757,112 @@
         ]
       }
     ]
+  },
+  {
+    "name": "New York 2025",
+    "photos": [
+      "/photography/New York 2025/IMG_4595.JPG",
+      "/photography/New York 2025/IMG_4597.JPG",
+      "/photography/New York 2025/IMG_4599.JPG",
+      "/photography/New York 2025/IMG_4603.JPG",
+      "/photography/New York 2025/IMG_4607.JPG",
+      "/photography/New York 2025/IMG_4611.JPG",
+      "/photography/New York 2025/IMG_4614.JPG",
+      "/photography/New York 2025/IMG_4616.JPG",
+      "/photography/New York 2025/IMG_4620.JPG",
+      "/photography/New York 2025/IMG_4622.JPG",
+      "/photography/New York 2025/IMG_4624.JPG",
+      "/photography/New York 2025/IMG_4626.JPG",
+      "/photography/New York 2025/IMG_4631.JPG",
+      "/photography/New York 2025/IMG_4632.JPG",
+      "/photography/New York 2025/IMG_4636.JPG",
+      "/photography/New York 2025/IMG_4638.JPG",
+      "/photography/New York 2025/IMG_4652.JPG",
+      "/photography/New York 2025/IMG_4661.JPG",
+      "/photography/New York 2025/IMG_4662.JPG",
+      "/photography/New York 2025/IMG_4664.JPG",
+      "/photography/New York 2025/IMG_4674.JPG",
+      "/photography/New York 2025/IMG_4680.JPG"
+    ],
+    "locations": [
+      {
+        "name": "Hudson Yards",
+        "lat": 40.7536,
+        "lng": -74.0023,
+        "photos": [
+          "/photography/New York 2025/IMG_4595.JPG",
+          "/photography/New York 2025/IMG_4597.JPG",
+          "/photography/New York 2025/IMG_4599.JPG"
+        ]
+      },
+      {
+        "name": "Little Island",
+        "lat": 40.7422,
+        "lng": -74.0112,
+        "photos": [
+          "/photography/New York 2025/IMG_4603.JPG"
+        ]
+      },
+      {
+        "name": "World Trade Center",
+        "lat": 40.7127,
+        "lng": -74.0134,
+        "photos": [
+          "/photography/New York 2025/IMG_4607.JPG",
+          "/photography/New York 2025/IMG_4631.JPG",
+          "/photography/New York 2025/IMG_4632.JPG",
+          "/photography/New York 2025/IMG_4636.JPG",
+          "/photography/New York 2025/IMG_4638.JPG",
+          "/photography/New York 2025/IMG_4652.JPG",
+          "/photography/New York 2025/IMG_4661.JPG",
+          "/photography/New York 2025/IMG_4662.JPG"
+        ]
+      },
+      {
+        "name": "Flatiron Building",
+        "lat": 40.7411,
+        "lng": -73.9897,
+        "photos": [
+          "/photography/New York 2025/IMG_4611.JPG",
+          "/photography/New York 2025/IMG_4624.JPG"
+        ]
+      },
+      {
+        "name": "Washington Square Park",
+        "lat": 40.7308,
+        "lng": -73.9973,
+        "photos": [
+          "/photography/New York 2025/IMG_4614.JPG",
+          "/photography/New York 2025/IMG_4616.JPG",
+          "/photography/New York 2025/IMG_4620.JPG",
+          "/photography/New York 2025/IMG_4622.JPG"
+        ]
+      },
+      {
+        "name": "Times Square",
+        "lat": 40.758,
+        "lng": -73.9855,
+        "photos": [
+          "/photography/New York 2025/IMG_4626.JPG"
+        ]
+      },
+      {
+        "name": "Central Park",
+        "lat": 40.7812,
+        "lng": -73.9665,
+        "photos": [
+          "/photography/New York 2025/IMG_4664.JPG"
+        ]
+      },
+      {
+        "name": "Williamsburg",
+        "lat": 40.7218,
+        "lng": -73.9586,
+        "photos": [
+          "/photography/New York 2025/IMG_4674.JPG",
+          "/photography/New York 2025/IMG_4680.JPG"
+        ]
+      }
+    ]
   }
 ]
