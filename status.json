@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-11-14T08:05:31.956Z",
+  "source": "github-actions-bridge",
+  "production": {
+    "state": "READY",
+    "target": "production",
+    "createdAt": "2026-11-10T14:45:35.609Z",
+    "sha": "4759d4b",
+    "ref": "master"
+  },
+  "previews": [
+    {
+      "state": "CANCELED",
+      "target": null,
+      "createdAt": "2026-11-09T03:51:17.283Z",
+      "sha": "4357b2a",
+      "ref": "feature/new-york-2025"
+    },
+    {
+      "state": "CANCELED",
+      "target": null,
+      "createdAt": "2026-11-09T03:48:44.809Z",
+      "sha": "ec892ba",
+      "ref": "feature/new-york-2025"
+    },
+    {
+      "state": "CANCELED",
+      "target": null,
+      "createdAt": "2026-11-09T03:46:17.895Z",
+      "sha": "7fd4a4a",
+      "ref": "feature/new-york-2025"
+    }
+  ]
+}
