@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-11-28T13:36:29.939Z",
+  "source": "github-actions-bridge",
+  "production": {
+    "state": "READY",
+    "target": "production",
+    "createdAt": "2026-11-24T16:09:20.849Z",
+    "sha": "9565052",
+    "ref": "master"
+  },
+  "previews": [
+    {
+      "state": "CANCELED",
+      "target": null,
+      "createdAt": "2026-11-22T00:05:33.902Z",
+      "sha": "04ad07d",
+      "ref": "chore/fix-lint-deps-audit"
+    }
+  ]
+}
